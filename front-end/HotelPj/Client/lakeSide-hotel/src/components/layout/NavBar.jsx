@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react"
 import { NavLink, Link } from "react-router-dom"
+import Logout from "../auth/Logout"
 
 
 
@@ -40,13 +41,13 @@ const NavBar = () => {
 							</NavLink>
 						</li>
 
-						
+						{isLoggedIn && userRole === "ROLE_ADMIN" && (
 							<li className="nav-item">
 								<NavLink className="nav-link" aria-current="page" to={"/admin"}>
 									Admin
 								</NavLink>
 							</li>
-						
+							)}
 					</ul>
 
 					<ul className="d-flex navbar-nav">
@@ -57,29 +58,31 @@ const NavBar = () => {
 						</li>
 
 						<li className="nav-item dropdown">
-							<a
-								className={`nav-link dropdown-toggle ${showAccount ? "show" : ""}`}
-								href="#"
-								role="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-								onClick={handleAccountClick}>
-								{" "}
-								Account
-							</a>
+						<a
+							className={`nav-link dropdown-toggle ${showAccount ? "show" : ""}`}
+							href="#"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+							onClick={handleAccountClick}>
+							{" "}
+							Tài khoản
+						</a>
 
-							<ul
-								className={`dropdown-menu ${showAccount ? "show" : ""}`}
-								aria-labelledby="navbarDropdown">
-								
-									<li>
-										<Link className="dropdown-item" to={"/login"}>
-											Đăng nhập
-										</Link>
-									</li>
-								
-							</ul>
-						</li>
+						<ul
+							className={`dropdown-menu ${showAccount ? "show" : ""}`}
+							aria-labelledby="navbarDropdown">
+							{isLoggedIn ? (
+								<Logout />
+							) : (
+								<li>
+									<Link className="dropdown-item" to={"/login"}>
+										Đăng ký
+									</Link>
+								</li>
+							)}
+						</ul>
+					</li>
 					</ul>
 				</div>
 			</div>

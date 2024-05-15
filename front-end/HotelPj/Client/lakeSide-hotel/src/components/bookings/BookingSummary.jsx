@@ -65,10 +65,10 @@ const BookingSummary = ({ booking, payment, isFormValid, onConfirm }) => {
       {payment > 0 ? (
         <>
             <p>
-                Total payment: <strong>{payment} đồng</strong>
+                Tổng tiền: <strong>{payment} đồng</strong>
             </p>
 
-            {isFormValid && !isBookingConfirmed ? (
+            {isFormValid ? (
                 <Button variant="success" onClick={handleConfirmBooking}>
                     {isProcessingPayment ? (
                         <>
@@ -79,7 +79,7 @@ const BookingSummary = ({ booking, payment, isFormValid, onConfirm }) => {
                             Booking Confirmed, redirecting to payment...
                         </>
                     ) : (
-                        "Confirm Booking & proceed to payment"
+                        "Xác nhận đơn đặt phòng và đang tới trang thanh toán"
                     )}
                 </Button>
             ) : isBookingConfirmed ? (
@@ -91,7 +91,7 @@ const BookingSummary = ({ booking, payment, isFormValid, onConfirm }) => {
             ) : null}
         </>
     ) : (
-        <p className="text-danger">Check-out date must be after check-in date.</p>
+        <p className="text-danger">Ngày kết thúc phải sau ngày bắt đầu đặt</p>
     )}
     </div>
     </div>

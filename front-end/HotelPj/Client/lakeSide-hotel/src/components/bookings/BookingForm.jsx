@@ -14,9 +14,10 @@ const BookingForm = () => {
   const [isValidated, setIsValidated] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const [roomPrice, setRoomPrice] = useState(0);
+  const currentUser = localStorage.getItem("userId")
   const [booking, setBooking] = useState({
     guestFullName: "",
-    guestEmail: "",
+    guestEmail: currentUser,
     checkInDate: "",
     checkOutDate: "",
     numOfAdults: "",
@@ -59,7 +60,7 @@ const BookingForm = () => {
     if (
       !moment(booking.checkOutDate).isSameOrAfter(moment(booking.checkInDate))
     ) {
-      setErrMsg("Ngày ra phòng phải đến trước ngày đặt phòng");
+      setErrMsg("Ngày kết thúc phải trước ngày đặt phòng");
       return false;
     } else {
       setErrMsg("");
@@ -76,6 +77,7 @@ const BookingForm = () => {
     ) {
       e.stopPropagation();
     } else {
+      setIsValidated(true);
       return setIsSubmitted(true);
     }
     setIsValidated(true);
