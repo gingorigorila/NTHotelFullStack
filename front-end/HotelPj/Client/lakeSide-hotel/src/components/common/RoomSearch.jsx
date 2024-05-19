@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import { getAvailableRooms } from "../ultils/ApiFunctions";
-import { Col, Container, Form, Row,Button } from "react-bootstrap";
+import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import RoomTypeSelector from "./RoomTypeSelector";
 
 import RoomSearchResult from "./RoomSearchResult";
@@ -14,17 +14,17 @@ const RoomSearch = () => {
   });
   const [err, setErr] = useState("");
   const [availableRooms, setAvailableRooms] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const handleSearch = (e) => {
     e.preventDefault();
-    const checkIn = moment(searchQuerry.checkInDate);
-    const checkOut = moment(searchQuerry.checkOutDate);
-    if (!checkIn.isValid() || !checkOut.isValid()) {
+    const checkInMoment = moment(searchQuerry.checkInDate);
+    const checkOutMoment = moment(searchQuerry.checkOutDate);
+    if (!checkInMoment.isValid() || !checkOutMoment.isValid()) {
       setErr("Xin vui lòng nhập khoảng thời gian ở đúng");
       return;
     }
-    if (!checkIn.isSameOrAfter(checkIn)) {
-      setErr("Ngày bắt đầu phải trước ngày kết thúc");
+    if (!checkOutMoment.isSameOrAfter(checkInMoment)) {
+      setErr("Ngày kết thúc phải sau ngày bắt đầu");
       return;
     }
     setIsLoading(true);
@@ -35,6 +35,7 @@ const RoomSearch = () => {
     )
       .then((response) => {
         setAvailableRooms(response.data);
+        console.log("available :", response.data);
         setTimeout(() => {
           setIsLoading(false);
         }, 2000);
@@ -48,9 +49,10 @@ const RoomSearch = () => {
   };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    const checkIn = moment(searchQuerry.checkInDate);
-    const checkOut = moment(searchQuerry.checkOutDate);
-    if (checkIn.isValid() && checkOut.isValid()) {
+    setSearchQuerry({ ...searchQuerry, [name]: value });
+    const checkInDate = moment(searchQuerry.checkInDate);
+    const checkOutDate = moment(searchQuerry.checkOutDate);
+    if (checkInDate.isValid() && checkOutDate.isValid()) {
       setErr("");
     }
   };
@@ -60,12 +62,13 @@ const RoomSearch = () => {
       checkOutDate: "",
       roomType: "",
     });
+    setAvailableRooms([]);
   };
   return (
     <>
-      <Container>
-        <Form>
-          <Row>
+      <Container className="mt-5 mb-5 py-5 shadow">
+        <Form onSubmit={handleSearch}>
+          <Row className="justify-content-center">
             <Col xs={12} md={3}>
               <Form.Group controlId="checkIndate">
                 <Form.Label>Ngày bắt đầu</Form.Label>
@@ -74,7 +77,7 @@ const RoomSearch = () => {
                   name="checkInDate"
                   value={searchQuerry.checkInDate}
                   onChange={handleInputChange}
-                  min={moment().format("DD-MM-YYYY")}
+                  min={moment().format("YYYY-MM-DD")}
                 />
               </Form.Group>
             </Col>
@@ -86,12 +89,12 @@ const RoomSearch = () => {
                   name="checkOutDate"
                   value={searchQuerry.checkOutDate}
                   onChange={handleInputChange}
-                  min={moment().format("DD-MM-YYYY")}
+                  min={moment().format("YYYY-MM-DD")}
                 />
               </Form.Group>
             </Col>
             <Col xs={12} md={3}>
-              <Form.Group controlId="checkOutdate">
+              <Form.Group controlId="roomType">
                 <Form.Label>Loại phòng</Form.Label>
                 <div className="d-flex">
                   <RoomTypeSelector
@@ -111,7 +114,7 @@ const RoomSearch = () => {
         ) : availableRooms ? (
           <RoomSearchResult
             results={availableRooms}
-            onClearSearch={handleSearch}
+            onClearSearch={ClearSearch}
           />
         ) : (
           <p className="mt-4">

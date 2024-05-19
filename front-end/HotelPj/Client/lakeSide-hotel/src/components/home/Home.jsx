@@ -17,15 +17,15 @@ const Home = () => {
       {message && <p className="text-warning px-5 text-center">{message}</p>}
       {currentUser && <h6 className="text-success text-center">Chào mừng bạn {currentUser} đến khách sạn chúng tôi</h6>}
       <MainHeader />
-      <section className="container">
-        <RoomSearch/>
-        <RoomCarousel />
+      <div className="container">
+      <RoomSearch/>
+       <RoomCarousel />
         <Parallax />
-        <RoomCarousel />
+        <RoomCarousel />  
         <HotelService />
         <Parallax />
         <RoomCarousel />
-      </section>
+        </div>
     </section>
   );
 };

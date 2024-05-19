@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { Button } from "bootstrap";
 import React, { useState } from "react";
-import { Row } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
 import RoomCard from "../room/RoomCard";
 import RoomPaginator from "./RoomPaginator";
 
 const RoomSearchResult = ({ results, onClearSearch }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const resultsPerPage = 3;
-  const totalResults = results.length();
+  const totalResults = results.length;
   const totalPages = Math.ceil(totalResults / resultsPerPage);
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);

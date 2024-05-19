@@ -235,9 +235,7 @@ export async function loginUser(login){
 export async function getUserProfile(userId, token) {
 	// eslint-disable-next-line no-useless-catch
 	try {
-		const response = await api.get(`users/profile/${userId}`, {
-			headers: getHeader()
-		})
+		const response = await api.get(`users/profile/${userId}`)
 		return response.data
 	} catch (error) {
 		throw error
@@ -259,9 +257,7 @@ export async function deleteUser(userId) {
 /* This is the function to get a single user */
 export async function getUser(userId, token) {
 	try {
-		const response = await api.get(`/users/${userId}`, {
-			headers: getHeader()
-		})
+		const response = await api.get(`/users/${userId}`)
 		return response.data
 	} catch (error) {
 		throw error
@@ -271,9 +267,7 @@ export async function getUser(userId, token) {
 /* This is the function to get user bookings by the user id */
 export async function getBookingsByUserId(userId, token) {
 	try {
-		const response = await api.get(`/bookings/user/${userId}/bookings`, {
-			headers: getHeader()
-		})
+		const response = await api.get(`/bookings/user/${userId}/bookings`)
 		return response.data
 	} catch (error) {
 		console.error("Error fetching bookings:", error.message)
