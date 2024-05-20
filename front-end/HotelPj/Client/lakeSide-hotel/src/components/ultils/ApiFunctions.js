@@ -11,21 +11,23 @@ export const getHeader = () => {
   const token = localStorage.getItem("token");
   return {
     Authorization: `Bearer ${token}`,
-    "Content-Type": "application/json",
+    "Content-Type": "application/json"
   };
 };
 export async function addRoom(photo, roomType, roomPrice) {
-  const formData = new FormData();
-  formData.append("photo", photo);
-  formData.append("roomType", roomType);
-  formData.append("roomPrice", roomPrice);
+	const formData = new FormData()
+	formData.append("photo", photo)
+	formData.append("roomType", roomType)
+	formData.append("roomPrice", roomPrice)
 
-  const response = await api.post("/rooms/add/new-room", formData);
-  if (response.status === 201) {
-    return true;
-  } else {
-    return false;
-  }
+	const response = await api.post("/rooms/add/new-room", formData,{
+		headers: getHeader()
+	})
+	if (response.status === 201) {
+		return true
+	} else {
+		return false
+	}
 }
 //Ham lay cac kieu phong
 export async function getRoomType() {
@@ -47,12 +49,14 @@ export async function getAllRoom() {
 }
 //Ham xoa phong
 export async function deleteRoom(roomId) {
-  try {
-    const response = await api.delete(`/rooms/delete/room/${roomId}`);
-    return response.data;
-  } catch (e) {
-    throw new Error(`Error deleting room ${e.message}`);
-  }
+	try {
+		const result = await api.delete(`/rooms/delete/room/${roomId}`, {
+			headers: getHeader()
+		})
+		return result.data
+	} catch (error) {
+		throw new Error(`Error deleting room ${error.message}`)
+	}
 }
 //Ham cap nhap phong
 export async function updateRoom(roomId, roomData) {

@@ -65,7 +65,7 @@ const AddRoom = () => {
               <div className="alert alert-success fade show">{successMsg}</div>
             )}
             {errMsg && <div className="alert alert-danger fade show">{errMsg}</div>}
-            <form onSubmit={handleSubmit}>
+            <form encType="multipart/form-data" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="roomType" className="form-label">
                   Loại phòng
