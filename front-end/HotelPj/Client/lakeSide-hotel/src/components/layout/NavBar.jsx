@@ -50,6 +50,14 @@ const NavBar = () => {
 							)}
 					</ul>
 
+					<ul className="navbar-nav my-2 my-lg-0 navbar-nav-scroll">
+						<li className="nav-item">
+							<NavLink className="nav-link" aria-current="page" to={"/about-us"}>
+								Về chúng tôi
+							</NavLink>
+						</li>
+					</ul>
+
 					<ul className="d-flex navbar-nav">
 						<li className="nav-item">
 							<NavLink className="nav-link" to={"/find-booking"}>

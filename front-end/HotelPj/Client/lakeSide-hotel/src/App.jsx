@@ -24,6 +24,7 @@ import Profile from "./components/auth/Profile";
 import Logout from "./components/auth/Logout";
 import { AuthProvider } from "./components/auth/AuthProvider";
 import RequireAuth from "./components/auth/RequireAuth";
+import About from "./components/auth/About"
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<About />} />
             <Route path="/edit-room/:roomId" element={<EditRoom />} />
             <Route path="/existing-rooms" element={<ExsistingRooms />} />
             <Route path="/add-room" element={<AddRoom />} />
@@ -51,12 +53,14 @@ function App() {
             } />
             <Route path="/browse-all-rooms" element={<RoomListing />} />
             <Route path="/admin" element={<Admin />} />
+            
             <Route path="/existing-bookings" element={<Bookings />} />
             <Route path="/find-booking" element={<FindBooking />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Registration />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/logout" element={<Logout />} />
+
           </Routes>
         </Router>
         <Footer />
