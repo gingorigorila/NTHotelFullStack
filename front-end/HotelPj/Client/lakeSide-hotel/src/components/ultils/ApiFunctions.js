@@ -11,7 +11,7 @@ export const getHeader = () => {
   const token = localStorage.getItem("token");
   return {
     Authorization: `Bearer ${token}`,
-    "Content-Type": "application/json"
+    
   };
 };
 export async function addRoom(photo, roomType, roomPrice) {
