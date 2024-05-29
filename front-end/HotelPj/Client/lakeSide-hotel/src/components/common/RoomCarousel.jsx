@@ -64,7 +64,7 @@ const RoomCarousel = () => {
                           <Card.Text className="mt-3"> ⭐⭐⭐⭐⭐</Card.Text>
                         </Card.Title>
                         
-                        <div className="jack">
+                        <div className="book-button">
                           <Link
                             to={`/book-room/${room.id}`}
                             className="btn btn-hotel"
