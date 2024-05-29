@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 const About = () => {
 	return (
         <>
@@ -8,7 +8,7 @@ const About = () => {
                 <div className="col-lg-6">
                   <h1 className="mb-4">
                     Welcome to{" "}
-                    <span className="text-primary text-uppercase">KS Nha Trang</span>
+                    <span className="text-primary text-uppercase">Nha Trang</span>
                   </h1>
                   <p className="mb-4">
                     Chào mừng quý khách đến với Khách Sạn Nha Trang, nơi mang đến cho bạn trải nghiệm nghỉ dưỡng tuyệt vời và dịch vụ đẳng cấp tại trung tâm thành phố biển Nha Trang xinh đẹp. Với vị trí đắc địa ngay gần bãi biển, khách sạn của chúng tôi là điểm đến lý tưởng cho cả du khách nghỉ dưỡng và doanh nhân.

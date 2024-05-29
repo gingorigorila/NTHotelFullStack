@@ -81,7 +81,7 @@ const FindBooking = () => {
   return (
     <>
       <div className="container mt-5 flex-column align-items-center justify-content-center d-flex flex-column">
-        <h2 className="text-center mb-4">Tìm đơn đăt phòng</h2>
+        <h2 className="text-center mb-4">Tìm đơn đặt phòng</h2>
         <form onSubmit={handleFormSubmit} className="col-md-6">
           <div className="input-group mb-3">
             <input

@@ -96,6 +96,32 @@ body {
     height: '100vh'
   }
 
+  .jack {
+    margin-top: -3rem;
+    margin-bottom: -2rem;
+  }
+
+  .love {
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .love:hover {
+    transform: scale(1.05);
+  }
+
+  .hot-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
 
 
 .parallax {
