@@ -11,6 +11,7 @@
     "start": "NODE_OPTIONS='--max-http-header-size=100000"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.9",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
     "date-fns": "^3.6.0",
