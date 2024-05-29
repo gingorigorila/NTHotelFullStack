@@ -6,7 +6,7 @@ const About = () => {
             <div className="container">
               <div className="row g-5 align-items-center">
                 <div className="col-lg-6">
-                  <h1 className="mb-4">
+                  <h1 className="mb-4"> 
                     Welcome to{" "}
                     <span className="text-primary text-uppercase">Nha Trang</span>
                   </h1>

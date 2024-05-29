@@ -25,6 +25,8 @@ const RoomCard = ({ key, room }) => {
            
             <Card.Text> ⭐ ⭐ ⭐ ⭐ ⭐</Card.Text>
             <Card.Text>📶 Free Wifi</Card.Text>
+            <Card.Text>Kích thước phòng : 40m²</Card.Text>
+            <Card.Text>Điều hòa, Nước nóng, Hỗ trợ nhanh</Card.Text>
           </div>
           <div className="pay">
             <Card.Title className="room-price">{room.roomPrice}đ</Card.Title>
