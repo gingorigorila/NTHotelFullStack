@@ -22,10 +22,12 @@ const RoomCard = ({ key, room }) => {
           </div>
           <div className="flex-grow-1 ml-3 px-5">
             <Card.Title className="hotel-color">{room.roomType}</Card.Title>
-            <Card.Title className="room-price">{room.roomPrice}</Card.Title>
-            <Card.Text>Thong tin ve phg danh cho khach</Card.Text>
+
+            <Card.Text> ⭐ ⭐ ⭐ ⭐ ⭐</Card.Text>
+            <Card.Text>📶 Free Wifi</Card.Text>
           </div>
-          <div className="flex-shrink-0 mt-3">
+          <div className="pay">
+            <Card.Title className="room-price">{room.roomPrice}đ</Card.Title>
             <Link to={`/book-room/${room.id}`} className="btn btn-hotel btn-sm">
               Book Now
             </Link>

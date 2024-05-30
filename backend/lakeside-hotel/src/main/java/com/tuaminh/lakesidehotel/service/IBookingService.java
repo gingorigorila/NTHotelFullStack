@@ -12,4 +12,6 @@ public interface IBookingService {
     BookedRoom findByBookingConfimationCode(String confirmationCode);
 
     List<BookedRoom> getAllBookings();
+
+    List<BookedRoom> findBookingByEmail(String email);
 }
