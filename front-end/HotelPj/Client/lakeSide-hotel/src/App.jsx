@@ -27,6 +27,7 @@ import RequireAuth from "./components/auth/RequireAuth";
 import RestaurantListing from "./components/restaurant/RestaurantListing";
 import CheckOutRestaurant from "./components/orders/CheckOutRestaurant";
 import Orders from "./components/orders/Orders";
+import About from "./components/auth/About";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<About />} />
             <Route path="/edit-room/:roomId" element={<EditRoom />} />
             <Route path="/existing-rooms" element={<ExsistingRooms />} />
             <Route path="/add-room" element={<AddRoom />} />

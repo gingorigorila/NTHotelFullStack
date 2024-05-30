@@ -5,7 +5,19 @@ body {
 .card {
   opacity: 0.9;
 }
+.service-card {
+  transition: background-color 0.2s;
+}
 
+.service-card:hover {
+  background-color: orange;
+}
+
+.button {
+  margin-top: 2rem;
+  width: 10rem;
+
+}
 /* Navigation bar definitions */
  .navbar{
   padding: 0;
@@ -70,19 +82,22 @@ body {
     color: rgb(78, 146, 213);
   }
   .room-price{
-    color:darkgoldenrod;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:medium;
-  }
+    color:red;
+    /* font-family: 'Courier New', Courier, monospace; */
+    margin-bottom : 70px;
+    }
+  
   .vertical-rule{
     border-left: '0.5px solid black';
     height: '100vh'
   }
-
+  .pay {
+    align-items: center;
+  }
 
 
 .parallax {
-  background-image: url("./assets/images/parrall.jpg");
+  background-image: url("./assets/hotel-pic.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -117,7 +132,7 @@ body {
   animation: fadeInDown 1s ease-in-out;
 }
 
-.animated-texts p, h1, h2 {
+.animated-texts p, h1, h2, h3 {
   animation: fadeInUp 1s ease-in-out;
 }
 
@@ -189,7 +204,7 @@ body {
 
 /* The header banner */
 .header-banner {
-  background-image:  url("./assets/images/services-1.jpg");
+  background-image:  url("./assets/carousel-1.jpg");
    background-size: cover;
   background-position: center;
    position: relative;

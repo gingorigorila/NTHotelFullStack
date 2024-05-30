@@ -10,24 +10,23 @@ import {
   FaWifi,
 } from "react-icons/fa";
 import Header from "./Header";
+import { LiaUmbrellaBeachSolid } from "react-icons/lia";
 
 const HotelService = () => {
   return (
     <>
-      <Container className="mb-2">
-        <Header title={"Dịch vụ của chúng tôi"} />
-        <Row>
-          <h4 className="text-center">
-            Dịch vụ tại khách sạn <span className="hotel-color">Nha Trang</span>
-            <span className="gap-2">
-              <FaClock />
-              Phục vụ 24h
-            </span>
-          </h4>
-        </Row>
+      <Container className="mb-2 ">
+        <h1 className="font-bold">
+          <LiaUmbrellaBeachSolid className="bg-red" />
+          Explore our{" "}
+          <span style={{ color: "orange" }}>
+            SERVICES
+            <LiaUmbrellaBeachSolid />
+          </span>
+        </h1>
         <Row xs={1} md={2} lg={3} className="g-4 mt-2">
           <Col>
-            <Card>
+            <Card className="service-card">
               <Card.Body>
                 <Card.Title className="hotel-color">
                   <FaWifi />
@@ -38,74 +37,57 @@ const HotelService = () => {
             </Card>
           </Col>
           <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title className="hotel-color">
-                  <FaWifi />
-                  Wifi
-                </Card.Title>
-                <Card.Text>Kết nối mạng với tốc độ cao</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title className="hotel-color">
-                  <FaUtensils />
-                  Ăn sáng
-                </Card.Title>
-                <Card.Text>Sao</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title className="hotel-color">
-                  <FaTshirt />
-                  Giặt đồ
-                </Card.Title>
-                <Card.Text>Giữ sạch đồ với hệ thống giặt ủi</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title className="hotel-color">
-                  <FaCocktail />
-                  Bar mini
-                </Card.Title>
-                <Card.Text>
-                  Tận hưởng đồ uống ngon trong quán bar mini
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title className="hotel-color">
-                  <FaParking />
-                  Đậu xe
-                </Card.Title>
-                <Card.Text>
-                  Đậu xe tiện lợi trong bãi đậu xe của chúng tôi
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
+            <Card className="service-card">
               <Card.Body>
                 <Card.Title className="hotel-color">
                   <FaWifi />
                   Điều hòa
                 </Card.Title>
-                <Card.Text>
-                  Mát mẻ và thoải mái với hệ thống điều hòa của chúng tôi
-                </Card.Text>
+                <Card.Text> Nhiệt độ luôn luôn lý tưởng</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card className="service-card">
+              <Card.Body>
+                <Card.Title className="hotel-color">
+                  <FaUtensils />
+                  Ẩm thực
+                </Card.Title>
+                <Card.Text>Đa dạng và đẳng cấp</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card className="service-card">
+              <Card.Body>
+                <Card.Title className="hotel-color">
+                  <FaTshirt />
+                  Giặt đồ
+                </Card.Title>
+                <Card.Text>Hệ thống giặt ủi hiện đại</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card className="service-card">
+              <Card.Body>
+                <Card.Title className="hotel-color">
+                  <FaCocktail />
+                  Bar
+                </Card.Title>
+                <Card.Text>Thư giãn với những thức uống ngon</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card className="service-card">
+              <Card.Body>
+                <Card.Title className="hotel-color">
+                  <FaParking />
+                  Đậu xe
+                </Card.Title>
+                <Card.Text>Diện tích rộng rãi và an toàn</Card.Text>
               </Card.Body>
             </Card>
           </Col>
