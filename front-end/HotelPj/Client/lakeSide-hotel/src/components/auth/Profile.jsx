@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import  { useEffect, useState } from "react"
 import { deleteUser, getBookingsByUserId, getUser } from "../ultils/ApiFunctions"
 import { useNavigate } from "react-router-dom"
@@ -45,7 +46,8 @@ const Profile = () => {
 	useEffect(() => {
 		const fetchBookings = async () => {
 			try {
-				const response = await getBookingsByUserId(userId, token)
+				const response = await getBookingsByUserId(userId)
+				console.log(response)
 				setBookings(response)
 			} catch (error) {
 				console.error("Error fetching bookings:", error.message)

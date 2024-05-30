@@ -95,7 +95,7 @@ public ResponseEntity<Void> deleteRoom(@PathVariable Long roomId){
         return theRoom.map(room -> {
             RoomResponse roomResponse = getRoomResponse(room);
             return  ResponseEntity.ok(Optional.of(roomResponse));
-        }).orElseThrow(() -> new ResourceNotFoundException("Room not found"));
+        }).orElseThrow(() -> new ResourceNotFoundException("Khong tim thay phong"));
     }
 
 
@@ -112,7 +112,7 @@ public ResponseEntity<Void> deleteRoom(@PathVariable Long roomId){
             try {
                 photoBytes = photoBlob.getBytes(1, (int) photoBlob.length());
             } catch (SQLException e) {
-                throw new PhotoRetrievalException("Error retrieving photo");
+                throw new PhotoRetrievalException("Loi truy xuat hinh anh");
             }
         }
         return new RoomResponse(room.getId(),

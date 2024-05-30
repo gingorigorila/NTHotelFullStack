@@ -39,6 +39,7 @@ const NavBar = () => {
 							<NavLink className="nav-link" aria-current="page" to={"/browse-all-rooms"}>
 								Danh sách phòng
 							</NavLink>
+						
 						</li>
 
 						{isLoggedIn && userRole === "ROLE_ADMIN" && (
@@ -48,6 +49,12 @@ const NavBar = () => {
 								</NavLink>
 							</li>
 							)}
+							<li className="nav-item">
+							<NavLink className="nav-link" aria-current="page" to={"/browse-all-restaurants"}>
+								Nhà hàng
+							</NavLink>
+						
+						</li>
 					</ul>
 
 					<ul className="d-flex navbar-nav">

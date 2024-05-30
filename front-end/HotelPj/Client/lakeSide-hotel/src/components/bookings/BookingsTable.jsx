@@ -12,8 +12,11 @@ const BookingsTable = ({ bookingInfo, handleCancellationBooking }) => {
     let filtered = bookingInfo;
     if (startDate && endDate) {
       filtered = bookingInfo.filter((booking) => {
-        const bookingStartDate = parseISO(booking.checkInDate);
-        const bookingEndDate = parseISO(booking.checkOutDate);
+        const formattedCheckInDate = `${booking.checkInDate[0]}-0${booking.checkInDate[1]}-${booking.checkInDate[2]}`;
+        const formattedCheckOutDate = `${booking.checkOutDate[0]}-0${booking.checkOutDate[1]}-${booking.checkOutDate[2]}`;
+        const bookingStartDate = parseISO(formattedCheckInDate);
+        const bookingEndDate = parseISO(formattedCheckOutDate);
+        console.log(bookingStartDate)
         return (
           bookingStartDate >= startDate &&
           bookingEndDate <= endDate &&
@@ -25,6 +28,7 @@ const BookingsTable = ({ bookingInfo, handleCancellationBooking }) => {
   };
   useEffect(() => {
     setFilteredBookings(bookingInfo);
+    console.log(bookingInfo);
   }, [bookingInfo]);
   return (
     <section>
@@ -75,7 +79,9 @@ const BookingsTable = ({ bookingInfo, handleCancellationBooking }) => {
           ))}
         </tbody>
       </table>
-      {filterBookings.length ===0 && <p>Không tìm thấy đơn đặt theo ngày được chọn</p>}
+      {filterBookings.length === 0 && (
+        <p>Không tìm thấy đơn đặt theo ngày được chọn</p>
+      )}
     </section>
   );
 };

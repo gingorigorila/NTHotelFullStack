@@ -15,6 +15,7 @@ import com.tuaminh.lakesidehotel.service.IRestaurantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -38,6 +39,7 @@ public class RestaurantController {
     private final BookingRestaurantService bookingRestaurantService;
 
     @PostMapping("/add/new-restaurant")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<RestaurantResponse> addNewRestaurant(
             @RequestParam("photo") MultipartFile photo,
             @RequestParam("restaurantName") String restaurantName,
@@ -73,7 +75,14 @@ public class RestaurantController {
         }
         return ResponseEntity.ok(restaurantResponses);
     }
+    @DeleteMapping("/delete/restaurant/{restaurantId}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ResponseEntity<Void> deleteRestaurant(@PathVariable Long restaurantId){
+        restaurantService.deleteRestaurant(restaurantId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
     @PutMapping("/update/{restaurantId}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<RestaurantResponse> updateRestaurant(@PathVariable Long restaurantId,
                                                                @RequestParam(required = false) MultipartFile photo,
                                                                @RequestParam(required = false) String restaurantName,
@@ -123,13 +132,13 @@ public class RestaurantController {
                 throw new PhotoRetrievalException("Loi truy xuat hinh anh");
             }
         }
-        return new RestaurantResponse((restaurant.getId()), restaurant.getRestaurantName(), restaurant.getRestaurantType(), restaurant.getLocation(), restaurant.getHours(),restaurant.getEmail(), restaurant.getTelePhone(), restaurant.getDescription(),photoBytes);
+        return new RestaurantResponse(restaurant.getId(),
+                restaurant.getRestaurantName(), restaurant.getRestaurantType(),
+                restaurant.getLocation(), restaurant.getHours(),
+                restaurant.getEmail(), restaurant.getTelePhone(),
+                restaurant.getDescription(),photoBytes);
     }
-    @DeleteMapping("/delete/restaurant/{restaurantId}")
-    private ResponseEntity<Void> deleteRestaurant(@PathVariable("restaurantId") long restaurantId){
-        restaurantService.deleteRestaurant(restaurantId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+
     private List<BookedRestaurant> getAllBookingsByRestaurantId(Long restaurantId) {
 
         return bookingRestaurantService.getAllBookingsByRestaurantId(restaurantId);

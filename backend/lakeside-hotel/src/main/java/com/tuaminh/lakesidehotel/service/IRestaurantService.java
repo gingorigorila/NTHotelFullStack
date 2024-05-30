@@ -18,7 +18,7 @@ public interface IRestaurantService {
 
     byte[] getPhotoByteByRestaurantId(Long id) throws SQLException;
 
-    void deleteRestaurant(long restaurantId);
+    void deleteRestaurant(Long restaurantId);
 
     Restaurant updateRestaurant(Long restaurantId, String restaurantName, String restaurantType, String restaurantAddress, String restaurantHour, String restaurantTelephone, String restaurantEmail, String restaurantDesc, byte[] photoBytes) throws InternalServerException;
 

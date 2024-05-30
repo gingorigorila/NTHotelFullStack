@@ -81,7 +81,7 @@ const AddRestaurant = () => {
             {errMsg && (
               <div className="alert alert-danger fade show">{errMsg}</div>
             )}
-            <form onSubmit={handleSubmit}>
+            <form encType="multipart/form-data" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="restaurantName" className="form-label">
                   Ten nha hang

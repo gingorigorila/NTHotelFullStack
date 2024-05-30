@@ -26,7 +26,6 @@ public class BookingRestaurantService implements IBookingRestaurantService{
     @Override
     public String saveBooking(Long restaurantId, BookedRestaurant bookingRequest) {
         Restaurant restaurant=restaurantService.getRestaurantById(restaurantId).get();
-        List<BookedRestaurant> existingsBookings = restaurant.getBookings();
         restaurant.addBooking(bookingRequest);
         bookingRestaurantRepository.save(bookingRequest);
         return bookingRequest.getBookingConfirmationCode();

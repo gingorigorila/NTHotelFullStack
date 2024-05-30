@@ -61,7 +61,7 @@ public class RestaurantService implements IRestaurantService{
     }
 
     @Override
-    public void deleteRestaurant(long restaurantId) {
+    public void deleteRestaurant(Long restaurantId) {
         Optional<Restaurant> theRestaurant = restaurantRepository.findById(restaurantId);
         if(theRestaurant.isPresent()){
             restaurantRepository.deleteById(restaurantId);

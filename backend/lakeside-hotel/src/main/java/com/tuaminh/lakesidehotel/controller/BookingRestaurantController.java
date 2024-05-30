@@ -22,7 +22,7 @@ import java.util.List;
 public class BookingRestaurantController {
     private final IBookingRestaurantService bookingRestaurantService;
     private final IRestaurantService restaurantService;
-    @GetMapping("all-orders")
+    @GetMapping("/all-orders")
     public ResponseEntity<List<BookingRestaurantResponse>> getAllBookingRestaurant(){
         List<BookedRestaurant> bookings = bookingRestaurantService.getAllBookingsRestaurant();
         List<BookingRestaurantResponse> bookingRestaurantResponses = new ArrayList<>();
@@ -32,7 +32,7 @@ public class BookingRestaurantController {
         }
         return ResponseEntity.ok(bookingRestaurantResponses);
     }
-    @GetMapping("confirmation-order/{confirmationCode}")
+    @GetMapping("/confirmation-order/{confirmationCode}")
     public ResponseEntity<?> getOrderByConfirmationCode(@PathVariable String confirmationCode){
         try {
             BookedRestaurant bookings = bookingRestaurantService.findOrderByConfirmationCode(confirmationCode);

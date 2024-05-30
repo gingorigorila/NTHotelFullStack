@@ -1,20 +1,18 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Header from "../common/Header";
-import { cancelBookings, getAllBookings } from "../ultils/ApiFunctions";
-import BookingsTable from "./BookingsTable";
+import { cancelOrders, getAllOrders } from "../ultils/ApiFunctions";
+import OrderTable from "./OrderTable";
 
-const Bookings = () => {
-  const [bookingInfo, setBookingInfo] = useState([]);
+const Orders = () => {
+    const [bookingInfo, setBookingInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState("");
   useEffect(() => {
     setTimeout(() => {
-      getAllBookings()
+      getAllOrders()
         .then((data) => {
           setBookingInfo(data);
-          console.log("data",data)
           setIsLoading(false);
         })
         .catch((e) => {
@@ -22,12 +20,11 @@ const Bookings = () => {
           setIsLoading(false);
         });
     }, 1000);
-    
   }, []);
   const handleCancellationBooking = async (bookingId) => {
     try {
-      await cancelBookings(bookingId);
-      const data = await getAllBookings();
+      await cancelOrders(bookingId);
+      const data = await getAllOrders();
       setBookingInfo(data);
     } catch (e) {
       setErr(e.message);
@@ -40,13 +37,13 @@ const Bookings = () => {
       {isLoading ? (
         <p>Đang tải dữ liệu</p>
       ) : (
-        <BookingsTable
-          bookingInfo={bookingInfo}
-          handleCancellationBooking={handleCancellationBooking}
+        <OrderTable
+          orderInfo={bookingInfo}
+          handleCancellationOrder={handleCancellationBooking}
         />
       )}
     </section>
-  );
-};
+  )
+}
 
-export default Bookings;
+export default Orders

@@ -15,6 +15,10 @@ const Admin = () => {
       <br/>
       <Link to={"/add-restaurant"}>Thêm nha hang</Link>
       <br />
+      <Link to={"/all-restaurants"}>Quan ly nha hang</Link>
+      <br />
+      <Link to={"/existing-orders"}>Quản lý đơn đặt ban</Link>
+      <br/>
     </section>
   );
 };
