@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import Teams from "../common/Teams";
 const About = () => {
   return (
     <>
@@ -9,9 +10,7 @@ const About = () => {
             <div className="col-lg-6">
               <h1 className="mb-4">
                 Welcome to{" "}
-                <span className="text-primary text-uppercase">
-                  KS Nha Trang
-                </span>
+                <span className="text-primary text-uppercase">Nha Trang</span>
               </h1>
               <p className="mb-4">
                 Chào mừng quý khách đến với Khách Sạn Nha Trang, nơi mang đến
@@ -60,6 +59,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Teams/>
     </>
   );
 };

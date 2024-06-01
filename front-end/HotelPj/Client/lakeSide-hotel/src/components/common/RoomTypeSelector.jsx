@@ -7,7 +7,8 @@ const RoomTypeSelector = ({ handleRoomInputChange, newRoom }) => {
   const [roomTypes, setRoomTypes] = useState([""]);
   const [showNewRoomTypeInput, setShowNewRoomTypeInput] = useState(false);
   const [newRoomType, setNewRoomType] = useState("");
-
+  const isLoggedIn = localStorage.getItem("token");
+  const userRole = localStorage.getItem("userRole");
   useEffect(() => {
     getRoomType().then((data) => {
       setRoomTypes(data);
@@ -43,7 +44,12 @@ const RoomTypeSelector = ({ handleRoomInputChange, newRoom }) => {
             value={newRoom.roomType}
           >
             <option value={""}>Chọn loại phòng</option>
-            <option value={"Thêm loại phòng mới"}> Thêm loại phòng</option>
+            {isLoggedIn && userRole === "ROLE_ADMIN" && (
+              
+              <option value={"Thêm loại phòng mới"}> Thêm loại phòng</option>
+             
+            )}
+            
             {roomTypes.map((type, index) => (
                 <option key={index} value={type}>
                     {type}
