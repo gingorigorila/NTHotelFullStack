@@ -95,18 +95,18 @@ const RoomSearch = () => {
             </Col>
             <Col xs={12} md={3}>
               <Form.Group controlId="roomType">
-                <Form.Label>Loại phòng</Form.Label>
-                <div className="d-flex">
+                <Form.Label className="">Loại phòng</Form.Label>
+                <div className="">
                   <RoomTypeSelector
                     handleRoomInputChange={handleInputChange}
                     newRoom={searchQuerry}
                   />
-                  <Button variant="secondary" type="submit">
-                    Tìm kiếm
-                  </Button>
                 </div>
               </Form.Group>
             </Col>
+            <Button variant="secondary" type="submit" className="button">
+                    Tìm kiếm
+            </Button>
           </Row>
         </Form>
         {isLoading ? (

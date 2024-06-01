@@ -8,21 +8,19 @@ import {
   FaTshirt,
   FaUtensils,
   FaWifi,
+  FaWind
 } from "react-icons/fa";
-import Header from "./Header";
 import { LiaUmbrellaBeachSolid } from "react-icons/lia";
+
 
 const HotelService = () => {
   return (
     <>
       <Container className="mb-2 ">
         <h1 className="font-bold">
-          <LiaUmbrellaBeachSolid className="bg-red" />
-          Explore our{" "}
-          <span style={{ color: "orange" }}>
-            SERVICES
-            <LiaUmbrellaBeachSolid />
-          </span>
+        <LiaUmbrellaBeachSolid className="bg-red" />
+Explore our <span style={{ color: "orange" }}>SERVICES<LiaUmbrellaBeachSolid />
+</span>
         </h1>
         <Row xs={1} md={2} lg={3} className="g-4 mt-2">
           <Col>
@@ -40,10 +38,12 @@ const HotelService = () => {
             <Card className="service-card">
               <Card.Body>
                 <Card.Title className="hotel-color">
-                  <FaWifi />
+                  <FaWind />
                   Điều hòa
                 </Card.Title>
-                <Card.Text> Nhiệt độ luôn luôn lý tưởng</Card.Text>
+                <Card.Text>
+                  Nhiệt độ luôn luôn lý tưởng
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -59,7 +59,7 @@ const HotelService = () => {
             </Card>
           </Col>
           <Col>
-            <Card className="service-card">
+            <Card  className="service-card">
               <Card.Body>
                 <Card.Title className="hotel-color">
                   <FaTshirt />
@@ -70,24 +70,28 @@ const HotelService = () => {
             </Card>
           </Col>
           <Col>
-            <Card className="service-card">
+            <Card  className="service-card">
               <Card.Body>
                 <Card.Title className="hotel-color">
                   <FaCocktail />
                   Bar
                 </Card.Title>
-                <Card.Text>Thư giãn với những thức uống ngon</Card.Text>
+                <Card.Text>
+                  Thư giãn với những thức uống ngon
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
           <Col>
-            <Card className="service-card">
+            <Card  className="service-card">
               <Card.Body>
                 <Card.Title className="hotel-color">
                   <FaParking />
                   Đậu xe
                 </Card.Title>
-                <Card.Text>Diện tích rộng rãi và an toàn</Card.Text>
+                <Card.Text>
+                  Diện tích rộng rãi và an toàn
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>

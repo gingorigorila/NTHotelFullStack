@@ -9,7 +9,7 @@ const Parallax = () => {
         <div className="animated-texts bounceIn">
           <h1>
             Chào mừng đến khách sạn
-            <span className="hotel-color">Nha Trang</span>
+            <span className="hotel-color"> Nha Trang</span>
           </h1>
           <h3>Chúng tôi mang đến cuộc sống bạn mong muốn</h3>
         </div>
