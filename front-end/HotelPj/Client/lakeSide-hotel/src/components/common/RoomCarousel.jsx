@@ -37,14 +37,15 @@ const RoomCarousel = () => {
       <Link to={"/browse-all-rooms"} className="hotel-color text-center">
         Browse all rooms
       </Link>
-      <Container>
+      <Container >
         <Carousel indicators={false}>
           {[...Array(Math.ceil(rooms.length / 4))].map((_, index) => (
             <Carousel.Item key={index}>
               <Row>
                 {rooms.slice(index * 4, index * 4 + 4).map((room) => (
                   <Col key={room.id} className="mb-4" xs={12} md={6} lg={3}>
-                    <Card>
+                    <Card className="love">
+                    <div className="hot-icon">HOT</div>
                       <Link to={`/book-room/${room.id}`}>
                         <Card.Img
                           variant="top"
@@ -60,11 +61,13 @@ const RoomCarousel = () => {
                         </Card.Title>
                         <Card.Title className="room-price">
                           {room.roomPrice}đ/đêm
+                          <Card.Text className="mt-3"> ⭐⭐⭐⭐⭐</Card.Text>
                         </Card.Title>
-                        <div className="flex-shrink-0">
+                        
+                        <div className="book-button">
                           <Link
                             to={`/book-room/${room.id}`}
-                            className="btn btn-hotel btn-sm"
+                            className="btn btn-hotel"
                           >
                             Book Now
                           </Link>
