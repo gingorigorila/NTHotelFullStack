@@ -8,6 +8,7 @@ import RoomCarousel from "../common/RoomCarousel";
 import RoomSearch from "../common/RoomSearch";
 import MainHeader from "../layout/MainHeader";
 import { TbFlower } from "react-icons/tb";
+import Chat from "../chat/Chat";
 const Home = () => {
   const location = useLocation();
   const message = location.state && location.state.message;
@@ -29,6 +30,7 @@ const Home = () => {
         <Parallax />
         <RoomCarousel />
         <HotelService />
+        <Chat/>
       </div>
     </section>
   );

@@ -32,7 +32,7 @@ import About from "./components/auth/About";
 function App() {
   return (
     <AuthProvider>
-      <main>
+     
         <Router>
           <Navbar />
           <Routes>
@@ -80,7 +80,7 @@ function App() {
           </Routes>
         </Router>
         <Footer />
-      </main>
+    
     </AuthProvider>
   );
 }
