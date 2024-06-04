@@ -2,6 +2,7 @@
 import React, { useContext, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Logout from "../auth/Logout";
+import logo from "../../assets/logo.png";
 
 const NavBar = () => {
   const [showAccount, setShowAccount] = useState(false);
@@ -17,7 +18,7 @@ const NavBar = () => {
 		<nav className="navbar navbar-expand-lg bg-body-tertiary px-5 shadow sticky-top">
 			<div className="container-fluid">
 				<Link to={"/"} className="navbar-brand">
-					<span className="hotel-color">Khách sạn Nha Trang</span>
+					<img src={logo} alt="logo" width="220"  color="red" />
 				</Link>
 
         <button
