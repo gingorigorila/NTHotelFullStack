@@ -8,8 +8,8 @@ import RoomTypeSelector from "./RoomTypeSelector";
 import RoomSearchResult from "./RoomSearchResult";
 const RoomSearch = () => {
   const [searchQuerry, setSearchQuerry] = useState({
-    checkInDate: "",
-    checkOutDate: "",
+    checkInDate: moment().format("YYYY-MM-DD"),
+    checkOutDate: moment().add(1,'days').format("YYYY-MM-DD"),
     roomType: "",
   });
   const [err, setErr] = useState("");
@@ -78,6 +78,7 @@ const RoomSearch = () => {
                   value={searchQuerry.checkInDate}
                   onChange={handleInputChange}
                   min={moment().format("YYYY-MM-DD")}
+                  placeholder="Enter email"
                 />
               </Form.Group>
             </Col>
