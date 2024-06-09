@@ -105,7 +105,7 @@ const RoomSearch = () => {
                 </div>
               </Form.Group>
             </Col>
-            <Button variant="secondary" type="submit" className="button">
+            <Button variant="success" type="submit" className="button ">
                     Tìm kiếm
             </Button>
           </Row>

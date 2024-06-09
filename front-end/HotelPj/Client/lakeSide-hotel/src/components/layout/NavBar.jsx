@@ -3,7 +3,11 @@
 import React, { useContext, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Logout from "../auth/Logout";
+
 import { navList } from "../Data/Data";
+import logo from "../../assets/logo.png";
+
+
 
 const NavBar = () => {
   const [showAccount, setShowAccount] = useState(false);
@@ -22,6 +26,7 @@ const NavBar = () => {
   const userRole = localStorage.getItem("userRole");
 
 	return (
+
 		<>
       <div className="container-fluid bg-dark px-0">
         <div className="row gx-0">
@@ -30,6 +35,7 @@ const NavBar = () => {
               to="/"
               className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
             >
+               <img src={logo} alt="logo" width="220"  color="red" />
               <h1 className="m-0 text-primary text-uppercase">NHA TRANG</h1>
             </Link>
           </div>
@@ -42,6 +48,7 @@ const NavBar = () => {
                 type="button"
                 className="navbar-toggler"
                 onClick={() => setNavbarCollapse(!navbarCollapse)}
+
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
