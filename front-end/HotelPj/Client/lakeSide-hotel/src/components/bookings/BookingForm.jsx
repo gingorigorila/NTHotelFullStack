@@ -103,7 +103,7 @@ const BookingForm = () => {
         <div className="row">
           <div className="col-md-8">
             <div className="card card-body mt-5">
-              <h4 className="card card-title">Lưu phòng</h4>
+              <h4 className="card card-title">Nhập thông tin</h4>
               <Form noValidate validated={isValidated} onSubmit={handleSubmit}>
                 <Form.Group>
                   <Form.Label htmlFor="guestFullName">Họ tên</Form.Label>
@@ -223,8 +223,6 @@ const BookingForm = () => {
                 </div>
               </Form>
             </div>
-          </div>
-          <div className="col-md-8">
             {isSubmitted && (
               <BookingSummary
                 booking={booking}
@@ -234,6 +232,8 @@ const BookingForm = () => {
               />
             )}
           </div>
+         
+         
         </div>
       </div>
     </>

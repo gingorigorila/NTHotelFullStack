@@ -6,6 +6,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import RestaurantFilter from "../common/RestaurantCommon/RestaurantFilter";
 import RestaurantPaginator from "../common/RestaurantCommon/RestaurantPaginator";
 import { getAllRestaurant } from "../ultils/ApiFunctions";
+import ContentCard from "./ContentDinner";
 import RestaurantCard from "./RestaurantCard";
 
 
@@ -38,41 +39,23 @@ const Restaurant = () => {
   if (err) {
     return <div className="text-danger">Error :{err}</div>;
   }
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-  const totalPages = Math.ceil(filteredData.length / restaurantPerPage);
+  // const handlePageChange = (pageNumber) => {
+  //   setCurrentPage(pageNumber);
+  // };
+  // const totalPages = Math.ceil(filteredData.length / restaurantPerPage);
   const renderRestaurants = () => {
     const startIndex = (currentPage - 1) * restaurantPerPage;
     const lastIndex = startIndex + restaurantPerPage;
     return filteredData
       .slice(startIndex, lastIndex)
-      .map((restaurant) => <RestaurantCard key={restaurant.id} restaurant={restaurant} />);
+      .map((restaurant) => 
+      restaurant.id % 2 == 0 ? <ContentCard key={restaurant.id} restaurant={restaurant} /> : <ContentCard key={restaurant.id} restaurant={restaurant} reverse/>);
   };
   return (
     <Container>
-      <Row>
-        <Col md={6} className="mb-3 mb-md-0">
-          <RestaurantFilter data={data} setFilteredData={setFilteredData} />
-        </Col>
-        <Col md={6} className="d-flex align-items-center justify-content-end">
-          <RestaurantPaginator
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-          />
-        </Col>
-      </Row>
+      
       <Row>{renderRestaurants()}</Row>
-      <Row>
-        <Col md={6} className="d-flex align-items-center justify-content-end">
-          <RestaurantPaginator
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-          />
-        </Col>
-      </Row>
+      
     </Container>
   );
 };

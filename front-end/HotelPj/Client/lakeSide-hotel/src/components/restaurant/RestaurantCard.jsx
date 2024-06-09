@@ -25,21 +25,21 @@ const RestaurantCard = ({ key, restaurant }) => {
           </div>
           <div className="flex-grow-1 ml-3 px-5">
             <Card.Title className="hotel-color">
-              {restaurant.restaurantName}
+              Tên nhà hàng :{restaurant.restaurantName}
             </Card.Title>
             <Card.Title className="hotel-color">
-              {restaurant.restaurantType}
+              Kiểu : {restaurant.restaurantType}
             </Card.Title>
             <Card.Title className="hotel-color">
-              {restaurant.location}
+              Địa điểm : {restaurant.location}
             </Card.Title>
-            <Card.Title className="hotel-color">{restaurant.hours}</Card.Title>
-            <Card.Title className="hotel-color">{restaurant.email}</Card.Title>
+            <Card.Title className="hotel-color">Giờ mở cửa{restaurant.hours}</Card.Title>
+            <Card.Title className="hotel-color">Email: {restaurant.email}</Card.Title>
             <Card.Title className="hotel-color">
-              {restaurant.telePhone}
+              Số điện thoại : {restaurant.telePhone}
             </Card.Title>
             <Card.Title className="hotel-color">
-              {restaurant.description}
+              Mô tả : {restaurant.description}
             </Card.Title>
             <Card.Text>Thông tin về nhà hàng</Card.Text>
           </div>
@@ -48,7 +48,7 @@ const RestaurantCard = ({ key, restaurant }) => {
               to={`/order-restaurant/${restaurant.id}`}
               className="btn btn-hotel btn-sm"
             >
-              Dat ban ngay
+              Đặt bàn ngày
             </Link>
           </div>
         </Card.Body>

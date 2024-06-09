@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
@@ -7,7 +8,7 @@ import { useState } from "react";
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getAllRoom } from "../ultils/ApiFunctions";
-
+import { facility, roomItems } from "../Data/Data";
 const RoomCarousel = () => {
   const [rooms, setRooms] = useState([
     { id: "", roomType: "", roomPrice: "", photo: "" },
@@ -37,46 +38,60 @@ const RoomCarousel = () => {
       <Link to={"/browse-all-rooms"} className="hotel-color text-center">
         Browse all rooms
       </Link>
-      <Container >
+      <Container>
         <Carousel indicators={false}>
           {[...Array(Math.ceil(rooms.length / 4))].map((_, index) => (
             <Carousel.Item key={index}>
-              <Row>
-                {rooms.slice(index * 4, index * 4 + 4).map((room) => (
-                  <Col key={room.id} className="mb-4" xs={12} md={6} lg={3}>
-                    <Card className="love">
-                    <div className="hot-icon">HOT</div>
-                      <Link to={`/book-room/${room.id}`}>
-                        <Card.Img
-                          variant="top"
+              <div className="row g-4">
+                {rooms.slice(index * 3, index * 3 + 3).map((room) => (
+                  <div
+                    className="col-lg-4 col-md-6 wow fadeInUp"
+                    data-wow-delay="0.1s"
+                  >
+                    <div className="room-item shadow rounded overflow-hidden">
+                      <div className="position-relative">
+                        <img
+                          className="img-fluid"
                           src={`data:image/png;base64, ${room.photo}`}
-                          alt="Room Photo"
-                          className="w-100"
-                          style={{ height: "200px" }}
+                          alt="img"
                         />
-                      </Link>
-                      <Card.Body>
-                        <Card.Title className="hotel-colo">
-                          {room.roomType}
-                        </Card.Title>
-                        <Card.Title className="room-price">
-                          {room.roomPrice}đ/đêm
-                          <Card.Text className="mt-3"> ⭐⭐⭐⭐⭐</Card.Text>
-                        </Card.Title>
-                        
-                        <div className="book-button">
-                          <Link
-                            to={`/book-room/${room.id}`}
-                            className="btn btn-hotel"
-                          >
-                            Book Now
-                          </Link>
+                        <small className="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
+                          {room.roomPrice} đồng/đêm
+                        </small>
+                      </div>
+                      <div className="p-4 mt-2">
+                        <div className="d-flex justify-content-between mb-3">
+                          <h5 className="mb-0">{room.roomType}</h5>
+                          <div className="ps-2">⭐⭐⭐⭐⭐</div>
                         </div>
-                      </Card.Body>
-                    </Card>
-                  </Col>
+                        <div className="d-flex mb-3">
+                          
+                            <small className="border-end me-3 pe-3">
+                            <i className="fa fa-brands fa-github-square"></i>
+                              3 giường
+                            </small>
+                          
+                        </div>
+
+                        <div className="d-flex justify-content-between">
+                          <a
+                            className="btn btn-sm btn-primary rounded py-2 px-4"
+                            href="/room"
+                          >
+                            Xem chi tiết
+                          </a>
+                          <a
+                            className="btn btn-sm btn-dark rounded py-2 px-4"
+                            href={`/book-room/${room.id}`}
+                          >
+                            Đặt ngay
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 ))}
-              </Row>
+              </div>
             </Carousel.Item>
           ))}
         </Carousel>

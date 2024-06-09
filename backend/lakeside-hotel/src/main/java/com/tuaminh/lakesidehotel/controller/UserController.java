@@ -16,13 +16,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final IUserService userService;
-    @GetMapping("/all")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @GetMapping("/all-users")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<User>> getUsers(){
-        return new ResponseEntity<>(userService.getUsers(), HttpStatus.FOUND);
+        List<User> users = userService.getUsers();
+        return ResponseEntity.ok(users);
     }
     @GetMapping("/{email}")
-//    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<?> getUserByEmail(@PathVariable("email") String email){
         try{
             User theUser = userService.getUser(email);
@@ -34,7 +35,7 @@ public class UserController {
         }
     }
     @DeleteMapping("/delete/{email}")
-//    @PreAuthorize("hasRole('ROLE_ADMIN') or (hasRole('ROLE_USER') and #email == principal.username)")
+    @PreAuthorize("hasRole('ROLE_ADMIN') or (hasRole('ROLE_USER') and #email == principal.username)")
     public ResponseEntity<String> deleteUserByEmail(@PathVariable("email") String email){
         try {
             userService.deleteUser(email);

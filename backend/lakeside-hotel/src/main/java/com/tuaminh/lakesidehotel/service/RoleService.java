@@ -7,6 +7,7 @@ import com.tuaminh.lakesidehotel.model.User;
 import com.tuaminh.lakesidehotel.repository.RoleRepository;
 import com.tuaminh.lakesidehotel.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -77,4 +78,6 @@ public class RoleService implements IRoleService{
         role.get().removeAllUsersFromRole();
         return roleRepository.save(role.get());
     }
+
+
 }

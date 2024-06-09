@@ -38,6 +38,7 @@ public class Role {
     public void removeUserFromRole(User user){
         user.getRoles().remove(this);
         this.getUsers().remove(user);
+
     }
     public void removeAllUsersFromRole(){
         if(this.getUsers() != null){

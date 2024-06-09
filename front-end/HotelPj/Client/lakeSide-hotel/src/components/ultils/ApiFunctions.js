@@ -186,6 +186,7 @@ export async function deleteRestaurant(restaurantId) {
 }
 //Ham cap nhap nha hang theo ID
 export async function updateRestaurant(restaurantId, restaurantData) {
+  console.log("Dat",restaurantData)
   const formData = new FormData();
   formData.append("photo", restaurantData.photo);
   formData.append("restaurantName", restaurantData.restaurantName);
@@ -197,7 +198,10 @@ export async function updateRestaurant(restaurantId, restaurantData) {
   formData.append("description", restaurantData.description);
   const response = await api.put(
     `/restaurants/update/${restaurantId}`,
-    formData
+    formData,
+    {
+      headers: getHeader(),
+    }
   );
   return response;
 }
@@ -264,6 +268,7 @@ export async function cancelOrders(bookingId) {
 //Ham register
 export async function registerUser(registration) {
   try {
+    console.log("register", registration);
     const response = await api.post("/auth/register-user", registration);
     return response.data;
   } catch (e) {
@@ -293,14 +298,16 @@ export async function loginUser(login) {
 export async function getUserProfile(userId, token) {
   // eslint-disable-next-line no-useless-catch
   try {
-    const response = await api.get(`users/profile/${userId}`);
+    const response = await api.get(`users/profile/${userId}`, {
+      headers: getHeader(),
+    });
     return response.data;
   } catch (error) {
     throw error;
   }
 }
 
-/* This isthe function to delete a user */
+/* Ham xoa 1 account */
 export async function deleteUser(userId) {
   try {
     const response = await api.delete(`/users/delete/${userId}`, {
@@ -313,9 +320,11 @@ export async function deleteUser(userId) {
 }
 
 /* This is the function to get a single user */
-export async function getUser(userId, token) {
+export async function getUser(userId) {
   try {
-    const response = await api.get(`/users/${userId}`);
+    const response = await api.get(`/users/${userId}`, {
+      headers: getHeader(),
+    });
     return response.data;
   } catch (error) {
     throw error;
@@ -330,5 +339,41 @@ export async function getBookingsByUserId(email) {
   } catch (error) {
     console.error("Lỗi lấy thông tin đơn đặt phòng:", error.message);
     throw new Error("Thất bại lấy thông tin đơn đặt phòng");
+  }
+}
+
+//Ham lay toan bo nguoi dung
+export async function getAllUsers() {
+  const response = await api.get("users/all-users");
+  return response.data;
+}
+
+// Ham them role cho tai khoan
+export async function assignRoleToUser(assignRole) {
+  try {
+    console.log("api", assignRole);
+    const formData = new FormData();
+    formData.append("userId", assignRole.userId);
+    formData.append("roleId", assignRole.roleId);
+    const response = await api.post("/roles/assign-role-to-user", formData, {
+      headers: getHeader(),
+    });
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+//Ham xoa toan bo role
+
+//Ham lay toan bo role
+export async function getAllRoles() {
+  try {
+    const result = await api.get("/roles/all-roles", {
+      headers: getHeader(),
+    });
+    return result.data;
+  } catch (error) {
+    throw new Error("Loi khong lay duoc dl role", error);
   }
 }

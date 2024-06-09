@@ -50,7 +50,7 @@ const CheckOutRestaurant = () => {
         <div className="row flex-column flex-md-row align-items-center">
           <div className="col-md-4 mt-5 mb-5">
             {isLoading ? (
-              <p>Đang tải thông tin nha hang</p>
+              <p>Đang tải thông tin nhà hàng</p>
             ) : errMsg ? (
               <p>{errMsg}</p>
             ) : (
@@ -63,12 +63,12 @@ const CheckOutRestaurant = () => {
                 <table className="table table-bordered">
                   <tbody>
                     <tr>
-                      <th>Room Type:</th>
+                      <th>Tên nhà hàng</th>
                       <th>{restaurantInfo.restaurantName}</th>
                     </tr>
 
                     <tr>
-                      <th>Room service</th>
+                      <th>Dịch vụ nhà hàng</th>
                       <td>
                         <ul className="list-unstyled">
                           <li>

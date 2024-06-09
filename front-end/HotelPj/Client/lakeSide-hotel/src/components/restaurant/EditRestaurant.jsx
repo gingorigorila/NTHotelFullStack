@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import RestaurantTypeSelector from "../common/RestaurantCommon/RestaurantTypeSelector";
 import { getRestaurantById, updateRestaurant } from "../ultils/ApiFunctions";
 
@@ -9,11 +9,11 @@ const EditRestaurant = () => {
     photo: "",
     restaurantName: "",
     restaurantType: "",
-    restaurantAddress: "",
-    restaurantHour: "",
-    restaurantTelephone: "",
-    restaurantEmail: "",
-    restaurantDesc: "",
+    location: "",
+    hours: "",
+    telePhone: "",
+    email: "",
+    description: "",
   });
   const [imgPreview, setImgPreview] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
@@ -60,29 +60,29 @@ const EditRestaurant = () => {
         const restaurantData = await getRestaurantById(restaurantId);
         setRestaurant(restaurantData);
         setImgPreview(restaurantData.photo);
-        console.log(restaurantData.photo)
+        
       } catch (e) {
         console.log(e);
       }
     };
-    fetchRestaurant()
-  },[restaurantId]);
+    fetchRestaurant();
+  }, [restaurantId]);
   return (
     <>
       <section className="container mt-5 mb-5">
         <div className="row justify-content-center">
           <div className="col-md-8 col-lg-6">
-            <h2 className="mt-5 mb-2">Them nha hang</h2>
+            <h2 className="mt-5 mb-2">Chỉnh sửa</h2>
             {successMsg && (
               <div className="alert alert-success fade show">{successMsg}</div>
             )}
             {errMsg && (
               <div className="alert alert-danger fade show">{errMsg}</div>
             )}
-            <form onSubmit={handleSubmit}>
+            <form encType="multipart/form-data" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="restaurantName" className="form-label">
-                  Ten nha hang
+                  Tên nhà hàng
                 </label>
                 <input
                   className="form-control"
@@ -95,7 +95,7 @@ const EditRestaurant = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="restaurantType" className="form-label">
-                  Loai nha hang
+                  Kiểu nhà hàng
                 </label>
                 <div>
                   <RestaurantTypeSelector
@@ -106,12 +106,12 @@ const EditRestaurant = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="restaurantAddress" className="form-label">
-                  Dia diem nha hang
+                  Địa điểm nhà hàng
                 </label>
                 <input
                   className="form-control"
                   id="restaurantAddress"
-                  name="restaurantAddress"
+                  name="location"
                   type="text"
                   value={restaurant.location}
                   onChange={handleRestaurantInputChange}
@@ -119,11 +119,11 @@ const EditRestaurant = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="restaurantHour" className="form-label">
-                  Gio hoat dong
+                  Giờ hoạt động
                 </label>
                 <input
                   id="restaurantHour"
-                  name="restaurantHour"
+                  name="hours"
                   type="text"
                   className="form-control"
                   value={restaurant.hours}
@@ -132,11 +132,11 @@ const EditRestaurant = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="restaurantTelephone" className="form-label">
-                  So dien thoai nha hang
+                  Số điện thoại
                 </label>
                 <input
                   id="restaurantTelephone"
-                  name="restaurantTelephone"
+                  name="telePhone"
                   type="text"
                   className="form-control"
                   value={restaurant.telePhone}
@@ -145,11 +145,11 @@ const EditRestaurant = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="restaurantEmail" className="form-label">
-                  Email nha hang
+                  Email nhà hàng
                 </label>
                 <input
                   id="restaurantEmail"
-                  name="restaurantEmail"
+                  name="email"
                   type="text"
                   className="form-control"
                   value={restaurant.email}
@@ -158,11 +158,11 @@ const EditRestaurant = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="restaurantDesc" className="form-label">
-                  Chi tiet nha hang
+                  Mô tả nhà hàng
                 </label>
                 <input
                   id="restaurantDesc"
-                  name="restaurantDesc"
+                  name="description"
                   type="text"
                   className="form-control"
                   value={restaurant.description}
@@ -171,7 +171,7 @@ const EditRestaurant = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="photo" className="form-label">
-                  Hinh anh nha hang
+                  Hình ảnh nhà hàng
                 </label>
                 <input
                   id="photo"
@@ -190,7 +190,13 @@ const EditRestaurant = () => {
                 )}
               </div>
               <div className="d-grid d-md-flex mt-2">
-                <button className="btn btn-outline-primary ml-5">Luu</button>
+                <Link
+                  to={"/all-restaurants"}
+                  className="btn btn-outline-info ml-5"
+                >
+                  Trở lại
+                </Link>
+                <button className="btn btn-outline-primary ml-5">Lưu</button>
               </div>
             </form>
           </div>
