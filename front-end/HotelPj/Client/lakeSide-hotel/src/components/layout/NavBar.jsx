@@ -29,26 +29,24 @@ const NavBar = () => {
 
 		<>
       <div className="container-fluid bg-dark px-0">
-        <div className="row gx-0">
-          <div className="col-lg-3 bg-dark d-none d-lg-block">
+      <div className="row gx-0">
+      <div className="col-lg-3 bg-dark d-none d-lg-block">
             <Link
               to="/"
               className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
             >
-               <img src={logo} alt="logo" width="220"  color="red" />
-              <h1 className="m-0 text-primary text-uppercase">NHA TRANG</h1>
+            <img src={logo} alt="logo" width="220"  color="red" />
             </Link>
-          </div>
-          <div className="col-lg-9">
-            <nav className="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-              <Link to="/" className="navbar-brand d-block d-lg-none">
+      </div>
+      <div className="col-lg-9">
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
+      <Link to="/" className="navbar-brand d-block d-lg-none">
                 <h1 className="m-0 text-primary text-uppercase">The Sun</h1>
               </Link>
               <button
                 type="button"
                 className="navbar-toggler"
                 onClick={() => setNavbarCollapse(!navbarCollapse)}
-
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -129,9 +127,9 @@ const NavBar = () => {
             </li>
           </ul>
               </div>
-            </nav>
-          </div>
-        </div>
+      </nav>
+      </div>
+      </div>
       </div>
     </>
   );
