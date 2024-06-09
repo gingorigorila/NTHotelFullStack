@@ -87,15 +87,15 @@ public class RestaurantController {
                                                                @RequestParam(required = false) MultipartFile photo,
                                                                @RequestParam(required = false) String restaurantName,
                                                                @RequestParam(required = false) String restaurantType,
-                                                               @RequestParam(required = false) String restaurantAddress,
-                                                               @RequestParam(required = false) String restaurantHour,
-                                                               @RequestParam(required = false) String restaurantTelephone,
-                                                               @RequestParam(required = false) String restaurantEmail,
-                                                               @RequestParam(required = false) String restaurantDesc ) throws IOException, SQLException, InternalServerException {
+                                                               @RequestParam(required = false,name="location") String restaurantAddress,
+                                                               @RequestParam(required = false,name="hours") String restaurantHour,
+                                                               @RequestParam(required = false,name="telePhone") String telePhone,
+                                                               @RequestParam(required = false,name="email") String restaurantEmail,
+                                                               @RequestParam(required = false,name="description") String restaurantDesc ) throws IOException, SQLException, InternalServerException {
         byte[] photoBytes = photo !=null && !photo.isEmpty()?
                 photo.getBytes() : restaurantService.getPhotoByteByRestaurantId(restaurantId);
         Blob photoBlob = photoBytes != null && photoBytes.length >0 ? new SerialBlob(photoBytes): null;
-        Restaurant theRestaurant = restaurantService.updateRestaurant(restaurantId, restaurantName, restaurantType, restaurantAddress,restaurantHour,restaurantTelephone,restaurantEmail,restaurantDesc,photoBytes);
+        Restaurant theRestaurant = restaurantService.updateRestaurant(restaurantId, restaurantName, restaurantType, restaurantAddress,restaurantHour,telePhone,restaurantEmail,restaurantDesc,photoBytes);
         theRestaurant.setPhoto(photoBlob);
         RestaurantResponse restaurantResponse = getRestaurantResponse(theRestaurant);
         return ResponseEntity.ok(restaurantResponse);
@@ -111,18 +111,18 @@ public class RestaurantController {
     }
     private RestaurantResponse getRestaurantResponse(Restaurant restaurant) {
         List<BookedRestaurant> bookings = getAllBookingsByRestaurantId(restaurant.getId());
-//        List<BookingRestaurantResponse> bookingInfo = bookings
-//                .stream()
-//                .map(booking->new BookingRestaurantResponse(
-//                        booking.getBookingId(),
-//                        booking.getBookingDate(),
-//                        booking.getBookingTime(),
-//                        booking.getBookingRequest(),
-//                        booking.getGuestFullName(),
-//                        booking.getGuestEmail(),
-//                        booking.getGuestTelephone(),
-//                        booking.getNumOfGuest(),
-//                        booking.getBookingConfirmationCode())).toList();
+        List<BookingRestaurantResponse> bookingInfo = bookings
+                .stream()
+                .map(booking->new BookingRestaurantResponse(
+                        booking.getBookingId(),
+                        booking.getBookingDate(),
+                        booking.getBookingTime(),
+                        booking.getBookingRequest(),
+                        booking.getGuestFullName(),
+                        booking.getGuestEmail(),
+                        booking.getGuestTelephone(),
+                        booking.getNumOfGuest(),
+                        booking.getBookingConfirmationCode())).toList();
         byte[] photoBytes = null;
         Blob photoBlob = restaurant.getPhoto();
         if (photoBlob !=null){

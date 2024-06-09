@@ -272,3 +272,8 @@ body {
 .pay {
   align-items: center;
 }
+
+.login {
+  background-image: url('src/assets/bien1.jpg');
+  background-size: cover; /* Đảm bảo hình nền sẽ được căn chỉnh vừa với kích thước của thành phần */
+}

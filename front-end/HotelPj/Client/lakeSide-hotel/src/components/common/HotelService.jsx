@@ -19,7 +19,7 @@ const HotelService = () => {
       <Container className="mb-2 ">
         <h1 className="font-bold">
         <LiaUmbrellaBeachSolid className="bg-red" />
-Explore our <span style={{ color: "orange" }}>SERVICES<LiaUmbrellaBeachSolid />
+Khám phá <span style={{ color: "orange" }}>dịch vụ của chúng tôi<LiaUmbrellaBeachSolid />
 </span>
         </h1>
         <Row xs={1} md={2} lg={3} className="g-4 mt-2">

@@ -49,157 +49,100 @@ const OrderForm = () => {
   };
 
   return (
-    <>
-      <div className="container mb-5">
-        <div className="row">
-          <div className="col-md-8">
-            <div className="card card-body mt-5">
-              <h4 className="card card-title">Dat ban</h4>
-
-              <form onSubmit={handleBooking}>
-                <div className="mb-3 row">
-                  <label
-                    htmlFor="guestFullName"
-                    className="col-sm-2 col-form-label"
-                  >
-                    Họ tên
-                  </label>
-                  <div className="col-sm-10">
-                    <input
-                      id="guestFullName"
-                      name="guestFullName"
-                      type="text"
-                      className="form-control"
-                      value={booking.guestFullName}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-3 row">
-                  <label
-                    htmlFor="guestEmail"
-                    className="col-sm-2 col-form-label"
-                  >
-                    Email
-                  </label>
-                  <div className="col-sm-10">
-                    <input
-                      id="guestEmail"
-                      name="guestEmail"
-                      type="email"
-                      className="form-control"
-                      value={booking.guestEmail}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                </div>
-                <div className="mb-3 row">
-                  <label
-                    htmlFor="guestTelephone"
-                    className="col-sm-2 col-form-label"
-                  >
-                    So dien thoai
-                  </label>
-                  <div className="col-sm-10">
-                    <input
-                      id="guestTelephone"
-                      name="guestTelephone"
-                      type="text"
-                      className="form-control"
-                      value={booking.guestTelephone}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                </div>
-
-                <fieldset style={{ border: "2px" }}>
-                  <legend>Thời gian dat</legend>
-                  <div className="row">
-                    <div className="col-6">
-                      <label htmlFor="bookingDate">Ngày dat ban</label>
-
-                      <input
-                        required
-                        type="date"
-                        id="bookingDate"
-                        name="bookingDate"
-                        value={booking.bookingDate}
-                        placeholder="Ngày đặt"
-                        onChange={handleInputChange}
-                      />
-                    </div>
-
-                    <div className="col-6">
-                      <label htmlFor="bookingTime">Gio dat</label>
-
-                      <FormControl
-                        required
-                        type="time"
-                        id="bookingTime"
-                        name="bookingTime"
-                        value={booking.bookingTime}
-                        placeholder="Gio dat"
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    {errMsg && (
-                      <p className="error-message text-danger">{errMsg}</p>
-                    )}
-                  </div>
-                </fieldset>
-                <fieldset>
-                  <legend>Số lượng khách</legend>
-                  <div className="row">
-                    <div className="col-6">
-                      <label htmlFor="numOfAdults">So luong khach</label>
-                      <input
-                        required
-                        type="number"
-                        id="numOfGuest"
-                        name="numOfGuest"
-                        value={booking.numOfGuest}
-                        placeholder="0"
-                        min={1}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                  </div>
-                </fieldset>
-                <div className="mb-3 row">
-                  <label
-                    htmlFor="guestTelephone"
-                    className="col-sm-2 col-form-label"
-                  >
-                    Yeu cau
-                  </label>
-                  <div className="col-sm-10">
-                    <input
-                      required
-                      type="text"
-                      id="bookingRequest"
-                      name="bookingRequest"
-                      value={booking.bookingRequest}
-                      placeholder="Nhập yeu cau"
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <button
-                    type="submit"
-                    className="btn btn-hotel"
-                    style={{ marginRight: "10px" }}
-                  >
-                    Gui yeu cau
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+    <div className="container mt-5">
+    <h4 className="card card-title">Dat ban</h4>
+    <form onSubmit={handleBooking} className="container mt-5">
+      <div className="form-group">
+        <label htmlFor="guestFullName">Tên:</label>
+        <input
+        id="guestFullName"
+        name="guestFullName"
+        type="text"
+        className="form-control"
+        value={booking.guestFullName}
+        onChange={handleInputChange}
+          required
+        />
       </div>
-    </>
+      <div className="form-group">
+        <label htmlFor="guestEmail">Email:</label>
+        <input
+        id="guestEmail"
+        name="guestEmail"
+        type="email"
+        className="form-control"
+        value={booking.guestEmail}
+        onChange={handleInputChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="date">Ngày:</label>
+        <input
+          type="date"
+          className="form-control"
+          id="bookingDate"
+          name="bookingDate"
+          value={booking.bookingDate}
+          placeholder="Ngày đặt"
+          onChange={handleInputChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="bookingTime">Giờ:</label>
+        <input
+          type="time"
+          className="form-control"
+          id="bookingTime"
+          name="bookingTime"
+          value={booking.bookingTime}
+          placeholder="Gio dat"
+          onChange={handleInputChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="numberOfGuests">Số lượng khách:</label>
+        <input
+          type="number"
+          className="form-control"
+          id="numOfGuest"
+          name="numOfGuest"
+          value={booking.numOfGuest}
+          placeholder="0"
+          min={1}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="guestTelephone">Số điện thoại:</label>
+        <input
+          type="tel"
+          className="form-control"
+          id="guestTelephone"
+          name="guestTelephone"
+          value={booking.guestTelephone}
+          onChange={handleInputChange}
+          required
+          pattern="[0-9]{10}"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="notes">Chú thích:</label>
+        <textarea
+          className="form-control"
+          id="bookingRequest"
+          name="bookingRequest"
+          value={booking.bookingRequest}
+          onChange={handleInputChange}
+        />
+      </div>
+      <button type="submit" className="btn btn-success mt-5">
+        Đặt chỗ ngay
+      </button>
+    </form>
+  </div>
   );
 };
 

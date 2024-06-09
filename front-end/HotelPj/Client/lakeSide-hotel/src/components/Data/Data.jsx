@@ -1,51 +1,31 @@
+/* eslint-disable react/jsx-key */
 export const navList = [
   {
     id: 1,
     path: "/",
-    text: "Home",
+    text: "Trang chủ",
   },
   {
     id: 2,
-    path: "/about",
-    text: "About",
+    path: "/about-us",
+    text: "Về chúng tôi",
   },
   {
     id: 3,
-    path: "/services",
-    text: "Services",
+    path: "/browse-all-restaurants",
+    text: "Nhà hàng",
   },
   {
     id: 4,
-    path: "/rooms",
-    text: "Rooms",
+    path: "/browse-all-rooms",
+    text: "Danh sách phòng",
   },
   {
     id: 5,
-    path: "/page",
-    text: "Page",
-    subItems: [
-      {
-        id: 51,
-        path: "/booking",
-        text: "Booking",
-      },
-      {
-        id: 52,
-        path: "/team",
-        text: "Our Team",
-      },
-      {
-        id: 53,
-        path: "/testimonial",
-        text: "Testimonial",
-      },
-    ],
+    path: "/find-booking",
+    text: "Tìm đơn đặt phòng",
   },
-  {
-    id: 6,
-    path: "/contact",
-    text: "Contact",
-  },
+  
 ];
 export const socialIcons = [
   {
@@ -165,3 +145,73 @@ export const services = [
     discription: "Contrary to popular belief, ipsum is not simply random.",
   },
 ];
+
+export const facility = [
+  {
+    icon: <i className="fa fa-bed text-primary me-2"></i>,
+    quantity: 3,
+    facility: "giường",
+  },
+  {
+    icon: <i className="fa fa-bath text-primary me-2"></i>,
+    quantity: 2,
+    facility: "bồn tắm",
+  },
+  {
+    icon: <i className="fa fa-wifi text-primary me-2"></i>,
+    facility: "Wifi",
+  },
+];
+
+export const roomItems = [
+  {
+    img: "../assets/img/room-1.jpg",
+    price: "Liên hệ",
+    name: "Phòng nghỉ 1",
+    star: [
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+    ],
+    description:
+      " ",
+    yellowbtn: "Xem chi tiết",
+    darkbtn: "Thuê ngay",
+  },
+
+  {
+    img: "../assets/img/room-2.jpg",
+    price: "Liên hệ",
+    name: "Phòng nghỉ 2",
+    star: [
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+    ],
+    description:
+      " ",
+    yellowbtn: "Xem chi tiết",
+    darkbtn: "Thuê ngay",
+  },
+  {
+    img: "../assets/img/room-3.jpg",
+    price: "Liên hệ",
+    name: "Phòng nghỉ 3",
+    star: [
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+      <small className="fa fa-star text-primary"></small>,
+    ],
+    description:
+      " ",
+    yellowbtn: "Xem chi tiết",
+    darkbtn: "Thuê ngay",
+  },
+];
+

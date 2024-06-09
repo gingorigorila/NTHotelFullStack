@@ -28,59 +28,63 @@ import RestaurantListing from "./components/restaurant/RestaurantListing";
 import CheckOutRestaurant from "./components/orders/CheckOutRestaurant";
 import Orders from "./components/orders/Orders";
 import About from "./components/auth/About";
-
+import ExsistingUsers from "../user/ExsistingUsers";
+import AssignRoleUser from "../user/AssignRoleUser";
 function App() {
   return (
     <AuthProvider>
-     
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<About />} />
-            <Route path="/edit-room/:roomId" element={<EditRoom />} />
-            <Route path="/existing-rooms" element={<ExsistingRooms />} />
-            <Route path="/add-room" element={<AddRoom />} />
-            <Route path="/all-restaurants" element={<Restaurants />} />
-            <Route path="/add-restaurant" element={<AddRestaurant />} />
-            <Route
-              path="/edit-restaurant/:restaurantId"
-              element={<EditRestaurant />}
-            />
-            <Route path="/booking-success" element={<BookingSuccess />} />
-            <Route
-              path="/book-room/:roomId"
-              element={
-                <RequireAuth>
-                  <CheckOut />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path="/order-restaurant/:restaurantId"
-              element={
-                <RequireAuth>
-                  <CheckOutRestaurant />
-                </RequireAuth>
-              }
-            />
-            <Route path="/browse-all-rooms" element={<RoomListing />} />
-            <Route
-              path="/browse-all-restaurants"
-              element={<RestaurantListing />}
-            />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/existing-bookings" element={<Bookings />} />
-            <Route path="/existing-orders" element={<Orders />} />
-            <Route path="/find-booking" element={<FindBooking />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Registration />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/logout" element={<Logout />} />
-          </Routes>
-        </Router>
-        <Footer />
-    
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/edit-room/:roomId" element={<EditRoom />} />
+          <Route path="/existing-rooms" element={<ExsistingRooms />} />
+          <Route path="/add-room" element={<AddRoom />} />
+          <Route path="/all-restaurants" element={<Restaurants />} />
+          <Route path="/add-restaurant" element={<AddRestaurant />} />
+          <Route path="/existing-users" element={<ExsistingUsers />} />
+          <Route
+            path="/existing-users/assignRole/:userId"
+            element={<AssignRoleUser />}
+          />
+          <Route
+            path="/edit-restaurant/:restaurantId"
+            element={<EditRestaurant />}
+          />
+          <Route path="/booking-success" element={<BookingSuccess />} />
+          <Route
+            path="/book-room/:roomId"
+            element={
+              <RequireAuth>
+                <CheckOut />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/order-restaurant/:restaurantId"
+            element={
+              <RequireAuth>
+                <CheckOutRestaurant />
+              </RequireAuth>
+            }
+          />
+          <Route path="/browse-all-rooms" element={<RoomListing />} />
+          <Route
+            path="/browse-all-restaurants"
+            element={<RestaurantListing />}
+          />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/existing-bookings" element={<Bookings />} />
+          <Route path="/existing-orders" element={<Orders />} />
+          <Route path="/find-booking" element={<FindBooking />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/logout" element={<Logout />} />
+        </Routes>
+      </Router>
+      <Footer />
     </AuthProvider>
   );
 }

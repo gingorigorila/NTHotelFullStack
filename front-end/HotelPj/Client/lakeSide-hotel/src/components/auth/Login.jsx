@@ -1,6 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import  { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+
+import LoginForm from '../common/LoginComponent/LoginForm'
+import Or from '../common/LoginComponent/Or'
+import SocialLoginButton from '../common/LoginComponent/SocialLoginButtons'
 import { loginUser } from '../ultils/ApiFunctions'
 import { useAuth } from './AuthProvider'
 
@@ -38,51 +42,28 @@ const Login = () => {
 	}
 
 	return (
-		<section className="container col-6 mt-5 mb-5">
+		<section >
 			{errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
-			<h2>Đăng nhập</h2>
-			<form onSubmit={handleSubmit}>
-				<div className="row mb-3">
-					<label htmlFor="email" className="col-sm-2 col-form-label">
-						Email
-					</label>
-					<div>
-						<input
-							id="email"
-							name="email"
-							type="email"
-							className="form-control"
-							value={login.email}
-							onChange={handleInputChange}
-						/>
-					</div>
-				</div>
+			<div className='container login '>
+            <div className="row">
+            <div className="col-12">
+            <div className="mt-5 ">
+              <h2 className="display-5 fw-bold text-center">Đăng nhập</h2>
+              
+            </div>
+            </div>
+        </div>
+            <div className="py-3 py-md-5 py-xl-8 ">
+                <LoginForm login={login} handleInputChange={handleInputChange} handleSubmit={handleSubmit}/>
+                <Link to= "/">
+                
+                </Link>
+                <Or/>
+                <SocialLoginButton/>
+            </div>
 
-				<div className="row mb-3">
-					<label htmlFor="password" className="col-sm-2 col-form-label">
-						Mật khẩu
-					</label>
-					<div>
-						<input
-							id="password"
-							name="password"
-							type="password"
-							className="form-control"
-							value={login.password}
-							onChange={handleInputChange}
-						/>
-					</div>
-				</div>
-
-				<div className="mb-3">
-					<button type="submit" className="btn btn-hotel" style={{ marginRight: "10px" }}>
-						Đăng nhập
-					</button>
-					<span style={{ marginLeft: "10px" }}>
-						Chưa có tài khoản?<Link to={"/register"}> Đăng ký</Link>
-					</span>
-				</div>
-			</form>
+            
+        </div>
 		</section>
 	)
 }

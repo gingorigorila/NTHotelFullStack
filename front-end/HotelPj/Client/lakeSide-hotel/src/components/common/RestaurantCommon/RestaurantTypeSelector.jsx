@@ -14,7 +14,6 @@ const RestaurantTypeSelector = ({
   useEffect(() => {
     getRestaurantTypes().then((data) => {
       setRestaurantTypes(data);
-
     });
   }, []);
   const handleNewRestaurantTypeInputChange = (e) => {
@@ -23,11 +22,11 @@ const RestaurantTypeSelector = ({
   const handleAddNewRestaurantType = () => {
     if (newRestaurantType !== "") {
       setRestaurantTypes([...restaurantTypes, newRestaurantType]);
-      newRestaurantType("");
+      setNewRestaurantType("");
       setShowNewRestaurantTypeInput(false);
     }
   };
-  
+
   return (
     <div>
       {restaurantTypes.length > 0 && (

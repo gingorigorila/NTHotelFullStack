@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { registerUser } from "../ultils/ApiFunctions/"
 import { Link } from "react-router-dom"
+import RegisterForm from "../common/RegisterComponents/RegisterForm"
+import Or from "../common/LoginComponent/Or"
+import SocialLoginButton from "../common/LoginComponent/SocialLoginButtons"
 
 const Registration = () => {
 	const [registration, setRegistration] = useState({
@@ -35,84 +38,34 @@ const Registration = () => {
 	}
 
 	return (
-		<section className="container col-6 mt-5 mb-5">
+		<section >
 			{errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
 			{successMessage && <p className="alert alert-success">{successMessage}</p>}
 
-			<h2>Đăng ký</h2>
-			<form onSubmit={handleRegistration}>
-				<div className="mb-3 row">
-					<label htmlFor="firstName" className="col-sm-2 col-form-label">
-						Họ
-					</label>
-					<div className="col-sm-10">
-						<input
-							id="firstName"
-							name="firstName"
-							type="text"
-							className="form-control"
-							value={registration.firstName}
-							onChange={handleInputChange}
-						/>
-					</div>
-				</div>
+			<section >
+			{errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
+			<div className='container login '>
+            <div className="row">
+            <div className="col-12">
+            <div className="mt-5 ">
+              <h2 className="display-5 fw-bold text-center">Đăng ký</h2>
+              
+            </div>
+            </div>
+        </div>
+            <div className="py-3 py-md-5 py-xl-8 ">
+                <RegisterForm registration={registration} handleInputChange={handleInputChange} handleSubmit={handleRegistration}/>
+                <Link to= "/">
+                
+                </Link>
+                <Or/>
+                <SocialLoginButton/>
+            </div>
 
-				<div className="mb-3 row">
-					<label htmlFor="lastName" className="col-sm-2 col-form-label">
-						Tên
-					</label>
-					<div className="col-sm-10">
-						<input
-							id="lastName"
-							name="lastName"
-							type="text"
-							className="form-control"
-							value={registration.lastName}
-							onChange={handleInputChange}
-						/>
-					</div>
-				</div>
-
-				<div className="mb-3 row">
-					<label htmlFor="email" className="col-sm-2 col-form-label">
-						Email
-					</label>
-					<div className="col-sm-10">
-						<input
-							id="email"
-							name="email"
-							type="email"
-							className="form-control"
-							value={registration.email}
-							onChange={handleInputChange}
-						/>
-					</div>
-				</div>
-
-				<div className="mb-3 row">
-					<label htmlFor="password" className="col-sm-2 col-form-label">
-						Mật khẩu
-					</label>
-					<div className="col-sm-10">
-						<input
-							type="password"
-							className="form-control"
-							id="password"
-							name="password"
-							value={registration.password}
-							onChange={handleInputChange}
-						/>
-					</div>
-				</div>
-				<div className="mb-3">
-					<button type="submit" className="btn btn-hotel" style={{ marginRight: "10px" }}>
-						Đăng ký
-					</button>
-					<span style={{ marginLeft: "10px" }}>
-						Đã có tài khoản ? <Link to={"/login"}>Đăng nhập</Link>
-					</span>
-				</div>
-			</form>
+            
+        </div>
+		</section>
+			
 		</section>
 	)
 }

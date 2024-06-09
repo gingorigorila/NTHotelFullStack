@@ -57,15 +57,15 @@ const CheckOut = () => {
                 <table className="table table-bordered">
                   <tbody>
                     <tr>
-                      <th>Room Type:</th>
+                      <th>Kiểu phòng:</th>
                       <th>{roomInfo.roomType}</th>
                     </tr>
                     <tr>
-                      <th>Room Price:</th>
+                      <th>Giá phòng:</th>
                       <th>{roomInfo.roomPrice}</th>
                     </tr>
                     <tr>
-                    <th>Room service</th>
+                    <th>Dịch vụ phòng</th>
                       <td>
                         <ul className="list-unstyled">
                           <li>
@@ -74,27 +74,27 @@ const CheckOut = () => {
                           </li>
                           <li>
                             <FaTv />
-                            Film
+                            Xem phim
                           </li>
                           <li>
                             <FaUtensils />
-                            Breakfast
+                            Bữa sáng
                           </li>
                           <li>
                             <FaWineGlassAlt />
-                            Mini bar refresment
+                            Quán bar mini
                           </li>
                           <li>
                             <FaCar />
-                            Car Service
+                            Thuê xe
                           </li>
                           <li>
                             <FaParking />
-                            Parking space
+                            Không gian đậu xe
                           </li>
                           <li>
                             <FaTshirt />
-                            Laundry
+                            Giặt ủi
                           </li>
                         </ul>
                       </td>

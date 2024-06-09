@@ -19,6 +19,8 @@ const Admin = () => {
       <br />
       <Link to={"/existing-orders"}>Quản lý đơn đặt ban</Link>
       <br/>
+      <Link to={"/existing-users"}>Quản lý danh sách người dùng</Link>
+      <br/>
     </section>
   );
 };
