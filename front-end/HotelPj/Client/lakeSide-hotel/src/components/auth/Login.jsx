@@ -42,29 +42,28 @@ const Login = () => {
 	}
 
 	return (
-		<section >
-			{errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
-			<div className='container login '>
-            <div className="row">
-            <div className="col-12">
+		<section>
+      {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
+      <div className="container login ">
+        <div className="row">
+          <div className="col-12">
             <div className="mt-5 ">
               <h2 className="display-5 fw-bold text-center">Đăng nhập</h2>
-              
             </div>
-            </div>
+          </div>
         </div>
-            <div className="py-3 py-md-5 py-xl-8 ">
-                <LoginForm login={login} handleInputChange={handleInputChange} handleSubmit={handleSubmit}/>
-                <Link to= "/">
-                
-                </Link>
-                <Or/>
-                <SocialLoginButton/>
-            </div>
-
-            
+        <div className="py-3 py-md-5 py-xl-8 ">
+          <LoginForm
+            login={login}
+            handleInputChange={handleInputChange}
+            handleSubmit={handleSubmit}
+          />
+          <Link to="/"></Link>
+          <Or />
+          <SocialLoginButton />
         </div>
-		</section>
+      </div>
+    </section>
 	)
 }
 
