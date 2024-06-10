@@ -27,18 +27,19 @@ const Home = () => {
       )}
       <MainHeader />
       <div className="container">
+      {active ? (
+        <Chat setActive={setActive} />
+      ) : (
+        <div className="chatbot-active" onClick={() => setActive(true)}>
+          <img style={{position:"fixed"}} src={ChatImg} alt="" />
+        </div>
+      )}
         <RoomSearch />
         <RoomCarousel />
         <Parallax />
         <RoomCarousel />
         <HotelService />
-        {active ? (
-          <Chat setActive={setActive} />
-        ) : (
-          <div className="chatbot-active" onClick={() => setActive(true)}>
-            <img src={ChatImg} alt="" />
-          </div>
-        )}
+        
       </div>
     </section>
   );
