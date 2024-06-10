@@ -8,7 +8,7 @@ import CustomButton from "./CustomButton";
 const LoginForm = ({ login, handleInputChange, handleSubmit }) => {
   return (
     <div className="container col-12 col-lg-5">
-      <form onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
         <div className="form-floating mb-3">
           <div className="col-12">
             <input
