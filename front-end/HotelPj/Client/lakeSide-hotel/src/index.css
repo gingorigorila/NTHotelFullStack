@@ -487,3 +487,32 @@ h3 {
   color: lightgray;
 }
 
+
+.service-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  font-family: "Abril Fatface", serif;
+  font-style: italic;
+
+  
+}
+
+.service-container.row {
+  flex-direction: row;
+}
+
+.service-container.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.service-image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.service-info {
+  width: 40%;
+  padding: 1rem;
+}

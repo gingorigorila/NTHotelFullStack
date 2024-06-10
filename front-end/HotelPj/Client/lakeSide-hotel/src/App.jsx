@@ -30,6 +30,7 @@ import Orders from "./components/orders/Orders";
 import About from "./components/auth/About";
 import ExsistingUsers from "../user/ExsistingUsers";
 import AssignRoleUser from "../user/AssignRoleUser";
+import Service from "./components/auth/Service";
 function App() {
   return (
     <AuthProvider>
@@ -44,6 +45,7 @@ function App() {
           <Route path="/all-restaurants" element={<Restaurants />} />
           <Route path="/add-restaurant" element={<AddRestaurant />} />
           <Route path="/existing-users" element={<ExsistingUsers />} />
+          <Route path="/service" element={<Service />} />
           <Route
             path="/existing-users/assignRole/:userId"
             element={<AssignRoleUser />}
