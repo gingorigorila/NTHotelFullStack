@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Admin = () => {
   return (
-    <section className="container mt-5">
+    <section className="container1 mt-5">
       <h2>Trang Admin</h2>
       <hr />
       <Link className="link-button" to={"/add-room"}>Thêm phòng</Link>

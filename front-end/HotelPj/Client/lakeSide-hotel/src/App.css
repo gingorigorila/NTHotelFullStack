@@ -121,7 +121,9 @@
   margin-top: 10px;
   width: 100%;
 }
-
+form{
+  width:100%
+}
 textarea {
   flex: 1;
   padding: 8px;
