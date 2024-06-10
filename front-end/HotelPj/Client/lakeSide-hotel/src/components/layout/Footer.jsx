@@ -18,10 +18,10 @@ const Footer = () => {
   return (
     <footer className="text-center text-lg-start bg-body-tertiary text-muted footer">
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div className="me-5 d-none d-lg-block">
+        <div className="me-5 d-none d-lg-block footer-a">
           <span>Kết nối thông qua mạng xã hội</span>
         </div>
-        <div>
+        <div className="footer-b">
           <a href="https://facebook.com" className="me-4 text-reset">
             <FaFacebookF />
           </a>
