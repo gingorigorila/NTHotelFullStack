@@ -78,7 +78,7 @@ const Events = () => {
                     <p>{event.description}</p>
                     <div>
                       <a
-                        href={`/event-details/${index}`}
+                        href={`/event-details/${event.id}`}
                         className="events-details-buttons"
                       >
                         XEM THÊM
@@ -95,7 +95,7 @@ const Events = () => {
                     <p>{event.description}</p>
                     <div>
                       <a
-                        href={`/event-details/${index}`}
+                        href={`/event-details/${event.id}`}
                         className="events-details-buttons"
                       >
                         XEM THÊM
