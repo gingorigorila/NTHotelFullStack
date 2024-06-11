@@ -528,9 +528,19 @@ h3 {
 }
 
 .footer-a {
-  margin-left: 8.5rem;
+  margin-left: 4rem;
 }
 
 .footer-b {
-  margin-right: 11rem;
+  margin-right: 5rem;
+}
+
+.input-form {
+  align-self: center;
+  justify-content: center;
+}
+
+.form-label {
+  margin-bottom: -5px;
+  margin-top: 5px;
 }

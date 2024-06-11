@@ -123,7 +123,7 @@ const BookingForm = () => {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="guestEmail">Họ tên</Form.Label>
+                  <Form.Label htmlFor="guestEmail">Mail</Form.Label>
 
                   <FormControl
                     required
@@ -139,7 +139,7 @@ const BookingForm = () => {
                   </Form.Control.Feedback>
                 </Form.Group>
                 <fieldset style={{ border: "2px" }}>
-                  <legend>Thời gian ở</legend>
+                  <Form.Label className="form-label">Thời gian đặt phòng</Form.Label>
                   <div className="row">
                     <div className="col-6">
                       <Form.Label htmlFor="checkInDate">Ngày ở</Form.Label>
@@ -182,7 +182,7 @@ const BookingForm = () => {
                   </div>
                 </fieldset>
                 <fieldset>
-                  <legend>Số lượng khách</legend>
+                  <Form.Label className="form-label">Số lượng khách</Form.Label>
                   <div className="row">
                     <div className="col-6">
                       <Form.Label htmlFor="numOfAdults">Người lớn</Form.Label>

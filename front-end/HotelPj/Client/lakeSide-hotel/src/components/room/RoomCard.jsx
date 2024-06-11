@@ -29,7 +29,7 @@ const RoomCard = ({ key, room }) => {
             <Card.Text>Miễn phí ăn sáng, Hỗ trợ trả phòng nhanh</Card.Text>
           </div>
           <div className="pay">
-            <Card.Title className="room-price">{room.roomPrice}đ</Card.Title>
+            <Card.Title className="room-price">{room.roomPrice}đ/đêm</Card.Title>
             <Link to={`/book-room/${room.id}`} className="btn btn-hotel btn-sm">
               Book Now
             </Link>
