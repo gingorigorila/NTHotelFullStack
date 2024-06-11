@@ -1,8 +1,10 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
+
   /* padding: 2rem; */
   text-align: center;
+
 }
 
 .logo {
@@ -42,9 +44,12 @@
 }
 
 
+
+
 .chatbot-ac {
   cursor: pointer;
   position: fixed;
+
   right: 20px;
   bottom: 40px;
   animation: bounce 2s infinite;
@@ -62,8 +67,11 @@
   color: white;
   font-size: 14px;
   border-radius: 10px;
+
+
   cursor: pointer;
   margin-left:30%;
+
 }
 
 @keyframes bounce {
@@ -77,6 +85,7 @@
     transform: translateY(0); 
   }
 }
+
 
 
 .chatbot {
@@ -95,6 +104,7 @@
   color: #fff;
   padding: 10px;
   text-align: center;
+
 }
 
 .messages {
@@ -147,9 +157,11 @@
 
 #form1 {
   display: flex;
+
   align-items: center;
   padding: 10px;
   border-top: 1px solid #ccc;
+
 }
 
 textarea {
@@ -158,6 +170,8 @@ textarea {
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
+
+
 }
 
 button {
@@ -168,6 +182,7 @@ button {
   color: #fff;
   cursor: pointer;
   margin-left: 10px;
+
 }
 
 button:disabled {
