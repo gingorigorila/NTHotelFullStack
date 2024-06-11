@@ -4,6 +4,9 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { FaTv, FaUtensils, FaWifi } from "react-icons/fa";
+import { IoIosFitness } from "react-icons/io";
+import logo from "../../assets/logo.png";
 
 const RoomCard = ({ key, room }) => {
   return (
@@ -24,12 +27,30 @@ const RoomCard = ({ key, room }) => {
             <Card.Title className="hotel-color">{room.roomType}</Card.Title>
 
             <Card.Text> ⭐ ⭐ ⭐ ⭐ ⭐</Card.Text>
-            <Card.Text>📶 Free Wifi</Card.Text>
-            <Card.Text>Dịch tích phòng: 40m²</Card.Text>
-            <Card.Text>Miễn phí ăn sáng, Hỗ trợ trả phòng nhanh</Card.Text>
+            <ul className="list-unstyled sv-list">
+              <li>
+                <FaWifi />
+                Wifi
+              </li>
+              <li>
+                <FaTv />
+                Xem phim
+              </li>
+              <li>
+                <FaUtensils />
+                Bữa sáng
+              </li>
+              <li>
+                <IoIosFitness />
+                Phòng tập
+              </li>
+            </ul>
+            <img src={logo} alt="logo" width="220" />
           </div>
           <div className="pay">
-            <Card.Title className="room-price">{room.roomPrice}đ/đêm</Card.Title>
+            <Card.Title className="room-price">
+              {room.roomPrice}đ/đêm
+            </Card.Title>
             <Link to={`/book-room/${room.id}`} className="btn btn-hotel btn-sm">
               Book Now
             </Link>

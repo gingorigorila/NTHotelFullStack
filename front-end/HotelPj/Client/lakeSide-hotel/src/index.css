@@ -607,6 +607,26 @@ h3 {
 }
 
 .footer-b {
-  margin-right: 11rem;
-
+  margin-right: 5rem;
 }
+
+.form-label {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.input-form {
+  align-items: center;
+  justify-content: center;
+}
+
+.sv-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Abril Fatface", serif;
+  font-style: italic;
+  gap: 10px;
+}
+

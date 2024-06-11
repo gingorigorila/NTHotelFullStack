@@ -2,9 +2,8 @@
 /* eslint-disable no-unused-vars */
 import moment from "moment";
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { Form, FormControl, Button } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Form, FormControl, Button, Modal } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { bookRoom, getRoomById } from "../ultils/ApiFunctions";
 import BookingSummary from "./BookingSummary";
@@ -14,7 +13,8 @@ const BookingForm = () => {
   const [isValidated, setIsValidated] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const [roomPrice, setRoomPrice] = useState(0);
-  const currentUser = localStorage.getItem("userId")
+  const [showModal, setShowModal] = useState(false);
+  const currentUser = localStorage.getItem("userId");
   const [booking, setBooking] = useState({
     guestFullName: "",
     guestEmail: currentUser,
@@ -78,7 +78,7 @@ const BookingForm = () => {
       e.stopPropagation();
     } else {
       setIsValidated(true);
-      return setIsSubmitted(true);
+      setShowModal(true); // Show the modal on valid form submission
     }
     setIsValidated(true);
   };
@@ -103,11 +103,10 @@ const BookingForm = () => {
         <div className="row">
           <div className="col-md-8">
             <div className="card card-body mt-5">
-              <h4 className="card card-title">Nhập thông tin</h4>
+              <h4 className="card-title">Nhập thông tin</h4>
               <Form noValidate validated={isValidated} onSubmit={handleSubmit}>
                 <Form.Group>
                   <Form.Label htmlFor="guestFullName">Họ tên</Form.Label>
-
                   <FormControl
                     required
                     type="text"
@@ -121,10 +120,8 @@ const BookingForm = () => {
                     Nhập họ tên đầy đủ
                   </Form.Control.Feedback>
                 </Form.Group>
-
                 <Form.Group>
                   <Form.Label htmlFor="guestEmail">Mail</Form.Label>
-
                   <FormControl
                     required
                     type="email"
@@ -139,11 +136,10 @@ const BookingForm = () => {
                   </Form.Control.Feedback>
                 </Form.Group>
                 <fieldset style={{ border: "2px" }}>
-                  <Form.Label className="form-label">Thời gian đặt phòng</Form.Label>
+                  <Form.Label>Thời gian đặt phòng</Form.Label>
                   <div className="row">
                     <div className="col-6">
                       <Form.Label htmlFor="checkInDate">Ngày ở</Form.Label>
-
                       <FormControl
                         required
                         type="date"
@@ -157,12 +153,10 @@ const BookingForm = () => {
                         Hãy chọn ngày ở
                       </Form.Control.Feedback>
                     </div>
-
                     <div className="col-6">
                       <Form.Label htmlFor="checkOutDate">
                         Ngày kết thúc
                       </Form.Label>
-
                       <FormControl
                         required
                         type="date"
@@ -182,11 +176,10 @@ const BookingForm = () => {
                   </div>
                 </fieldset>
                 <fieldset>
-                  <Form.Label className="form-label">Số lượng khách</Form.Label>
+                  <Form.Label>Số lượng khách</Form.Label>
                   <div className="row">
                     <div className="col-6">
                       <Form.Label htmlFor="numOfAdults">Người lớn</Form.Label>
-
                       <FormControl
                         required
                         type="number"
@@ -203,7 +196,6 @@ const BookingForm = () => {
                     </div>
                     <div className="col-6">
                       <Form.Label htmlFor="numOfChildren">Trẻ em</Form.Label>
-
                       <FormControl
                         required
                         type="number"
@@ -223,19 +215,27 @@ const BookingForm = () => {
                 </div>
               </Form>
             </div>
-            {isSubmitted && (
-              <BookingSummary
-                booking={booking}
-                payment={calculatePayment()}
-                isFormValid={isValidated}
-                onConfirm={handleBooking}
-              />
-            )}
           </div>
-         
-         
         </div>
       </div>
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Tóm tắt đơn đặt phòng</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <BookingSummary
+            booking={booking}
+            payment={calculatePayment()}
+            isFormValid={isValidated}
+            onConfirm={handleBooking}
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Đóng
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

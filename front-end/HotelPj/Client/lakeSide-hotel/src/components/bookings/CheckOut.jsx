@@ -3,18 +3,16 @@
 import React,{ useEffect, useState  } from "react";
 
 import {
-  FaCar,
-  FaParking,
-  FaTshirt,
   FaTv,
   FaUtensils,
   FaWifi,
-  FaWineGlassAlt,
 } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import RoomCarousel from "../common/RoomCarousel";
 import { getRoomById } from "../ultils/ApiFunctions";
 import BookingForm from "./BookingForm";
+import { IoIosFitness } from "react-icons/io";
+
 
 const CheckOut = () => {
   const [errMsg, setErrMsg] = useState("");
@@ -57,17 +55,17 @@ const CheckOut = () => {
                 <table className="table table-bordered">
                   <tbody>
                     <tr>
-                      <th>Kiểu phòng:</th>
+                      <th>Kiểu phòng</th>
                       <th>{roomInfo.roomType}</th>
                     </tr>
                     <tr>
-                      <th>Giá phòng:</th>
+                      <th>Giá phòng</th>
                       <th>{roomInfo.roomPrice}đ/đêm</th>
                     </tr>
                     <tr>
-                    <th>Dịch vụ phòng</th>
+                    <th>Dịch vụ</th>
                       <td>
-                        <ul className="list-unstyled">
+                        <ul className="list-unstyled sv-list">
                           <li>
                             <FaWifi />
                             Wifi
@@ -81,20 +79,8 @@ const CheckOut = () => {
                             Bữa sáng
                           </li>
                           <li>
-                            <FaWineGlassAlt />
-                            Quán bar mini
-                          </li>
-                          <li>
-                            <FaCar />
-                            Thuê xe
-                          </li>
-                          <li>
-                            <FaParking />
-                            Không gian đậu xe
-                          </li>
-                          <li>
-                            <FaTshirt />
-                            Giặt ủi
+                            <IoIosFitness/>
+                            Phòng tập
                           </li>
                         </ul>
                       </td>

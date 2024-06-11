@@ -117,7 +117,7 @@ const NavBar = () => {
                   <li>
                   <li>
 									<Link className="dropdown-item" to={"/login"}>
-										Đăng ký
+										Đăng nhập
 									</Link>
 								</li>
                   </li>
