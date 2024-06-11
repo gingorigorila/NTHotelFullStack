@@ -28,7 +28,7 @@ const Chat = ({ setActive }) => {
       const randomIndex = Math.floor(Math.random() * responses.length);
       return responses[randomIndex].answer;
     }
-    return "Toi khong hieu";
+    return "Bạn có thể mô tả lại không?";
   };
   const proceedResponse = () => {
     switch (selectedIntent) {
@@ -62,6 +62,7 @@ const Chat = ({ setActive }) => {
       setTimeout(() => setActive(false), 5000);
     }, 2000);
   };
+  
 
   const processInput = (input) => {
     const nomrmalizeString = nomrmalizedString(input).toLowerCase();
@@ -105,33 +106,37 @@ const Chat = ({ setActive }) => {
       }
     }
   };
+
   return (
-    <div className="chatbot">
-      <div className="chatbot-header">Chatbot</div>
-      <div className="messages">
-        {messages.map((message, index) => (
-          <div
-            key={message.text + index}
-            className={`message ${message.author}`}
-          >
-            {message.text}
-          </div>
-        ))}
-      </div>
-      
-      <form id="form1" onSubmit={handleSubmit}>
-        <textarea
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Nhap cau hoi..."
-          wrap="soft"
-        />
-        <button type="submit" disabled={input.length === 0}>
-          Gui
+    <div class="chatbot">
+     <div class="chatbot-header">Nha Trang Hotel xin chào
+        <button className="close-button" onClick={() => setActive(false)}>
+          Đóng
         </button>
-      </form>
-      
-    </div>
+     </div>
+     <div class="messages">
+       {messages.map((message, index) => (
+        <div key={message.text + index} className={`message ${message.author}`}>
+          {message.author === 'bot' && <img src="../src/assets/img/chatbot.png" alt="" />}
+          {message.author === 'user' && <img src="../src/assets/img/user.png" alt="" />}
+          <div className="message-text">{message.text}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <form id="form1" onSubmit={handleSubmit}>
+    <textarea
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      placeholder="Nhập câu hỏi..."
+      wrap="soft"
+    />
+    <button type="submit" disabled={input.length === 0}>
+      Gửi
+    </button>
+  </form>
+</div>
   );
 };
 export default Chat;
