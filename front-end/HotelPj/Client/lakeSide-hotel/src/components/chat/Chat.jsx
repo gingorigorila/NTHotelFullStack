@@ -43,14 +43,14 @@ const Chat = ({ setActive }) => {
   };
 
   return (
-    <div class="chatbot">
-      <div class="chatbot-header">Nha Trang Hotel xin chào
+    <div className="chatbot">
+      <div className="chatbot-header">Nha Trang Hotel xin chào
           <button className="close-button" onClick={() => setActive(false)}>
             Đóng
           </button>
       </div>
 
-      <div class="messages">
+      <div className="messages">
        {messages.map((message, index) => (
           <div key={message.text + index} className={`message ${message.author}`}>
             {message.author === 'bot' && <img src="../src/assets/img/chatbot.png" alt="" />}
