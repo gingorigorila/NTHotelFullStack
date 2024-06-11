@@ -145,7 +145,7 @@
   margin-left: auto;
 }
 
-form {
+#form1 {
   display: flex;
   align-items: center;
   padding: 10px;
