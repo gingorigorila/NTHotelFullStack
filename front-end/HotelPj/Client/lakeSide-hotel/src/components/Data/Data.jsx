@@ -30,9 +30,11 @@ export const navList = [
     path: "/find-booking",
     text: "Tìm đơn đặt phòng",
   },
-
- 
-  
+  {
+    id: 6,
+    path: "/events",
+    text: "Sự kiện",
+  },
 ];
 export const socialIcons = [
   {
@@ -182,8 +184,7 @@ export const roomItems = [
       <small className="fa fa-star text-primary"></small>,
       <small className="fa fa-star text-primary"></small>,
     ],
-    description:
-      " ",
+    description: " ",
     yellowbtn: "Xem chi tiết",
     darkbtn: "Thuê ngay",
   },
@@ -199,8 +200,7 @@ export const roomItems = [
       <small className="fa fa-star text-primary"></small>,
       <small className="fa fa-star text-primary"></small>,
     ],
-    description:
-      " ",
+    description: " ",
     yellowbtn: "Xem chi tiết",
     darkbtn: "Thuê ngay",
   },
@@ -215,10 +215,8 @@ export const roomItems = [
       <small className="fa fa-star text-primary"></small>,
       <small className="fa fa-star text-primary"></small>,
     ],
-    description:
-      " ",
+    description: " ",
     yellowbtn: "Xem chi tiết",
     darkbtn: "Thuê ngay",
   },
 ];
-
