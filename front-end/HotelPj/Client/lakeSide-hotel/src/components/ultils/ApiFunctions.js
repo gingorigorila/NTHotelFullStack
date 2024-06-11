@@ -6,6 +6,9 @@ import axios from "axios";
 export const api = axios.create({
   baseURL: "http://localhost:9192",
 });
+export const api_chatBot = axios.create({
+  baseURL: "http://localhost:8080",
+});
 
 export const getHeader = () => {
   const token = localStorage.getItem("token");
@@ -186,7 +189,7 @@ export async function deleteRestaurant(restaurantId) {
 }
 //Ham cap nhap nha hang theo ID
 export async function updateRestaurant(restaurantId, restaurantData) {
-  console.log("Dat",restaurantData)
+  console.log("Dat", restaurantData);
   const formData = new FormData();
   formData.append("photo", restaurantData.photo);
   formData.append("restaurantName", restaurantData.restaurantName);
@@ -375,5 +378,15 @@ export async function getAllRoles() {
     return result.data;
   } catch (error) {
     throw new Error("Loi khong lay duoc dl role", error);
+  }
+}
+
+//Ham dung cho chatbit
+export async function getMessages(question) {
+  try {
+    const result = await api_chatBot.post("/chat", question);
+    return result;
+  } catch (error) {
+    throw new Error("Loi chatbot", error);
   }
 }

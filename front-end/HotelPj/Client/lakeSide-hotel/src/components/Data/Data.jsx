@@ -11,6 +11,11 @@ export const navList = [
     text: "Về chúng tôi",
   },
   {
+    id: 6,
+    path: "/service",
+    text: "Dịch vụ",
+  },
+  {
     id: 3,
     path: "/browse-all-restaurants",
     text: "Nhà hàng",

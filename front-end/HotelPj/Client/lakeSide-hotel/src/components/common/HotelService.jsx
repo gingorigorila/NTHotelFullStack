@@ -2,15 +2,15 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import {
-  FaClock,
   FaCocktail,
   FaParking,
-  FaTshirt,
   FaUtensils,
   FaWifi,
-  FaWind
+  FaWind,
 } from "react-icons/fa";
 import { LiaUmbrellaBeachSolid } from "react-icons/lia";
+import { IoIosFitness } from "react-icons/io";
+
 
 
 const HotelService = () => {
@@ -62,10 +62,10 @@ Khám phá <span style={{ color: "orange" }}>dịch vụ của chúng tôi<LiaUm
             <Card  className="service-card">
               <Card.Body>
                 <Card.Title className="hotel-color">
-                  <FaTshirt />
-                  Giặt đồ
+                <IoIosFitness />
+                Phòng tập
                 </Card.Title>
-                <Card.Text>Hệ thống giặt ủi hiện đại</Card.Text>
+                <Card.Text>Chuyên nghiệp và hiện đại</Card.Text>
               </Card.Body>
             </Card>
           </Col>
