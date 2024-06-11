@@ -25,6 +25,8 @@ const Chat = ({ setActive }) => {
     setInput("");
   };
 
+
+
   const processInput = async (input) => {
     fetch("http://localhost:8080/chat", {
       method: "POST",
@@ -41,29 +43,36 @@ const Chat = ({ setActive }) => {
   };
 
   return (
-    <div className="chatbot">
-      <div className="chatbot-header">Chatbot</div>
-      <div className="messages">
-        {messages.map((message, index) => (
-          <div
-            key={message.text + index}
-            className={`message ${message.author}`}
-          >
-            {message.text}
-          </div>
-        ))}
+    <div class="chatbot">
+      <div class="chatbot-header">Nha Trang Hotel xin chào
+          <button className="close-button" onClick={() => setActive(false)}>
+            Đóng
+          </button>
       </div>
 
-      <form id="form1" onSubmit={handleSubmit}>
-        <textarea
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Nhap cau hoi..."
-          wrap="soft"
-        />
-        <button type="submit">Gui</button>
-      </form>
+      <div class="messages">
+       {messages.map((message, index) => (
+          <div key={message.text + index} className={`message ${message.author}`}>
+            {message.author === 'bot' && <img src="../src/assets/img/chatbot.png" alt="" />}
+            {message.author === 'user' && <img src="../src/assets/img/user.png" alt="" />}
+            <div className="message-text">{message.text}</div>
+          </div>
+       ))}
+
     </div>
+
+  <form id="form1" onSubmit={handleSubmit}>
+    <textarea
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      placeholder="Nhập câu hỏi..."
+      wrap="soft"
+    />
+    <button type="submit" disabled={input.length === 0}>
+      Gửi
+    </button>
+  </form>
+</div>
   );
 };
 export default Chat;

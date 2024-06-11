@@ -9,7 +9,6 @@ import RoomSearch from "../common/RoomSearch";
 import MainHeader from "../layout/MainHeader";
 import { TbFlower } from "react-icons/tb";
 import Chat from "../chat/Chat";
-import ChatImg from "../../assets/img/tải xuống.png";
 const Home = () => {
   const location = useLocation();
   const message = location.state && location.state.message;
@@ -30,8 +29,8 @@ const Home = () => {
       {active ? (
         <Chat setActive={setActive} />
       ) : (
-        <div className="chatbot-active" onClick={() => setActive(true)}>
-          <img style={{position:"fixed"}} src={ChatImg} alt="" />
+        <div className="chatbot-ac" onClick={() => setActive(true)}>
+          <img src="../src/assets/img/chatbot.png" alt="" />
         </div>
       )}
         <RoomSearch />
