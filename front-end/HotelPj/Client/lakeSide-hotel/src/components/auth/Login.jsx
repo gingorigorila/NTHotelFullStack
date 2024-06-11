@@ -1,48 +1,54 @@
 /* eslint-disable react/no-unescaped-entities */
-import  { useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-
-import LoginForm from '../common/LoginComponent/LoginForm'
-import Or from '../common/LoginComponent/Or'
-import SocialLoginButton from '../common/LoginComponent/SocialLoginButtons'
-import { loginUser } from '../ultils/ApiFunctions'
-import { useAuth } from './AuthProvider'
+import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Modal, Form, Button } from "react-bootstrap";
+import LoginForm from "../common/LoginComponent/LoginForm";
+import Or from "../common/LoginComponent/Or";
+import SocialLoginButton from "../common/LoginComponent/SocialLoginButtons";
+import { loginUser } from "../ultils/ApiFunctions";
+import { useAuth } from "./AuthProvider";
 
 const Login = () => {
-    const [errorMessage, setErrorMessage] = useState("")
-	const [login, setLogin] = useState({
-		email: "",
-		password: ""
-	})
+  const [errorMessage, setErrorMessage] = useState("");
+  const [login, setLogin] = useState({
+    email: "",
+    password: "",
+  });
 
-	const navigate = useNavigate()
-	const auth = useAuth()
-	const location = useLocation()
-	const redirectUrl = location.state?.path || "/"
+  const navigate = useNavigate();
+  const auth = useAuth();
+  const location = useLocation();
+  const redirectUrl = location.state?.path || "/";
 
-	const handleInputChange = (e) => {
-		setLogin({ ...login, [e.target.name]: e.target.value })
-	}
+  const handleInputChange = (e) => {
+    setLogin({ ...login, [e.target.name]: e.target.value });
+  };
 
-	const handleSubmit = async (e) => {
-		e.preventDefault()
-        console.log("Login ",login)
-		const success = await loginUser(login)
-        console.log("token :",success)
-		if (success) {
-			const token = success.token
-			auth.handleLogin(token)
-			navigate(redirectUrl, { replace: true })
-		} else {
-			setErrorMessage("Tên tài khoản hoặc mật khẩu không hợp lệ")
-		}
-		setTimeout(() => {
-			setErrorMessage("")
-		}, 4000)
-	}
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Login ", login);
+    const success = await loginUser(login);
+    console.log("token :", success);
+    if (success) {
+      const token = success.token;
+      auth.handleLogin(token);
+      navigate(redirectUrl, { replace: true });
+      e.preventDefault();
+      setShow(true);
+      handleClose();
+    } else {
+      setErrorMessage("Tên tài khoản hoặc mật khẩu không hợp lệ");
+    }
+    setTimeout(() => {
+      setErrorMessage("");
+    }, 4000);
+  };
+  //Login Modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
 
-	return (
-		<section>
+  return (
+    <section>
       {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
       <div className="container login ">
         <div className="row">
@@ -63,8 +69,21 @@ const Login = () => {
           <SocialLoginButton />
         </div>
       </div>
-    </section>
-	)
-}
 
-export default Login
+      {/* Modal Đăng nhập thành công */}
+      <Modal
+        show={show}
+        onHide={handleClose}
+        centered
+        dialogClassName="modal-dialog-centered modal-dialog-scrollable"
+        contentClassName="p-8"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>{"Đăng nhập thành công, xin chào abcxyz"}</Modal.Title>
+        </Modal.Header>
+      </Modal>
+    </section>
+  );
+};
+
+export default Login;

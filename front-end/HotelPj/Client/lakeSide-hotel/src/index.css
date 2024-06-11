@@ -497,7 +497,82 @@ h3 {
   color: lightgray;
 }
 
-
+.events-header{
+  color:#1e1145 !important;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  font-family: 'Times New Roman', Times, serif, Arial, sans-serif !important;
+}
+.events-header-description{
+  text-align: center;
+  font-size: 13px !important;
+  font-family: Arial, Helvetica, sans-serif, Arial, sans-serif !important;
+  color: #797979 !important;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  box-sizing: inherit;
+}
+.event-item{
+  display: flex;
+  align-items: center;
+}
+.event-item div{
+  padding:20px;
+  font-size: 25px !important;
+  color: #1e1145 !important;
+  line-height: 1.4;
+  margin: 0 0 15px;
+}
+.event-item div p{
+  line-height: 24px !important;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  color: #797979 !important;
+  
+}
+.events-details-buttons{
+  background-color: #390033;
+  border-color: transparent;
+  color:#fff;
+  position: relative;
+  display: inline-block;
+  line-height: 1.4;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 12px;
+  padding: 8px 15px;
+  text-decoration: none;
+}
+.events-footer div{
+  font-size: 36px;
+  margin: 0 0 13px 0;
+  color: #34343c;
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif, Arial, sans-serif;
+}
+.events-footer p{
+  color: #606060;
+  line-height: 1.4;
+}
+.event-details-images{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  width: 100%;
+}
+.event-details-images img{
+  width: 100%;
+}
+.events-em{
+  margin-top:20px;
+  line-height: 24px !important;
+  font-weight: normal !important;font-size: 16px !important;    color: #797979 !important;
+}
 .service-container {
   display: flex;
   justify-content: center;
@@ -532,15 +607,6 @@ h3 {
 }
 
 .footer-b {
-  margin-right: 5rem;
-}
+  margin-right: 11rem;
 
-.input-form {
-  align-self: center;
-  justify-content: center;
-}
-
-.form-label {
-  margin-bottom: -5px;
-  margin-top: 5px;
 }
