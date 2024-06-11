@@ -109,21 +109,20 @@ const Chat = ({ setActive }) => {
 
   return (
     <div class="chatbot">
-     <div class="chatbot-header">Nha Trang Hotel xin chào
-        <button className="close-button" onClick={() => setActive(false)}>
-          Đóng
-        </button>
-     </div>
-     <div class="messages">
-       {messages.map((message, index) => (
-        <div key={message.text + index} className={`message ${message.author}`}>
-          {message.author === 'bot' && <img src="../src/assets/img/chatbot.png" alt="" />}
-          {message.author === 'user' && <img src="../src/assets/img/user.png" alt="" />}
-          <div className="message-text">{message.text}
-        </div>
+      <div class="chatbot-header">Nha Trang Hotel xin chào
+          <button className="close-button" onClick={() => setActive(false)}>
+            Đóng
+          </button>
       </div>
-    ))}
-  </div>
+      <div class="messages">
+       {messages.map((message, index) => (
+          <div key={message.text + index} className={`message ${message.author}`}>
+            {message.author === 'bot' && <img src="../src/assets/img/chatbot.png" alt="" />}
+            {message.author === 'user' && <img src="../src/assets/img/user.png" alt="" />}
+            <div className="message-text">{message.text}</div>
+          </div>
+       ))}
+    </div>
 
   <form id="form1" onSubmit={handleSubmit}>
     <textarea

@@ -56,6 +56,16 @@
   width: 120px; 
 }
 
+.chatbot-header .close-button {
+  background-color: red;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left:30%;
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0); 
