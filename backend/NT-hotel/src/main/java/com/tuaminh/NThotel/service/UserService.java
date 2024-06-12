@@ -29,7 +29,7 @@ public class UserService implements IUserService{
             throw new UserAlreadyExistsException(user.getEmail()+" Đã tồn tại");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        Role userRole=roleRepository.findByName("ROLE_ADMIN").get();
+        Role userRole=roleRepository.findByName("ROLE_USER").get();
         user.setRoles(Collections.singleton(userRole));
         return userRepository.save(user);
     }

@@ -11,6 +11,9 @@ const RegisterForm = ({ registration, handleInputChange, handleSubmit }) => {
       <form onSubmit={handleSubmit}>
         <div className="form-floating mb-3">
           <div className="col-12">
+          <label htmlFor="firstName" className="form-label">
+              Họ
+            </label>
             <input
               id="firstName"
               name="firstName"
@@ -21,13 +24,14 @@ const RegisterForm = ({ registration, handleInputChange, handleSubmit }) => {
               placeholder="Nhập họ"
               required
             ></input>
-            <label htmlFor="firstName" className="form-label">
-              Họ
-            </label>
+            
           </div>
         </div>
         <div className="form-floating mb-3">
           <div className="col-12">
+          <label htmlFor="lasttName" className="form-label">
+              Tên
+            </label>
             <input
               id="lastName"
               name="lastName"
@@ -38,13 +42,14 @@ const RegisterForm = ({ registration, handleInputChange, handleSubmit }) => {
               placeholder="Nhạp tên"
               required
             ></input>
-            <label htmlFor="email" className="form-label">
-              Tên
-            </label>
+            
           </div>
         </div>
         <div className="form-floating mb-3">
           <div className="col-12">
+          <label htmlFor="email" className="form-label">
+              Email
+            </label>
             <input
               id="email"
               name="email"
@@ -55,14 +60,15 @@ const RegisterForm = ({ registration, handleInputChange, handleSubmit }) => {
               placeholder="name@example.com"
               required
             ></input>
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
+            
           </div>
         </div>
 
         <div className="form-floating mb-3">
           <div className="col-12">
+          <label htmlFor="password" className="form-label">
+              Mật khẩu
+            </label>
             <input
               type="password"
               className="form-control border-dark border-2 rounded-0"

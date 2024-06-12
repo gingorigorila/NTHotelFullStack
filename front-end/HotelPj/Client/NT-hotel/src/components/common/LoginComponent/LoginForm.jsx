@@ -10,7 +10,11 @@ const LoginForm = ({ login, handleInputChange, handleSubmit }) => {
     <div className="container col-12 col-lg-5">
       <form  onSubmit={handleSubmit}>
         <div className="form-floating mb-3">
+        
           <div className="col-12">
+          <label htmlFor="email" className="form-label">
+              Email
+            </label>
             <input
               id="email"
               name="email"
@@ -21,14 +25,15 @@ const LoginForm = ({ login, handleInputChange, handleSubmit }) => {
               placeholder="name@example.com"
               required
             ></input>
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
+            
           </div>
         </div>
 
         <div className="form-floating mb-3">
           <div className="col-12">
+          <label htmlFor="password" className="form-label">
+              Mật khẩu
+            </label>
             <input
               type="password"
               className="form-control border-dark border-2 rounded-0"
