@@ -11,6 +11,9 @@ const LoginForm = ({ login, handleInputChange, handleSubmit }) => {
       <form  onSubmit={handleSubmit}>
         <div className="form-floating mb-3">
           <div className="col-12">
+          <label htmlFor="email" className="form-label">
+              Email
+            </label>
             <input
               id="email"
               name="email"
@@ -21,14 +24,12 @@ const LoginForm = ({ login, handleInputChange, handleSubmit }) => {
               placeholder="name@example.com"
               required
             ></input>
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
           </div>
         </div>
 
         <div className="form-floating mb-3">
           <div className="col-12">
+          <label htmlFor="password" className="form-label">Mật khẩu</label>
             <input
               type="password"
               className="form-control border-dark border-2 rounded-0"
@@ -39,7 +40,6 @@ const LoginForm = ({ login, handleInputChange, handleSubmit }) => {
               placeholder="Password"
               required
             ></input>
-            <label htmlFor="password" className="form-label"></label>
           </div>
         </div>
         <CustomButton
@@ -48,7 +48,7 @@ const LoginForm = ({ login, handleInputChange, handleSubmit }) => {
         >
           Login
         </CustomButton>
-        <span style={{ marginLeft: "60px" }}>
+        <span style={{ marginLeft: "60px"}}>
           Chưa có tài khoản?<Link to={"/register"}> Đăng ký</Link>
         </span>
       </form>
