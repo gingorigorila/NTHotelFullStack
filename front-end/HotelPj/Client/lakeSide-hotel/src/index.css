@@ -573,6 +573,12 @@ h3 {
   line-height: 24px !important;
   font-weight: normal !important;font-size: 16px !important;    color: #797979 !important;
 }
+
+.btn-delete{
+  background-color: red !important;
+  border:1px solid red !important;
+}
+
 .service-container {
   display: flex;
   justify-content: center;
