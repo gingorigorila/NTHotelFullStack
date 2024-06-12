@@ -5,6 +5,7 @@ import {
   getBookingByConfimationCode,
 } from "../ultils/ApiFunctions";
 import moment from "moment";
+
 const FindBooking = () => {
   const [confirmationCode, setConfirmationCode] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -81,7 +82,7 @@ const FindBooking = () => {
   return (
     <>
       <div className="container mt-5 flex-column align-items-center justify-content-center d-flex flex-column">
-        <h2 className="text-center mb-4">Tìm đơn đăt phòng</h2>
+        <h2 className="text-center mb-4">Tìm đơn đặt phòng</h2>
         <form onSubmit={handleFormSubmit} className="col-md-6">
           <div className="input-group mb-3">
             <input
@@ -93,13 +94,13 @@ const FindBooking = () => {
               onChange={handleInputChange}
               placeholder="Nhập mã đơn đặt phòng"
             />
-            <button type="submit" className="btn btn-hotel input-group-text">
-              Tìm đơn đặt
+            <button type="submit"  className="btn btn-hotel input-group-text">
+              Tìm kiếm
             </button>
           </div>
         </form>
         {isLoading ? (
-          <div>Đang tải đơn đặt ...</div>
+          <div></div>
         ) : err ? (
           <p className="text-danger">Lỗi: {err}</p>
         ) : bookingInfo.bookingConfirmationCode ? (
