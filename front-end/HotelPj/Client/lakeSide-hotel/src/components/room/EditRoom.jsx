@@ -2,14 +2,15 @@
 import React, { useEffect, useState } from "react";
 import { getRoomById, updateRoom } from "../ultils/ApiFunctions";
 import { Link, useParams } from "react-router-dom";
-
+import { Modal, Form, Button } from "react-bootstrap";
 const EditRoom = () => {
   const [room, setRoom] = useState({
     photo: "",
     roomType: "",
     roomPrice: "",
   });
-
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
   const [imagePreview, setImagePreview] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -134,10 +135,40 @@ const EditRoom = () => {
               <button type="submit" className="btn btn-outline-warning">
                 Chỉnh sửa
               </button>
+              <button
+                type="submit"
+                className="btn btn-outline-warning btn-delete"
+                onClick={() => {
+                  setShow(true);
+                }}
+              >
+                Xóa
+              </button>
             </div>
           </form>
         </div>
       </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        centered
+        dialogClassName="modal-dialog-centered modal-dialog-scrollable"
+        contentClassName="p-8"
+      >
+        <Modal.Header>
+          <Modal.Title>
+            {"Bạn có thật sự muốn xóa phòng này không?"}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Footer>
+          <Button variant="danger" onClick={handleClose}>
+            Đồng ý
+          </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Không đồng ý
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
