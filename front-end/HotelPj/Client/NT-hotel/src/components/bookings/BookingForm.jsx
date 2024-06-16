@@ -85,7 +85,7 @@ const BookingForm = () => {
   const handleBooking = async () => {
     try {
       const confirmationCode = await bookRoom(roomId, booking);
-      console.log(booking);
+      console.log("booking:", booking);
       setIsSubmitted(true);
       navigate("/booking-success", { state: { message: confirmationCode } });
     } catch (e) {
@@ -197,7 +197,6 @@ const BookingForm = () => {
                     <div className="col-6">
                       <Form.Label htmlFor="numOfChildren">Trẻ em</Form.Label>
                       <FormControl
-                        required
                         type="number"
                         id="numOfChildren"
                         name="numOfChildren"

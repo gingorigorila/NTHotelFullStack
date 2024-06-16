@@ -35,6 +35,8 @@ import Events from "./components/events/Event";
 import EventDetails from "./components/events/EventDetails";
 
 import Service from "./components/auth/Service";
+import RoomImgs from "./components/room/RoomImgs";
+import AddRoomImg from "./components/room/AddRoomImg";
 
 function App() {
   return (
@@ -50,7 +52,7 @@ function App() {
           <Route path="/all-restaurants" element={<Restaurants />} />
           <Route path="/add-restaurant" element={<AddRestaurant />} />
           <Route path="/existing-users" element={<ExsistingUsers />} />
-
+          <Route path="/all-roomImgs" element={<RoomImgs />} />
           <Route path="/events" element={<Events />} />
           <Route path="/event-details" element={<EventDetails />} />
 
@@ -81,6 +83,7 @@ function App() {
               </RequireAuth>
             }
           />
+          <Route path="/add-roomImg/:roomId" element={<AddRoomImg />} />
           <Route path="/browse-all-rooms" element={<RoomListing />} />
           <Route
             path="/browse-all-restaurants"

@@ -23,6 +23,7 @@ export async function addRoom(
   maxPeople,
   roomDescription
 ) {
+  console.log("photo",photo)
   const formData = new FormData();
   formData.append("photo", photo);
   formData.append("roomType", roomType);
@@ -87,6 +88,35 @@ export async function getRoomById(roomId) {
     return result.data;
   } catch (e) {
     throw new Error(`Error fetching room ${e.message}`);
+  }
+}
+//Ham luu anh phong
+export async function addRoomImg(roomId, image) {
+  try {
+    
+    const formData = new FormData();
+    formData.append("image", image);
+    console.log(roomId)
+    const result = await api.post(
+      `/roomImg/add-roomImg/room/${roomId}`,
+      formData,
+      {
+        headers: getHeader(),
+      }
+    );
+    console.log("add room img", result);
+    return result;
+  } catch (e) {
+    throw new Error(`Loi khong them duoc anh ${e.message}`);
+  }
+}
+//Ham hien thi anh phong
+export async function displayRoomImg() {
+  try {
+    const response = await api.get("/roomImg/all");
+    return response.data;
+  } catch (error) {
+    throw new Error("Loi truy xuat anh phong", error.message);
   }
 }
 //Hàm lưu đơn đặt phòng đến database

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RoomTypeSelector from "../common/RoomTypeSelector";
 import { addRoom } from "../ultils/ApiFunctions";
@@ -33,6 +33,7 @@ const AddRoom = () => {
     setNewRoom({ ...newRoom, photo: selectedImage });
     setImagePreview(URL.createObjectURL(selectedImage));
   };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
