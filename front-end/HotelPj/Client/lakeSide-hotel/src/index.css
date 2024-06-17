@@ -614,3 +614,140 @@ h3 {
   margin-right: 11rem;
 
 }
+.cuisine-header{
+  line-height: 1.4;
+  color: #54534a;
+  background-color: #fff;
+  width: 66%;
+  margin: auto;
+  padding-bottom:40px;
+}
+.cuisine-header .cuisine-header-content{
+  padding-top: 40px;
+  position: relative;
+  font-size: 30px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #232530;
+  margin-top: 0;
+  font-family: 'SVN-New-Baskerville';
+}
+.cuisine-header h1::before{
+  content: '';
+  width: 100%;
+  max-width: 270px;
+  height: 1px;
+  background-color: #a49057;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 20px;
+}
+.cuisine-header h1::after{
+  content: '';
+  width: 52px;
+  height: 28px;
+  background: #fff url(https://www.icsaigon.com/sites/icsaigon/themes/saigon/images/icon_dining.svg) center no-repeat;
+  background-size: 28px 28px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.cuisine-header p{
+  margin: 0px 15px
+}
+.cuisine-content-items{
+  display: flex;
+  justify-items: space-between;
+  align-items: center;
+    margin-top: 24px;
+}
+.cuisine-content-items-header{
+  font-family: 'SVN-New-Baskerville';
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #9e884b;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  max-width: 430px;
+  text-align: left;
+  }
+  .cuisine-content-item{
+    padding:24px;
+    background-color: #fff;
+  }
+.cuisine-content-items-description{
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  color: #54534a;
+  text-align: left;
+}
+.cuisine-footer-content{
+  padding-top: 40px;
+  position: relative;
+  font-size: 30px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #232530;
+  margin-top: 0;
+  font-family: 'SVN-New-Baskerville';
+  line-height: 1.4;
+
+}
+.cuisine-footer{
+  font-family: 'Roboto', sans-serif;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  max-width: 1170px;
+  margin: 0 auto;
+  color: #54534a;
+  overflow-x: hidden;
+}
+.cuisine-footer div{
+  width: 32.456%;
+  padding: 30px 20px 0;
+  background-color: #f1f0ef;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 0.427350%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  margin:8px;
+}
+.cuisine-footer div h1{
+  font-family: 'SVN-New-Baskerville';
+  font-size: 18px;
+  color: #232530;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.cuisine-footer div p{
+  font-size: 13px;
+  height: 90%;
+}
+.cuisine-footer div img{
+  position: relative;
+  background-color: #000;
+  top: 20px;
+  transition: all 0.3s ease-in;
+  width: 100%;
+  opacity: 1;
+}
