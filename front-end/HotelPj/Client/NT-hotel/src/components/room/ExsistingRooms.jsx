@@ -106,7 +106,8 @@ const ExsistingRooms = () => {
                   <th>ID</th>
                   <th>Kiểu phòng</th>
                   <th>Giá phòng</th>
-                  <th>Sửa/Xóa/Thêm ảnh phòng</th> 
+                  <th>Sửa/Xóa</th>
+                  <th>Them anh/Xem anh</th>
                 </tr>
               </thead>
               <tbody>
@@ -121,15 +122,22 @@ const ExsistingRooms = () => {
                           <FaEdit />
                         </span>
                       </Link>
-            
+
                       <button
                         className="btn btn-danger btn-sm"
                         onClick={() => handleDeleteRoom(room.id)}
                       >
                         <FaTrashAlt />
                       </button>
+                    </td>
+                    <td className="gap-2">
                       <Link to={`/add-roomImg/${room.id}`}>
-                      <span className="btn btn-info btn-sm">
+                        <span className="btn btn-info btn-sm">
+                          <FaPlus />
+                        </span>
+                      </Link>
+                      <Link to={`/all-roomImg-by-room/${room.id}`}>
+                        <span className="btn btn-info btn-sm">
                           <FaEye />
                         </span>
                       </Link>

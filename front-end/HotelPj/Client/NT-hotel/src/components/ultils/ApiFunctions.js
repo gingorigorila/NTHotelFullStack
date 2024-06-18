@@ -23,7 +23,7 @@ export async function addRoom(
   maxPeople,
   roomDescription
 ) {
-  console.log("photo",photo)
+  console.log("photo", photo);
   const formData = new FormData();
   formData.append("photo", photo);
   formData.append("roomType", roomType);
@@ -93,10 +93,9 @@ export async function getRoomById(roomId) {
 //Ham luu anh phong
 export async function addRoomImg(roomId, image) {
   try {
-    
     const formData = new FormData();
     formData.append("image", image);
-    console.log(roomId)
+    console.log(roomId);
     const result = await api.post(
       `/roomImg/add-roomImg/room/${roomId}`,
       formData,
@@ -110,13 +109,38 @@ export async function addRoomImg(roomId, image) {
     throw new Error(`Loi khong them duoc anh ${e.message}`);
   }
 }
-//Ham hien thi anh phong
+//Ham hien thi toan bo anh phong
 export async function displayRoomImg() {
   try {
     const response = await api.get("/roomImg/all");
     return response.data;
   } catch (error) {
     throw new Error("Loi truy xuat anh phong", error.message);
+  }
+}
+//Ham hien thi anh phong theo id phong
+export async function displayRoomImgByRoomId(roomId) {
+  try {
+    const result = await api.get(`/roomImg/room/${roomId}`, {
+      headers: getHeader(),
+    });
+    return result.data;
+  } catch (e) {
+    throw new Error("Loi truy xuat anh cua phong");
+  }
+}
+//Ham xoa anh phong theo id anh
+export async function deleteImgByImgId(roomImgId) {
+  try {
+    const result = await api.delete(
+      `/roomImg/delete-roomImg/${roomImgId}/delete`,
+      {
+        headers: getHeader(),
+      }
+    );
+    return result.data;
+  } catch (error) {
+    throw new Error(`Loi xoa anh phong ${error.message}`);
   }
 }
 //Hàm lưu đơn đặt phòng đến database
