@@ -52,7 +52,6 @@ function App() {
           <Route path="/all-restaurants" element={<Restaurants />} />
           <Route path="/add-restaurant" element={<AddRestaurant />} />
           <Route path="/existing-users" element={<ExsistingUsers />} />
-          <Route path="/all-roomImgs" element={<RoomImgs />} />
           <Route path="/events" element={<Events />} />
           <Route path="/event-details" element={<EventDetails />} />
 
@@ -84,6 +83,7 @@ function App() {
             }
           />
           <Route path="/add-roomImg/:roomId" element={<AddRoomImg />} />
+          <Route path="/all-roomImg-by-room/:roomId" element={<RoomImgs />} />
           <Route path="/browse-all-rooms" element={<RoomListing />} />
           <Route
             path="/browse-all-restaurants"

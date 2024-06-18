@@ -3,16 +3,25 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { FaEdit, FaEye, FaPlus, FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { displayRoomImg } from "../ultils/ApiFunctions";
+import { Link, useParams } from "react-router-dom";
+import {
+  deleteImgByImgId,
+  displayRoomImg,
+  displayRoomImgByRoomId,
+} from "../ultils/ApiFunctions";
 
 const RoomImgs = () => {
-  const [imagePreview, setImagePreview] = useState([]);
+  const [imagePreview, setImagePreview] = useState([
+    { roomImgId: "", roomPhoto: "" },
+  ]);
+  const { roomId } = useParams();
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errMsg, setErrMsg] = useState("");
   useEffect(() => {
     const fetchRoomImgs = async () => {
       try {
-        const roomImg = await displayRoomImg();
-
+        const roomImg = await displayRoomImgByRoomId(roomId);
+        console.log(roomImg);
         setImagePreview(roomImg);
       } catch (error) {
         console.error(error);
@@ -20,7 +29,25 @@ const RoomImgs = () => {
     };
 
     fetchRoomImgs();
-  }, [setImagePreview]);
+  }, [roomId, setImagePreview]);
+
+  const handleDeleteRoomImg = async (roomImgId) => {
+    try {
+      const result = await deleteImgByImgId(roomImgId);
+      if (result === "") {
+        setSuccessMsg(`Phòng số ${roomId} đã được xóa`);
+        displayRoomImgByRoomId(roomId);
+      } else {
+        console.log(`Lỗi xóa anh phòng : ${result.message}`);
+      }
+    } catch (e) {
+      setErrMsg(e.message);
+    }
+    setTimeout(() => {
+      setSuccessMsg("");
+      setErrMsg("");
+    }, 3000);
+  };
 
   return (
     <div>
@@ -59,14 +86,14 @@ const RoomImgs = () => {
 
       <section className="mt-5 mb-5 container">
         <div className="d-flex justify-content-between mb-3 mt-5">
-          <h2>Phòng hiện có</h2>
+          <h2>Anh cua phong</h2>
         </div>
         <Row>
           <Col md={6} className="mb-3 mb-md-0"></Col>
           <Col md={6} className="d-flex justify-content-end">
-            <Link to={"/add-room"}>
+            <Link to={`/add-roomImg/${roomId}`}>
               <FaPlus />
-              Thêm phòng
+              Thêm anh
             </Link>
           </Col>
         </Row>
@@ -75,14 +102,16 @@ const RoomImgs = () => {
             <tr className="text-center">
               <th>ID</th>
               <th>Hinh anh</th>
+              <th>Xoa anh</th>
             </tr>
           </thead>
           <tbody>
-            {imagePreview.map((room) => (
-              <tr key={room.id} className="text-center">
+            {imagePreview.map((roomImg) => (
+              <tr key={roomImg.roomImgId} className="text-center">
+                <td>{roomImg.roomImgId}</td>
                 <td>
                   <img
-                    src={`data:image/jpeg;base64,${room}`}
+                    src={`data:image/jpeg;base64,${roomImg.roomPhoto}`}
                     alt="Room preview"
                     style={{ maxWidth: "400px", maxHeight: "400" }}
                     className="mt-3"
@@ -90,15 +119,10 @@ const RoomImgs = () => {
                 </td>
 
                 <td className="gap-2">
-                  <Link to={`/edit-room/${room.id}`} className="gap-2">
-                    <span className="btn btn-info btn-sm">
-                      <FaEye />
-                    </span>
-                    <span className="btn btn-warning btn-sm">
-                      <FaEdit />
-                    </span>
-                  </Link>
-                  <button className="btn btn-danger btn-sm">
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => handleDeleteRoomImg(roomImg.roomImgId)}
+                  >
                     <FaTrashAlt />
                   </button>
                 </td>
