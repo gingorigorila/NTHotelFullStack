@@ -573,6 +573,12 @@ h3 {
   line-height: 24px !important;
   font-weight: normal !important;font-size: 16px !important;    color: #797979 !important;
 }
+
+.btn-delete{
+  background-color: red !important;
+  border:1px solid red !important;
+}
+
 .service-container {
   display: flex;
   justify-content: center;
@@ -630,3 +636,257 @@ h3 {
   gap: 10px;
 }
 
+
+.cuisine-header{
+  line-height: 1.4;
+  color: #54534a;
+  background-color: #fff;
+  width: 66%;
+  margin: auto;
+  padding-bottom:40px;
+}
+.cuisine-header .cuisine-header-content{
+  padding-top: 40px;
+  position: relative;
+  font-size: 30px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #232530;
+  margin-top: 0;
+  font-family: 'SVN-New-Baskerville';
+}
+.cuisine-header h1::before{
+  content: '';
+  width: 100%;
+  max-width: 270px;
+  height: 1px;
+  background-color: #a49057;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 20px;
+}
+.cuisine-header h1::after{
+  content: '';
+  width: 52px;
+  height: 28px;
+  background: #fff url(https://www.icsaigon.com/sites/icsaigon/themes/saigon/images/icon_dining.svg) center no-repeat;
+  background-size: 28px 28px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.cuisine-header p{
+  margin: 0px 15px
+}
+.cuisine-content-items{
+  display: flex;
+  justify-items: space-between;
+  align-items: center;
+    margin-top: 24px;
+}
+.cuisine-content-items-header{
+  font-family: 'SVN-New-Baskerville';
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #9e884b;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  max-width: 430px;
+  text-align: left;
+  }
+  .cuisine-content-item{
+    padding:24px;
+    background-color: #fff;
+  border-right: 1px solid #d6cec5;
+  border-left: 1px solid #d6cec5;
+
+}
+.cuisine-content-items-description{
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  color: #54534a;
+  text-align: left;
+}
+.cuisine-options-button {
+  width: 44%;
+  padding: 25px 25px 25px 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cuisine-options-button .options-button {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cuisine-options-button .cuisine-details-button {
+  padding: 16px 8px;
+  background-color: #c8ba8c;
+  text-transform: uppercase;
+  color: #fff;
+  flex-grow: 1;
+  text-align: center;
+  text-decoration: none;
+}
+.cuisine-footer-content{
+  padding-top: 40px;
+  position: relative;
+  font-size: 30px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #232530;
+  margin-top: 0;
+  font-family: 'SVN-New-Baskerville';
+  line-height: 1.4;
+
+}
+.cuisine-footer{
+  font-family: 'Roboto', sans-serif;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  max-width: 1170px;
+  margin: 0 auto;
+  color: #54534a;
+  overflow-x: hidden;
+}
+.cuisine-footer div{
+  width: 32.456%;
+  padding: 30px 20px 0;
+  background-color: #f1f0ef;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 0.427350%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  margin:8px;
+}
+.cuisine-footer div h1{
+  font-family: 'SVN-New-Baskerville';
+  font-size: 18px;
+  color: #232530;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.cuisine-footer div p{
+  font-size: 13px;
+  height: 90%;
+}
+.cuisine-footer div img{
+  position: relative;
+  background-color: #000;
+  top: 20px;
+  transition: all 0.3s ease-in;
+  width: 100%;
+  opacity: 1;
+}
+.cuisine-content-top{
+  position: relative;
+  top: -45px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  padding: 40px 15px 0px;
+  text-align: center;
+  z-index: 6;
+  width: 80%;
+  margin: auto;
+}
+.cuisine-content-top h1{
+  font-size: 30px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #232530;
+  font-family: 'SVN-New-Baskerville';
+  max-width: 700px;
+  margin: 0 auto;
+}
+.cuisine-content-top p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.dining-offer-container{
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  color: #54534a;
+  overflow-x: hidden;
+  width:100%;
+}
+.dining-offer-wrapper{
+  display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: left;
+}
+.dining-offer-items{
+  margin-left: 0;
+  margin-right: 0;
+  width: 30%;
+  margin-right: 1.59%;
+  margin-bottom: 60px;
+  padding: 25px 20px 0;
+  background-color: #e6e6e6;
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+}
+.dining-offer-items .dining-offer-header{
+  font-family: 'SVN-New-Baskerville';
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+.dining-offer-items .dining-offer-description{
+  height: 100%;
+  font-size: 13px;
+  text-align: left;
+}

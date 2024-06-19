@@ -34,11 +34,11 @@ import AssignRoleUser from "../user/AssignRoleUser";
 
 import Events from "./components/events/Event";
 import EventDetails from "./components/events/EventDetails";
-
+import Cuisine from "./components/restaurant/Cuisine";
 import Service from "./components/auth/Service";
+import CuisineDetails from "./components/restaurant/CuisineDetails";
 import RoomImgs from "./components/room/RoomImgs";
 import AddRoomImg from "./components/room/AddRoomImg";
-
 
 function App() {
   return (
@@ -58,6 +58,8 @@ function App() {
           <Route path="/event-details" element={<EventDetails />} />
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/service" element={<Service />} />
+          <Route path="/cuisine" element={<Cuisine />} />
+          <Route path="/cuisine-details/:id" element={<CuisineDetails />} />
 
           <Route
             path="/existing-users/assignRole/:userId"

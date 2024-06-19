@@ -45,17 +45,25 @@ const Events = () => {
           alt="Event 1"
           style={{ width: "100%" }}
         />
+        <h2 className="events-header">Sự kiện tại Khách sạn Nha Trang</h2>
+        <p className="events-header-description">
+          Mười không gian tổ chức sự kiện của chúng tôi có thiết bị AV hiện đại
+          và lối trang trí bắt mắt, khiến Nha Trang Sài Gòn trở thành địa điểm
+          hàng đầu trong thành phố để tổ chức đám cưới, hội họp, hội nghị, sự
+          kiện và dạ tiệc. Tâm điểm của tầng sự kiện Nha Trang Sài Gòn là Phòng
+          khiêu vũ Nha Trang có diện tích sàn 300m2 với chiều cao trần 4,7m.
+        </p>
         <h2 className="events-header">Sự kiện tại Khách sạn Nha Trang </h2>
         <p className="events-header-description">
           Mười không gian tổ chức sự kiện của chúng tôi có thiết bị AV hiện đại
-          và lối trang trí bắt mắt, khiến Nha Trang  trở thành địa điểm
-          hàng đầu trong thành phố để tổ chức đám cưới, hội họp, hội nghị, sự
-          kiện và dạ tiệc. Tâm điểm của tầng sự kiện Nha Trang là Phòng
-          khiêu vũ Caravelle có diện tích sàn 300m2 với chiều cao trần 4,7m.
-          Phòng khiêu vũ có thể được bố trí thành nhiều cấu hình khác nhau tùy
-          theo dịp và có thể phục vụ tối đa 400 người. Nó cũng có thể được chia
-          thành hai không gian sự kiện riêng biệt một cách thuận tiện nếu cần
-          bằng một bức tường có thể thu vào.
+          và lối trang trí bắt mắt, khiến Nha Trang trở thành địa điểm hàng đầu
+          trong thành phố để tổ chức đám cưới, hội họp, hội nghị, sự kiện và dạ
+          tiệc. Tâm điểm của tầng sự kiện Nha Trang là Phòng khiêu vũ Caravelle
+          có diện tích sàn 300m2 với chiều cao trần 4,7m. Phòng khiêu vũ có thể
+          được bố trí thành nhiều cấu hình khác nhau tùy theo dịp và có thể phục
+          vụ tối đa 400 người. Nó cũng có thể được chia thành hai không gian sự
+          kiện riêng biệt một cách thuận tiện nếu cần bằng một bức tường có thể
+          thu vào.
         </p>
         <p className="events-header-description">
           Các Phòng Opera nhìn ra Nhà hát Opera lịch sử của thành phố có cửa sổ
@@ -117,7 +125,8 @@ const Events = () => {
           <div>Bạn đang lên kế hoạch cho một sự kiện...</div>
           <p>
             Để biết thêm thông tin, vui lòng liên hệ Bộ phận Sự kiện theo số
-            (84) 2838 234 999 hoặc email: events@NThotel.com
+            (84) 2838 234 999 hoặc email: events@nhatranghotel.com (84) 2838 234
+            999 hoặc email: events@NThotel.com
           </p>
         </div>
       </div>
