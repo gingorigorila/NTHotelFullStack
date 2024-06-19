@@ -573,10 +573,12 @@ h3 {
   line-height: 24px !important;
   font-weight: normal !important;font-size: 16px !important;    color: #797979 !important;
 }
+
 .btn-delete{
   background-color: red !important;
   border:1px solid red !important;
 }
+
 .service-container {
   display: flex;
   justify-content: center;
@@ -607,12 +609,34 @@ h3 {
 }
 
 .footer-a {
-  margin-left: 8.5rem;
+  margin-left: 4rem;
 }
 
 .footer-b {
-  margin-right: 11rem;
+  margin-right: 5rem;
+}
 
+.form-label {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.input-form {
+  align-items: center;
+  justify-content: center;
+}
+
+.sv-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Abril Fatface", serif;
+  font-style: italic;
+  gap: 10px;
+}
+
+<<<<<<< HEAD
 }
 .cuisine-header{
   line-height: 1.4;
@@ -867,3 +891,5 @@ h3 {
   font-size: 13px;
   text-align: left;
 }
+=======
+>>>>>>> ee0b3dc54e1dd4b99af0d8330f01b4f21713b236

@@ -11,16 +11,6 @@ export const navList = [
     text: "Về chúng tôi",
   },
   {
-    id: 6,
-    path: "/service",
-    text: "Dịch vụ",
-  },
-  {
-    id: 3,
-    path: "/browse-all-restaurants",
-    text: "Nhà hàng",
-  },
-  {
     id: 4,
     path: "/browse-all-rooms",
     text: "Danh sách phòng",
@@ -30,6 +20,17 @@ export const navList = [
     path: "/find-booking",
     text: "Tìm đơn đặt phòng",
   },
+  {
+    id: 6,
+    path: "/service",
+    text: "Dịch vụ",
+  },
+  {
+    id: 3,
+    path: "/browse-all-restaurants",
+    text: "Nhà hàng",
+  },
+ 
   {
     id: 6,
     path: "/events",
