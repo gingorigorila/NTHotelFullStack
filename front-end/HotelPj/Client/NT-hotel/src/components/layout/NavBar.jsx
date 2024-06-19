@@ -119,6 +119,9 @@ const NavBar = () => {
 									<Link className="dropdown-item" to={"/login"}>
 										Đăng nhập
 									</Link>
+                  <Link className="dropdown-item" to={"/dashboard"}>
+										DB
+									</Link>
 								</li>
                   </li>
                   

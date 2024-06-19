@@ -28,6 +28,7 @@ import RestaurantListing from "./components/restaurant/RestaurantListing";
 import CheckOutRestaurant from "./components/orders/CheckOutRestaurant";
 import Orders from "./components/orders/Orders";
 import About from "./components/auth/About";
+import DashBoard from "./components/dashboard/DashBoard";
 import ExsistingUsers from "../user/ExsistingUsers";
 import AssignRoleUser from "../user/AssignRoleUser";
 
@@ -35,6 +36,9 @@ import Events from "./components/events/Event";
 import EventDetails from "./components/events/EventDetails";
 
 import Service from "./components/auth/Service";
+import RoomImgs from "./components/room/RoomImgs";
+import AddRoomImg from "./components/room/AddRoomImg";
+
 
 function App() {
   return (
@@ -50,10 +54,9 @@ function App() {
           <Route path="/all-restaurants" element={<Restaurants />} />
           <Route path="/add-restaurant" element={<AddRestaurant />} />
           <Route path="/existing-users" element={<ExsistingUsers />} />
-
           <Route path="/events" element={<Events />} />
           <Route path="/event-details" element={<EventDetails />} />
-
+          <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/service" element={<Service />} />
 
           <Route
@@ -81,6 +84,8 @@ function App() {
               </RequireAuth>
             }
           />
+          <Route path="/add-roomImg/:roomId" element={<AddRoomImg />} />
+          <Route path="/all-roomImg-by-room/:roomId" element={<RoomImgs />} />
           <Route path="/browse-all-rooms" element={<RoomListing />} />
           <Route
             path="/browse-all-restaurants"

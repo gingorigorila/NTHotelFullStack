@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="91836002-0dc8-4c36-8637-a9a6db2bd1d4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/LakesideHotelApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/controller/BookingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/controller/BookingRestaurantController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/controller/RestaurantController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/controller/RoleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/controller/RoomController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/exception/InternalServerException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/exception/InvalidBookingRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/exception/PhotoRetrievalException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/exception/RoleAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/exception/UserAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/model/BookedRestaurant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/model/BookedRoom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/model/Restaurant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/model/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/model/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/repository/BookingRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/repository/BookingRestaurantRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/repository/RestaurantRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/repository/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/repository/RoomRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/request/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/response/BookingResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/response/BookingRestaurantResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/response/JwtResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/response/RestaurantResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/response/RoomResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/security/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/security/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/security/jwt/AuthTokenFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/security/jwt/JwtAuthEntryPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/security/jwt/JwtUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/security/user/HotelUserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/security/user/HotelUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/BookingRestaurantService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/BookingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/IBookingRestaurantService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/IBookingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/IRestaurantService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/IRoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/IRoomService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/IUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/RestaurantService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/RoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/RoomService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/java/com/tuaminh/lakesidehotel/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/lakeside-hotel/src/test/java/com/tuaminh/lakesidehotel/LakesideHotelApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/auth/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/auth/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/common/RoomCarousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/common/RoomCarousel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/room/AddRoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/room/AddRoom.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/room/EditRoom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/room/EditRoom.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/ultils/ApiFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/HotelPj/Client/lakeSide-hotel/src/components/ultils/ApiFunctions.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2hluN7pwajqOMTcWJ5ufYxU08uj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91836002-0dc8-4c36-8637-a9a6db2bd1d4" name="Changes" comment="" />
+      <created>1718180943849</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718180943849</updated>
+    </task>
+    <servers />
+  </component>
+</project>

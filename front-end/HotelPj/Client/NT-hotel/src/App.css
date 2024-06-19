@@ -196,3 +196,40 @@ button:disabled {
     right: 10px;
   }
 }
+.DashBoard {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row; /* Đảm bảo các thành phần nằm ngang */
+}
+
+.sidebar1 {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  height: 100vh;
+}
+
+.sidebar1 h2 {
+  color: #fff;
+}
+
+.sidebar1 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar1 ul li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar1 ul li:hover {
+  background-color: #575757;
+}
+
+.main-content1 {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4; /* Màu nền cho phần nội dung chính */
+}

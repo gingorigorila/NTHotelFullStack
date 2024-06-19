@@ -112,9 +112,7 @@ const CheckOutRestaurant = () => {
           </div>
         </div>
       </section>
-      <div className="container">
-        <RoomCarousel />
-      </div>
+     
     </div>
   );
 };
