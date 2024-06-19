@@ -678,12 +678,40 @@ h3 {
   .cuisine-content-item{
     padding:24px;
     background-color: #fff;
-  }
+  border-right: 1px solid #d6cec5;
+  border-left: 1px solid #d6cec5;
+
+}
 .cuisine-content-items-description{
   font-family: 'Roboto', sans-serif;
   line-height: 1.4;
   color: #54534a;
   text-align: left;
+}
+.cuisine-options-button {
+  width: 44%;
+  padding: 25px 25px 25px 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cuisine-options-button .options-button {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cuisine-options-button .cuisine-details-button {
+  padding: 16px 8px;
+  background-color: #c8ba8c;
+  text-transform: uppercase;
+  color: #fff;
+  flex-grow: 1;
+  text-align: center;
+  text-decoration: none;
 }
 .cuisine-footer-content{
   padding-top: 40px;
@@ -750,4 +778,92 @@ h3 {
   transition: all 0.3s ease-in;
   width: 100%;
   opacity: 1;
+}
+.cuisine-content-top{
+  position: relative;
+  top: -45px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  padding: 40px 15px 0px;
+  text-align: center;
+  z-index: 6;
+  width: 80%;
+  margin: auto;
+}
+.cuisine-content-top h1{
+  font-size: 30px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #232530;
+  font-family: 'SVN-New-Baskerville';
+  max-width: 700px;
+  margin: 0 auto;
+}
+.cuisine-content-top p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.dining-offer-container{
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  color: #54534a;
+  overflow-x: hidden;
+  width:100%;
+}
+.dining-offer-wrapper{
+  display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: left;
+}
+.dining-offer-items{
+  margin-left: 0;
+  margin-right: 0;
+  width: 30%;
+  margin-right: 1.59%;
+  margin-bottom: 60px;
+  padding: 25px 20px 0;
+  background-color: #e6e6e6;
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+}
+.dining-offer-items .dining-offer-header{
+  font-family: 'SVN-New-Baskerville';
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+.dining-offer-items .dining-offer-description{
+  height: 100%;
+  font-size: 13px;
+  text-align: left;
 }
