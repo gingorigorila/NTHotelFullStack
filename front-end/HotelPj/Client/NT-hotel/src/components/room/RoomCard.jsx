@@ -25,8 +25,9 @@ const RoomCard = ({ key, room }) => {
           </div>
           <div className="flex-grow-1 ml-3 px-5">
             <Card.Title className="hotel-color">{room.roomType}</Card.Title>
-
+            <Card.Text>Số lượng người ở:{room.maxPeople}</Card.Text>
             <Card.Text> ⭐ ⭐ ⭐ ⭐ ⭐</Card.Text>
+            
             <ul className="list-unstyled sv-list">
               <li>
                 <FaWifi />

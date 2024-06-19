@@ -23,7 +23,8 @@ const FindBooking = () => {
     guestEmail: "",
     numOfAdults: "",
     numOfChildren: "",
-    totalNumOfGuests: ""
+    totalNumOfGuests: "",
+    bookingStatus:"",
   });
   const clearBookingInfo = {
     id: "",
@@ -37,6 +38,7 @@ const FindBooking = () => {
     numOfAdults: "",
     numOfChildren: "",
     totalNumOfGuest: "",
+    bookingStatus:"",
   };
   const handleInputChange = (e) => {
     setConfirmationCode(e.target.value);
@@ -116,7 +118,7 @@ const FindBooking = () => {
             <p>Số người lớn: {bookingInfo.numOfAdults}</p>
             <p>Số trẻ em: {bookingInfo.numOfChildren}</p>
             <p>Tổng số lượng khách: {bookingInfo.totalNumOfGuest}</p>
-
+            <p>Tinh trang don dat: {bookingInfo.bookingStatus}</p>
             { !isDeleted && (
                 <button
                   className="btn btn-danger"

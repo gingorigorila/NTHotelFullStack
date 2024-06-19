@@ -22,6 +22,7 @@ const BookingForm = () => {
     checkOutDate: "",
     numOfAdults: "",
     numOfChildren: "",
+    bookingStatus:"Chưa thanh toán"
   });
   const [roomInfo, setRoomInfo] = useState({
     photo: "",
@@ -197,6 +198,7 @@ const BookingForm = () => {
                     <div className="col-6">
                       <Form.Label htmlFor="numOfChildren">Trẻ em</Form.Label>
                       <FormControl
+
                         type="number"
                         id="numOfChildren"
                         name="numOfChildren"

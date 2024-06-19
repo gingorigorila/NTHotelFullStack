@@ -56,14 +56,19 @@ const CheckOut = () => {
                   <tbody>
                     <tr>
                       <th>Kiểu phòng</th>
-                      <th>{roomInfo.roomType}</th>
+                      <td>{roomInfo.roomType}</td>
                     </tr>
                     <tr>
                       <th>Giá phòng</th>
-                      <th>{roomInfo.roomPrice}đ/đêm</th>
+                      <td>{roomInfo.roomPrice}đ/đêm</td>
                     </tr>
                     <tr>
-                    <th>Dịch vụ</th>
+                      <th>Giá phòng</th>
+                      <td>{roomInfo.roomPrice}đ/đêm</td>
+                    </tr>
+                    <tr>
+                    
+                    <tr>Dịch vụ</tr>
                       <td>
                         <ul className="list-unstyled sv-list">
                           <li>
@@ -84,6 +89,11 @@ const CheckOut = () => {
                           </li>
                         </ul>
                       </td>
+
+                    </tr>
+                    <tr>
+                    <th>Mo ta</th>
+                    <td>{roomInfo.roomDescription}</td>
                     </tr>
                   </tbody>
                 </table>

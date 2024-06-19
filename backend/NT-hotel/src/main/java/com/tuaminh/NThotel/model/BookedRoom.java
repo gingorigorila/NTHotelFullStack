@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.web.WebProperties;
+
 
 import java.time.LocalDate;
 @Entity
@@ -39,6 +39,7 @@ public class BookedRoom {
 
     @Column(name = "total_guest")
     private int totalNumOfGuest;
+    
 
     @Column(name = "confirmation_Code")
     private String bookingConfimationCode;
