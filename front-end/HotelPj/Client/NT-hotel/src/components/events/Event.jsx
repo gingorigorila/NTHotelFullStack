@@ -6,7 +6,7 @@ const Events = () => {
   const data = [
     {
       urlImage: "https://www.caravellehotel.com/wp-content/uploads/web1-2.jpg",
-      header: "Tiệc cuối năm tại Caravelle",
+      header: "Tiệc cuối năm tại Nha Trang ",
       description:
         "Trải nghiệm không trang nhã và ấm cúng thích hợp cho bữa tiệc cuối năm của bạn.",
     },
@@ -19,7 +19,7 @@ const Events = () => {
     },
     {
       urlImage: "https://www.caravellehotel.com/wp-content/uploads/web3-3.jpg",
-      header: "TIỆC CƯỚI TẠI CARAVELLE",
+      header: "TIỆC CƯỚI TẠI Nha Trang ",
       description:
         "Tổ chức ngày trọng đại của đời bạn một cách hoàn hảo nhất với Caravelle Saigon",
     },
@@ -45,12 +45,12 @@ const Events = () => {
           alt="Event 1"
           style={{ width: "100%" }}
         />
-        <h2 className="events-header">Sự kiện tại Khách sạn Caravelle</h2>
+        <h2 className="events-header">Sự kiện tại Khách sạn Nha Trang </h2>
         <p className="events-header-description">
           Mười không gian tổ chức sự kiện của chúng tôi có thiết bị AV hiện đại
-          và lối trang trí bắt mắt, khiến Caravelle Sài Gòn trở thành địa điểm
+          và lối trang trí bắt mắt, khiến Nha Trang  trở thành địa điểm
           hàng đầu trong thành phố để tổ chức đám cưới, hội họp, hội nghị, sự
-          kiện và dạ tiệc. Tâm điểm của tầng sự kiện Caravelle Sài Gòn là Phòng
+          kiện và dạ tiệc. Tâm điểm của tầng sự kiện Nha Trang là Phòng
           khiêu vũ Caravelle có diện tích sàn 300m2 với chiều cao trần 4,7m.
           Phòng khiêu vũ có thể được bố trí thành nhiều cấu hình khác nhau tùy
           theo dịp và có thể phục vụ tối đa 400 người. Nó cũng có thể được chia
@@ -117,7 +117,7 @@ const Events = () => {
           <div>Bạn đang lên kế hoạch cho một sự kiện...</div>
           <p>
             Để biết thêm thông tin, vui lòng liên hệ Bộ phận Sự kiện theo số
-            (84) 2838 234 999 hoặc email: events@caravellehotel.com
+            (84) 2838 234 999 hoặc email: events@NThotel.com
           </p>
         </div>
       </div>

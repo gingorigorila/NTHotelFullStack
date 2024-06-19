@@ -31,9 +31,12 @@ public class Room {
 
     @OneToMany(mappedBy="room", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<BookedRoom> bookings;
+    @OneToMany(mappedBy="room", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<RoomImages> roomImages;
 
     public Room() {
         this.bookings = new ArrayList<>();
+        this.roomImages=new ArrayList<>();
     }
     public void addBooking(BookedRoom booking){
         if (bookings == null){
@@ -46,6 +49,13 @@ public class Room {
         booking.setBookingConfirmationCode(bookingCode);
     }
 
+   public void addRoomImages(RoomImages roomImage){
+        if (roomImages == null){
+           roomImages = new ArrayList<>();
+        }
+        roomImages.add(roomImage);
+        roomImage.setRoom(this);
 
+   }
 
 }

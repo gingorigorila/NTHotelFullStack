@@ -32,6 +32,7 @@ public class BookingResponse {
 
     private int totalNumOfGuest;
 
+
     private String bookingConfirmationCode;
 
     private RoomResponse room ;

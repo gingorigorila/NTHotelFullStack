@@ -1,10 +1,6 @@
 package com.tuaminh.NThotel.service;
 
-//import com.tuaminh.lakesidehotel.exception.InvalidBookingRequest;
-//import com.tuaminh.lakesidehotel.exception.ResourceNotFoundException;
-//import com.tuaminh.lakesidehotel.model.BookedRoom;
-//import com.tuaminh.lakesidehotel.model.Room;
-//import com.tuaminh.lakesidehotel.repository.BookingRepository;
+
 import com.tuaminh.NThotel.exception.InvalidBookingRequest;
 import com.tuaminh.NThotel.exception.ResourceNotFoundException;
 import com.tuaminh.NThotel.model.BookedRoom;

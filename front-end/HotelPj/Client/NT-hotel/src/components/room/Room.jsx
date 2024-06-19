@@ -21,6 +21,7 @@ const Room = () => {
     getAllRoom()
       .then((data) => {
         setData(data);
+        console.log(data)
         setFilteredData(data);
         setIsLoading(false);
       })

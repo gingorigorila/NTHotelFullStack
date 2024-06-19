@@ -6,9 +6,12 @@ import com.tuaminh.NThotel.exception.PhotoRetrievalException;
 import com.tuaminh.NThotel.exception.ResourceNotFoundException;
 import com.tuaminh.NThotel.model.BookedRoom;
 import com.tuaminh.NThotel.model.Room;
+import com.tuaminh.NThotel.model.RoomImages;
 import com.tuaminh.NThotel.response.BookingResponse;
+import com.tuaminh.NThotel.response.RoomImgResponse;
 import com.tuaminh.NThotel.response.RoomResponse;
 import com.tuaminh.NThotel.service.BookingService;
+import com.tuaminh.NThotel.service.IRoomImgService;
 import com.tuaminh.NThotel.service.IRoomService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +40,7 @@ import java.util.Optional;
 public class RoomController {
     private final IRoomService roomService;
     private final BookingService bookingService;
-
+    private final IRoomImgService roomImgService;
     @PostMapping("/add/new-room")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<RoomResponse> addNewRoom(
@@ -105,11 +108,22 @@ public ResponseEntity<Void> deleteRoom(@PathVariable Long roomId){
 
     private RoomResponse getRoomResponse(Room room) {
         List<BookedRoom> bookings = getAllBookingsByRoomId(room.getId());
+        List<RoomImages> roomImages = getAllImgByRoomId(room.getId());
         List<BookingResponse> bookingInfo = bookings
                 .stream()
                 .map(booking -> new BookingResponse(booking.getBookingId(),
                         booking.getCheckInDate(),
                         booking.getCheckOutDate(), booking.getBookingConfirmationCode())).toList();
+        List<RoomImgResponse> roomImgInfo = roomImages
+                .stream()
+                .map(roomImage -> {
+                    try {
+                        return new RoomImgResponse(roomImage.getRoomImgId(),
+                                Base64.encodeBase64String(roomImage.getRoomPhoto().getBytes(1,(int) roomImage.getRoomPhoto().length())).getBytes());
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }).toList();
         byte[] photoBytes = null;
         Blob photoBlob = room.getPhoto();
         if (photoBlob != null) {
@@ -121,13 +135,15 @@ public ResponseEntity<Void> deleteRoom(@PathVariable Long roomId){
         }
         return new RoomResponse(room.getId(),
                 room.getRoomType(), room.getRoomPrice(),
-                room.isBooked(), photoBytes, room.getMaxPeople(), room.getRoomDescription(), bookingInfo);
+                room.isBooked(), photoBytes, room.getMaxPeople(), room.getRoomDescription(), bookingInfo,roomImgInfo);
     }
 
     private List<BookedRoom> getAllBookingsByRoomId(Long roomId) {
         return bookingService.getAllBookingsByRoomId(roomId);
     }
-
+   private List<RoomImages> getAllImgByRoomId(Long roomId){
+        return roomImgService.getAllImgsByRoomId(roomId);
+   }
     @GetMapping("/available-rooms")
     public ResponseEntity<List<RoomResponse>> getAvailableRooms(
             @RequestParam("checkInDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)LocalDate checkInDate,

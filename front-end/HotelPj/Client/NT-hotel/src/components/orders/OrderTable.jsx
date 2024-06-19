@@ -31,14 +31,14 @@ const OrderTable = ({ orderInfo, handleCancellationOrder }) => {
         <thead>
           <tr>
             <th>Mã đơn</th>
-            <th>Mã nha hang</th>
-            <th>Ngày dat</th>
-            <th>Gio dat</th>
+            <th>Mã nhà hàng</th>
+            <th>Ngày đặt</th>
+            <th>Giờ đặt</th>
             <th>Tên người đặt</th>
             <th>Email</th>
             <th>So dien thoai</th>
             <th>Số lượng khach</th>
-            <th>Yeu cau</th>
+            <th>Yêu cầu</th>
             <th colSpan={2}>Actions</th>
           </tr>
         </thead>
@@ -46,8 +46,8 @@ const OrderTable = ({ orderInfo, handleCancellationOrder }) => {
           {filteredBookings.map((booking, index) => (
             <tr key={booking.id}>
               <td>{index + 1}</td>
-              <td>{booking.id}</td>
-              <td>{booking.restaurant.id}</td>
+              
+              <td>{booking.restaurant.restaurantName}</td>
               <td>{booking.bookingDate}</td>
               <td>{booking.bookingTime}</td>
               <td>{booking.guestFullName}</td>

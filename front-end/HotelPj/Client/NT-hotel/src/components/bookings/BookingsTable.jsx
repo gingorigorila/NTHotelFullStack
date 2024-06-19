@@ -16,7 +16,6 @@ const BookingsTable = ({ bookingInfo, handleCancellationBooking }) => {
         const formattedCheckOutDate = `${booking.checkOutDate[0]}-0${booking.checkOutDate[1]}-${booking.checkOutDate[2]}`;
         const bookingStartDate = parseISO(formattedCheckInDate);
         const bookingEndDate = parseISO(formattedCheckOutDate);
-        console.log(bookingStartDate)
         return (
           bookingStartDate >= startDate &&
           bookingEndDate <= endDate &&
@@ -41,7 +40,7 @@ const BookingsTable = ({ bookingInfo, handleCancellationBooking }) => {
           <tr>
             <th>S/N</th>
             <th>Mã đơn</th>
-            <th>Mã phòng</th>
+            <th>Tên phòng</th>
             <th>Ngày bắt đầu</th>
             <th>Ngày kết thúc</th>
             <th>Tên người đặt</th>
@@ -49,6 +48,7 @@ const BookingsTable = ({ bookingInfo, handleCancellationBooking }) => {
             <th>Người lớn</th>
             <th>Trẻ em</th>
             <th>Số lượng người ở</th>
+            <th>Tình trạng</th>
             <th>Mã xác nhận</th>
             <th colSpan={2}>Actions</th>
           </tr>
@@ -58,14 +58,15 @@ const BookingsTable = ({ bookingInfo, handleCancellationBooking }) => {
             <tr key={booking.id}>
               <td>{index + 1}</td>
               <td>{booking.id}</td>
-              <td>{booking.room.id}</td>
+              <td>{booking.room.roomType}</td>
               <td>{booking.checkInDate}</td>
               <td>{booking.checkOutDate}</td>
-              <td>{booking.guestName}</td>
+              <td>{booking.guestFullName}</td>
               <td>{booking.guestEmail}</td>
               <td>{booking.numOfAdults}</td>
               <td>{booking.numOfChildren}</td>
-              <td>{booking.totalNumOfGuests}</td>
+              <td>{booking.totalNumOfGuest}</td>
+              <td>{booking.bookingStatus}</td>
               <td>{booking.bookingConfirmationCode}</td>
               <td>
                 <button

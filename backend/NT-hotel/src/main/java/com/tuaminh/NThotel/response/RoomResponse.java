@@ -1,5 +1,6 @@
 package com.tuaminh.NThotel.response;
 
+import com.tuaminh.NThotel.model.RoomImages;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -19,6 +20,7 @@ public class RoomResponse {
     private boolean isBooked;
     private String photo;
     private List<BookingResponse>bookings;
+    private List<RoomImgResponse>roomImgs;
 
     public RoomResponse(Long id, String roomType, BigDecimal roomPrice,Long maxPeople,String roomDescription) {
         this.id = id;
@@ -29,7 +31,7 @@ public class RoomResponse {
     }
 
     public RoomResponse(Long id, String roomType, BigDecimal roomPrice, boolean isBooked,
-                        byte[] photoBytes,Long maxPeople,String roomDescription, List<BookingResponse> bookings) {
+                        byte[] photoBytes,Long maxPeople,String roomDescription, List<BookingResponse> bookings,List<RoomImgResponse>roomImgs) {
         this.id = id;
         this.roomType = roomType;
         this.roomPrice = roomPrice;
@@ -38,6 +40,7 @@ public class RoomResponse {
         this.maxPeople=maxPeople;
         this.roomDescription=roomDescription;
         this.bookings = bookings;
+        this.roomImgs= roomImgs;
 
     }
 
