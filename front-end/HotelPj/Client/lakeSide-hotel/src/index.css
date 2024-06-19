@@ -625,7 +625,13 @@ h3 {
 .input-form {
   align-items: center;
   justify-content: center;
+  display: flex;
+  margin-left: 3rem;
+
+
 }
+
+
 
 .sv-list {
   display: flex;
@@ -634,5 +640,31 @@ h3 {
   font-family: "Abril Fatface", serif;
   font-style: italic;
   gap: 10px;
+}
+
+
+.room-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+.table {
+  width: 50%;
+  background-color: red;
+  margin-left: 20rem;
+}
+
+.book-room {
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+.sup-img {
+  display: flex;
+  width: 20%;
+  gap: 5px;
 }
 

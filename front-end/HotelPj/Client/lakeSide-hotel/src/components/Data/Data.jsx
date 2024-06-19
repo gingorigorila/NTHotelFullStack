@@ -60,31 +60,31 @@ export const team = [
     image:
       "src/assets/MemberImg/21730979_496584560703069_1924354470749651213_n.jpg",
     name: "Nguyễn Hoàng Phú Sỹ",
-    designation: "Designation",
+    designation: "20520739",
   },
   {
     image:
       "src/assets/MemberImg/28872187_549397685417802_6967868415172149248_n.jpg",
     name: "Lê Đình Tuấn Kiệt",
-    designation: "Designation",
+    designation: "20521498",
   },
   {
     image:
       "src/assets/MemberImg/117931385_958335134590076_8288883146676163910_n.jpg",
     name: "Huỳnh Tuấn Minh",
-    designation: "Designation",
+    designation: "20521598",
   },
   {
     image:
       "src/assets/MemberImg/361596084_2007341862968609_580714709451258949_n.jpg",
-    name: "Phạm Thế Sơn",
-    designation: "Designation",
+    name: "Trần Thanh Sơn",
+    designation: "21522557",
   },
   {
     image:
       "src/assets/MemberImg/438300462_1002592557889619_8376318296925496494_n.jpg",
     name: "Thới Đức Luận",
-    designation: "Designation",
+    designation: "20521586",
   },
 ];
 export const carouselData = [
