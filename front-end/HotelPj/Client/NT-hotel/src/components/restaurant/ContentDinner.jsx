@@ -37,7 +37,7 @@ const ContentCard = ({ key, restaurant }) => {
               <a href={`/order-restaurant/${restaurant.id}`} className="cuisine-details-button">Đặt bàn</a>
             </div>
             <div className="options-button">
-              <a className="cuisine-details-button">Xem chi tiết</a>
+              <a href={`/restaurant-details/${restaurant.id}`} className="cuisine-details-button">Xem chi tiết</a>
             </div>
           </div>
         </div>
@@ -45,10 +45,10 @@ const ContentCard = ({ key, restaurant }) => {
         <div className="cuisine-content-items">
           <div className="cuisine-options-button">
             <div className="options-button">
-              <a className="cuisine-details-button">Đặt bàn</a>
+              <a href={`/order-restaurant/${restaurant.id}`} className="cuisine-details-button">Đặt bàn</a>
             </div>
             <div className="options-button">
-              <a className="cuisine-details-button">Xem chi tiết</a>
+              <a href={`/restaurant-details/${restaurant.id}`} className="cuisine-details-button">Xem chi tiết</a>
             </div>
           </div>
 

@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import generatePDF from 'react-to-pdf';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -43,23 +44,31 @@ const MainContent = () => {
       },
     },
   };
-
+  const targetRef = useRef();
   return (
-    <div className="main-content1">
+    
+    <div className="main-content1" ref={targetRef}>
       <h2>Doanh Thu</h2>
       <Line data={data} options={options} />
       <hr />
-      <h1>Hãy điền tổng doanh thu ở đây</h1>
+      <button onClick={() => generatePDF(targetRef, { filename: "page.pdf" })}>
+        Download PDF
+      </button>
     </div>
   );
 };
 
 function DashBoard() {
+  
   return (
-    <div className="DashBoard">
+    <>
+    <div className="DashBoard" >
       <Sidebar />
       <MainContent />
+      
     </div>
+    
+      </>
   );
 }
 

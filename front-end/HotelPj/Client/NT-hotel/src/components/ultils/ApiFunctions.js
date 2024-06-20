@@ -284,6 +284,17 @@ export async function getRestaurantById(restaurantId) {
     throw new Error("Loi truy xuat thong tin nha hang");
   }
 }
+//Ham lay menu cua tung nha hang theo id
+export async function displayMenuByRetaurantId(restaurantId) {
+  try {
+    const result = await api.get(`/restaurantMenu/restaurant/${restaurantId}`, {
+      headers: getHeader(),
+    });
+    return result.data;
+  } catch (e) {
+    throw new Error("Loi truy xuat anh cua phong");
+  }
+}
 //Hàm lưu đơn đặt bàn đến database
 export async function bookRestaurant(restaurantId, booking) {
   try {
@@ -414,7 +425,9 @@ export async function getBookingsByUserId(email) {
 
 //Ham lay toan bo nguoi dung
 export async function getAllUsers() {
-  const response = await api.get("users/all-users");
+  const response = await api.get("users/all-users", {
+    headers: getHeader(),
+  });
   return response.data;
 }
 

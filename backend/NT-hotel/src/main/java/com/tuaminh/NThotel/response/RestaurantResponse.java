@@ -32,6 +32,7 @@ public class RestaurantResponse {
         this.description = description;
     }
 
+
     public RestaurantResponse(Long id, String restaurantName, String restaurantType, String location, String hours, String email, String telePhone, String description, byte[] photoBytes,List<BookingRestaurantResponse> bookings,List<RestaurantMenuResponse> restaurantMenus) {
         this.id = id;
         this.restaurantName = restaurantName;

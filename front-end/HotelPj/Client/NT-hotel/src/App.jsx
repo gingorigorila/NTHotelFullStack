@@ -59,7 +59,7 @@ function App() {
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/service" element={<Service />} />
           <Route path="/cuisine" element={<Cuisine />} />
-          <Route path="/cuisine-details/:id" element={<CuisineDetails />} />
+          
 
           <Route
             path="/existing-users/assignRole/:userId"
@@ -86,6 +86,7 @@ function App() {
               </RequireAuth>
             }
           />
+          <Route path="/restaurant-details/:restaurantId" element={<CuisineDetails />} />
           <Route path="/add-roomImg/:roomId" element={<AddRoomImg />} />
           <Route path="/all-roomImg-by-room/:roomId" element={<RoomImgs />} />
           <Route path="/browse-all-rooms" element={<RoomListing />} />

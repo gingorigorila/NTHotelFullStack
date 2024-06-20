@@ -44,7 +44,7 @@ const CheckOut = () => {
             ) : errMsg ? (
               <p>{errMsg}</p>
             ) : (
-              <div >
+              <div>
                 <img
                   alt="Room photo"
                   src={`data:image/png;base64,${roomInfo.photo}`}
@@ -63,19 +63,17 @@ const CheckOut = () => {
                     className="room-photo"
                   />
 
-<img
+                  <img
                     alt="Room photo"
                     src={`data:image/png;base64,${roomInfo.photo}`}
                     className="room-photo"
                   />
 
-<img
+                  <img
                     alt="Room photo"
                     src={`data:image/png;base64,${roomInfo.photo}`}
                     className="room-photo"
                   />
-
-
                 </div>
               </div>
             )}
@@ -87,7 +85,7 @@ const CheckOut = () => {
         <div className="row flex-column align-items-center">
           <div className="col-md-12 mt-5 mb-5">
             {!isLoading && !errMsg && (
-              <table className="table table-bordered">
+              <table className="table1 table-bordered">
                 <tbody>
                   <tr>
                     <th>Kiểu phòng</th>
@@ -127,7 +125,7 @@ const CheckOut = () => {
         </div>
       </section>
       <div className="container">
-      <CommentForm /> {/* Add CommentForm component */}
+        <CommentForm /> {/* Add CommentForm component */}
       </div>
       <div className="container">
         <RoomCarousel />
@@ -135,8 +133,7 @@ const CheckOut = () => {
       <button onClick={() => generatePDF(targetRef, { filename: "page.pdf" })}>
         Download PDF
       </button>
-     </div>
-    
+    </div>
   );
 };
 

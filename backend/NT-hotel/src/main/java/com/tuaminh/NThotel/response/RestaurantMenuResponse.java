@@ -20,4 +20,11 @@ public class RestaurantMenuResponse {
         this.menuItemDescription=menuItemDescription;
         this.menuItemPhoto=photoBytes != null ? Base64.encodeBase64String(photoBytes) : null;
     }
+
+
+    public RestaurantMenuResponse(Long id, String menuItemName, String menuItemDescription) {
+        this.id=id;
+        this.menuItemName=menuItemName;
+        this.menuItemDescription=menuItemDescription;
+    }
 }
