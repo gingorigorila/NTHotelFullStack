@@ -30,9 +30,12 @@ public class Restaurant {
 
     @OneToMany(mappedBy="restaurant", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<BookedRestaurant> bookings;
+    @OneToMany(mappedBy="restaurant", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<RestaurantMenu> restaurantMenus;
 
     public Restaurant() {
         this.bookings = new ArrayList<>();
+        this.restaurantMenus=new ArrayList<>();
     }
     public void addBooking(BookedRestaurant booking){
         if (bookings == null){
@@ -43,6 +46,11 @@ public class Restaurant {
         String bookingCode = RandomStringUtils.randomNumeric(10);
         booking.setBookingConfirmationCode(bookingCode);
     }
-
-
+    public void addRestaurantMenus(RestaurantMenu restaurantMenu){
+        if(restaurantMenus == null){
+            restaurantMenus = new ArrayList<>();
+        }
+        restaurantMenus.add(restaurantMenu);
+        restaurantMenu.setRestaurant(this);
+    }
 }

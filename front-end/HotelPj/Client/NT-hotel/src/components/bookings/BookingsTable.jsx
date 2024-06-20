@@ -48,6 +48,7 @@ const BookingsTable = ({ bookingInfo, handleCancellationBooking }) => {
             <th>Người lớn</th>
             <th>Trẻ em</th>
             <th>Số lượng người ở</th>
+            <th>Tổng tiền</th>
             <th>Tình trạng</th>
             <th>Mã xác nhận</th>
             <th colSpan={2}>Actions</th>

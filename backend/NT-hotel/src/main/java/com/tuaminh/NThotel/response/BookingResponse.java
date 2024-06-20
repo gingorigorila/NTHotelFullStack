@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 @Data
@@ -34,14 +35,16 @@ public class BookingResponse {
 
 
     private String bookingConfirmationCode;
+    private BigDecimal orderPrice;
 
     private RoomResponse room ;
 
     public BookingResponse(Long id, LocalDate checkInDate, LocalDate checkOutDate,
-                           String bookingConfirmationCode) {
+                           String bookingConfirmationCode,BigDecimal orderPrice) {
         this.id = id;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.bookingConfirmationCode = bookingConfirmationCode;
+        this.orderPrice=orderPrice;
     }
 }

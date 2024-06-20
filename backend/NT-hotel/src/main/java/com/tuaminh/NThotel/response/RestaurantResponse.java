@@ -19,7 +19,7 @@ public class RestaurantResponse {
     private String description;
     private String photo;
     private List<BookingRestaurantResponse> bookings;
-
+    private List<RestaurantMenuResponse> restaurantMenus;
 
     public RestaurantResponse(Long id, String restaurantName, String restaurantType, String location, String hours, String email, String telePhone, String description) {
         this.id = id;
@@ -32,7 +32,7 @@ public class RestaurantResponse {
         this.description = description;
     }
 
-    public RestaurantResponse(Long id, String restaurantName, String restaurantType, String location, String hours, String email, String telePhone, String description, byte[] photoBytes) {
+    public RestaurantResponse(Long id, String restaurantName, String restaurantType, String location, String hours, String email, String telePhone, String description, byte[] photoBytes,List<BookingRestaurantResponse> bookings,List<RestaurantMenuResponse> restaurantMenus) {
         this.id = id;
         this.restaurantName = restaurantName;
         this.restaurantType = restaurantType;
@@ -42,7 +42,8 @@ public class RestaurantResponse {
         this.telePhone = telePhone;
         this.description = description;
         this.photo = photoBytes != null ? Base64.encodeBase64String(photoBytes) : null;
-//        this.bookings = bookings;
+        this.bookings = bookings;
+        this.restaurantMenus=restaurantMenus;
     }
 
 

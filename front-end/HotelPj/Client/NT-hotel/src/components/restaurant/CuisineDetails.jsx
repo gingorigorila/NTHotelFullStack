@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useLocation, useParams } from "react-router-dom";
 const CuisineDetails = () => {
@@ -22,9 +23,9 @@ const CuisineDetails = () => {
           <p>{state.description}</p>
           <p>&nbsp;</p>
           <p>
-            <span class="address-email">dine@icsaigon.com</span>{" "}
-            <span class="address-phone">(028) 3520 9999</span>&nbsp;Tầng Trệt
-            <span class="address-location">
+            <span className="address-email">dine@icsaigon.com</span>{" "}
+            <span className="address-phone">(028) 3520 9999</span>&nbsp;Tầng Trệt
+            <span className="address-location">
               , InterContinental Saigon&nbsp;
             </span>
           </p>
@@ -53,7 +54,7 @@ const CuisineDetails = () => {
           <div className="options-button">
             <a
               className="cuisine-details-button"
-              onClick={() => handleViewDetails(content)}
+              // onClick={() => handleViewDetails(content)}
             >
               Đặt bàn
             </a>

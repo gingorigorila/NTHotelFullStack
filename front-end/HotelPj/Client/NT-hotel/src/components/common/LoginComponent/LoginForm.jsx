@@ -44,7 +44,6 @@ const LoginForm = ({ login, handleInputChange, handleSubmit }) => {
               placeholder="Password"
               required
             ></input>
-            <label htmlFor="password" className="form-label"></label>
           </div>
         </div>
         <CustomButton
@@ -53,7 +52,7 @@ const LoginForm = ({ login, handleInputChange, handleSubmit }) => {
         >
           Login
         </CustomButton>
-        <span style={{ marginLeft: "60px" }}>
+        <span style={{ marginLeft: "60px"}}>
           Chưa có tài khoản?<Link to={"/register"}> Đăng ký</Link>
         </span>
       </form>
