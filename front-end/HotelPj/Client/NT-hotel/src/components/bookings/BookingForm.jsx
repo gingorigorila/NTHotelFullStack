@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-unused-vars */
 import moment from "moment";
@@ -22,7 +23,7 @@ const BookingForm = () => {
     checkOutDate: "",
     numOfAdults: "",
     numOfChildren: "",
-    bookingStatus:"Chưa thanh toán"
+    orderPrice:"",
   });
   const [roomInfo, setRoomInfo] = useState({
     photo: "",
@@ -49,7 +50,9 @@ const BookingForm = () => {
     const checkOutDate = moment(booking.checkOutDate);
     const diffInDays = checkOutDate.diff(checkInDate, "days");
     const paymentPerDay = roomPrice ? roomPrice : 0;
-    return diffInDays * paymentPerDay;
+    const price = diffInDays*paymentPerDay;
+    booking.orderPrice=price;
+    return price;
   };
   const isGuestCountValid = () => {
     const adultCount = parseInt(booking.numOfAdults);
@@ -85,6 +88,7 @@ const BookingForm = () => {
   };
   const handleBooking = async () => {
     try {
+      
       const confirmationCode = await bookRoom(roomId, booking);
       console.log("booking:", booking);
       setIsSubmitted(true);
@@ -96,8 +100,8 @@ const BookingForm = () => {
   };
   useEffect(() => {
     getRoomPriceByRoomId(roomId);
-    console.log(roomPrice);
-  }, [roomId, roomPrice]);
+   
+  }, [roomId]);
   return (
     <>
       <div className="container mb-5">
@@ -209,6 +213,19 @@ const BookingForm = () => {
                     </div>
                   </div>
                 </fieldset>
+                <Form.Group>
+                  <Form.Label htmlFor="guestEmail">Tổng tiền</Form.Label>
+                  <FormControl
+                    required
+                    type="number"
+                    id="orderPrice"
+                    name="orderPrice"
+                    value={calculatePayment()}
+                    onChange={handleInputChange}
+                    
+                  />
+                  
+                </Form.Group>
                 <div className="form-group mt-2 mb-2">
                   <button type="submit" className="btn btn-hotel">
                     Tiếp theo

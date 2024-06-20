@@ -106,8 +106,10 @@ const ExsistingRooms = () => {
                   <th>ID</th>
                   <th>Kiểu phòng</th>
                   <th>Giá phòng</th>
+
                   <th>Sửa/Xóa</th>
                   <th>Them anh/Xem anh</th>
+
                 </tr>
               </thead>
               <tbody>

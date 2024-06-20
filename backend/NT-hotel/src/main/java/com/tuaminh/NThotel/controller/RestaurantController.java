@@ -6,9 +6,12 @@ import com.tuaminh.NThotel.exception.PhotoRetrievalException;
 import com.tuaminh.NThotel.exception.ResourceNotFoundException;
 import com.tuaminh.NThotel.model.BookedRestaurant;
 import com.tuaminh.NThotel.model.Restaurant;
+import com.tuaminh.NThotel.model.RestaurantMenu;
 import com.tuaminh.NThotel.response.BookingRestaurantResponse;
+import com.tuaminh.NThotel.response.RestaurantMenuResponse;
 import com.tuaminh.NThotel.response.RestaurantResponse;
 import com.tuaminh.NThotel.service.BookingRestaurantService;
+import com.tuaminh.NThotel.service.IRestaurantMenuService;
 import com.tuaminh.NThotel.service.IRestaurantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,7 +21,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -35,7 +37,7 @@ import java.util.Optional;
 public class RestaurantController {
     private final IRestaurantService restaurantService;
     private final BookingRestaurantService bookingRestaurantService;
-
+    private final IRestaurantMenuService restaurantMenuService;
     @PostMapping("/add/new-restaurant")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<RestaurantResponse> addNewRestaurant(
@@ -109,6 +111,7 @@ public class RestaurantController {
     }
     private RestaurantResponse getRestaurantResponse(Restaurant restaurant) {
         List<BookedRestaurant> bookings = getAllBookingsByRestaurantId(restaurant.getId());
+        List<RestaurantMenu> restaurantMenus = getMenusByRestaurantId(restaurant.getId());
         List<BookingRestaurantResponse> bookingInfo = bookings
                 .stream()
                 .map(booking->new BookingRestaurantResponse(
@@ -121,6 +124,18 @@ public class RestaurantController {
                         booking.getGuestTelephone(),
                         booking.getNumOfGuest(),
                         booking.getBookingConfirmationCode())).toList();
+        List<RestaurantMenuResponse> menuInfo = restaurantMenus
+                .stream()
+                .map(restaurantMenu -> {
+                    try {
+                        return new RestaurantMenuResponse(restaurantMenu.getId()
+                                ,restaurantMenu.getMenuItemName()
+                                ,restaurantMenu.getMenuItemDescription()
+                                ,Base64.encodeBase64String(restaurantMenu.getPhoto().getBytes(1,(int) restaurantMenu.getPhoto().length())).getBytes());
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }).toList();
         byte[] photoBytes = null;
         Blob photoBlob = restaurant.getPhoto();
         if (photoBlob !=null){
@@ -134,7 +149,11 @@ public class RestaurantController {
                 restaurant.getRestaurantName(), restaurant.getRestaurantType(),
                 restaurant.getLocation(), restaurant.getHours(),
                 restaurant.getEmail(), restaurant.getTelePhone(),
-                restaurant.getDescription(),photoBytes);
+                restaurant.getDescription(),photoBytes,bookingInfo,menuInfo);
+    }
+
+    private List<RestaurantMenu> getMenusByRestaurantId(Long id) {
+        return restaurantMenuService.getMenuByRestaurantId(id);
     }
 
     private List<BookedRestaurant> getAllBookingsByRestaurantId(Long restaurantId) {

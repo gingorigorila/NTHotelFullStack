@@ -113,7 +113,7 @@ public ResponseEntity<Void> deleteRoom(@PathVariable Long roomId){
                 .stream()
                 .map(booking -> new BookingResponse(booking.getBookingId(),
                         booking.getCheckInDate(),
-                        booking.getCheckOutDate(), booking.getBookingConfirmationCode())).toList();
+                        booking.getCheckOutDate(), booking.getBookingConfirmationCode(),booking.getOrderPrice())).toList();
         List<RoomImgResponse> roomImgInfo = roomImages
                 .stream()
                 .map(roomImage -> {

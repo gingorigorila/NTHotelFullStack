@@ -1,13 +1,5 @@
-// import React from 'react';
+/* eslint-disable no-unused-vars */
 
-
-// function App() {
-//   return (
-//     <h1>Doanh Thu</h1>
-//   );
-// }
-
-// export default App;
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';

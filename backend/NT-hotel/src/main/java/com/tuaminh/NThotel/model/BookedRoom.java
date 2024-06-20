@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 @Entity
 @Setter
@@ -43,6 +44,9 @@ public class BookedRoom {
 
     @Column(name = "confirmation_Code")
     private String bookingConfimationCode;
+
+    @Column(name = "order_Price")
+    private BigDecimal orderPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id")

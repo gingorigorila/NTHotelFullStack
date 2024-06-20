@@ -84,6 +84,6 @@ public class BookingController {
         return new BookingResponse(booking.getBookingId(), booking.getCheckInDate(),
                 booking.getCheckOutDate(),booking.getGuestFullName(),
                 booking.getGuestEmail(),booking.getNumOfAdults(),
-                booking.getNumOfChildren(),booking.getTotalNumOfGuest(), booking.getBookingConfirmationCode(), room);
+                booking.getNumOfChildren(),booking.getTotalNumOfGuest(), booking.getBookingConfirmationCode(),booking.getOrderPrice(), room);
     }
 }

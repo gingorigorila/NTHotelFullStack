@@ -37,6 +37,10 @@ const Admin = () => {
             Quản lý đơn đặt phòng
           </Link>
           <br />
+          <Link className="link-button" to={"/dashboard"}>
+            DB
+          </Link>
+          <br />
           <Link className="link-button" to={"/all-roomImgs"}>
             Quản lý hinh anh phong
           </Link>

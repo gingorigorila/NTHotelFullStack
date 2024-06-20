@@ -625,6 +625,8 @@ h3 {
 .input-form {
   align-items: center;
   justify-content: center;
+  display: flex;
+  margin-left: 3rem;
 }
 
 .sv-list {
@@ -636,7 +638,30 @@ h3 {
   gap: 10px;
 }
 
+.room-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
+
+.table {
+  width: 50%;
+  background-color: red;
+  margin-left: 20rem;
+}
+
+.book-room {
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+.sup-img {
+  display: flex;
+  width: 20%;
+  gap: 5px;
+}
 .cuisine-header{
   line-height: 1.4;
   color: #54534a;
