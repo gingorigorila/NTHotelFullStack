@@ -14,15 +14,24 @@ Cách chạy Pj:
 - Folder Frontend:
    Bật terminal và chạy npm i và npm run dev
 Giao diện:
-![Ảnh chụp màn hình (1866)](https://github.com/user-attachments/assets/121e7fbc-4c91-4def-b6c2-36b60ec572d1)
 
-
+- Trang đăng nhập:
+   ![Ảnh chụp màn hình (1866)](https://github.com/user-attachments/assets/121e7fbc-4c91-4def-b6c2-36b60ec572d1)
+- Trang chủ:
   ![Ảnh chụp màn hình (1868)](https://github.com/user-attachments/assets/9f099474-d516-4b5f-a7db-8fc06a784806)
-![Ảnh chụp màn hình (1870)](https://github.com/user-attachments/assets/92998a7f-44e4-4419-91c5-17ba43cf4284)
-![Ảnh chụp màn hình (1871)](https://github.com/user-attachments/assets/b689b0f4-f44e-4153-8fa5-5812cbe6f0ed)
-![Ảnh chụp màn hình (1872)](https://github.com/user-attachments/assets/2f61ec45-c80c-4c2f-ab23-7f5869051670)
-![Ảnh chụp màn hình (1873)](https://github.com/user-attachments/assets/37f0f861-fe1c-49b4-845d-951c922d8bd3)
-![Ảnh chụp màn hình (1874)](https://github.com/user-attachments/assets/8a216e4a-66df-4a6e-93fb-af4c421a272f)
-![Ảnh chụp màn hình (1875)](https://github.com/user-attachments/assets/de1d531e-423f-4bfb-ad58-c7d11d5eeb6d)
-![Ảnh chụp màn hình (1876)](https://github.com/user-attachments/assets/a020d1f1-048f-40eb-b647-4369c019b422)
+- Trang danh sách phòng: 
+  ![Ảnh chụp màn hình (1870)](https://github.com/user-attachments/assets/92998a7f-44e4-4419-91c5-17ba43cf4284)
+- Trang đặt phòng:
+  ![Ảnh chụp màn hình (1871)](https://github.com/user-attachments/assets/b689b0f4-f44e-4153-8fa5-5812cbe6f0ed)
+- Trang quản lý phòng:
+  ![Ảnh chụp màn hình (1872)](https://github.com/user-attachments/assets/eb731dbd-1c8a-4284-bc7f-08ded87293a0)
+- Trang quản lý đơn đặt phòng:
+  ![Ảnh chụp màn hình (1873)](https://github.com/user-attachments/assets/37f0f861-fe1c-49b4-845d-951c922d8bd3)
+- Trang quản lý danh sách người dùng:
+  ![Ảnh chụp màn hình (1874)](https://github.com/user-attachments/assets/3a9a330d-62c4-415f-a47a-5cec3ddacf45)
+- Trang quản lý đơn đặt bàn
+ ![Ảnh chụp màn hình (1875)](https://github.com/user-attachments/assets/de643bd6-9dc8-4530-b9ca-140d799d8ad7)
+- Trang Profile
+  ![Ảnh chụp màn hình (1876)](https://github.com/user-attachments/assets/522accb5-25bf-47f5-9598-ac8e8def988b)
+
 
