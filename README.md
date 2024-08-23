@@ -1,3 +1,7 @@
+Sơ đồ quan hệ:
+![Ảnh chụp màn hình (1881)](https://github.com/user-attachments/assets/03b208d9-2e60-4f55-a205-f0f14f87563b)
+
+
 Cách chạy Pj:
 - Folder Backend:
  + Cần cài đặt:
@@ -13,6 +17,7 @@ Cách chạy Pj:
   Chạy lại file NTHotelApplication.java và vào pj đăng ký tài khoản và pj chạy thành công
 - Folder Frontend:
    Bật terminal và chạy npm i và npm run dev
+  
 Giao diện:
 
 - Trang đăng nhập:
