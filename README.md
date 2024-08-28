@@ -38,10 +38,6 @@ Giao diện:
 - Order management page:
   ![Ảnh chụp màn hình (1873)](https://github.com/user-attachments/assets/37f0f861-fe1c-49b4-845d-951c922d8bd3)
   
-- User management page:
-  ![Ảnh chụp màn hình (1874)](https://github.com/user-attachments/assets/3a9a330d-62c4-415f-a47a-5cec3ddacf45)
-- Table reservation management page
- ![Ảnh chụp màn hình (1875)](https://github.com/user-attachments/assets/de643bd6-9dc8-4530-b9ca-140d799d8ad7)
 - Profile page
   ![Ảnh chụp màn hình (1876)](https://github.com/user-attachments/assets/522accb5-25bf-47f5-9598-ac8e8def988b)
 
